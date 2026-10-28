@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+import re
 import shutil
 from pathlib import Path
 
@@ -117,10 +118,19 @@ class TicketStore:
 
 
 def file_residue(directory: Path, needles: list[str]) -> list[tuple[str, str]]:
-    """Raw-byte scan of every file (catches plaintext left in JSON, caches, temp files)."""
+    """Raw-byte scan of every file (catches plaintext left in JSON, caches, temp files).
+
+    A needle only counts when it is not embedded in a longer alphanumeric run. Encrypted blobs are random base64, so a
+    short identifier such as a user id can appear inside one by chance (about 1 run in 100 for a 4-character id); real
+    leaks sit between delimiters (quotes, spaces, '@', newlines) and are still found.
+    """
+    patterns = [
+        (n, re.compile(rb"(?<![A-Za-z0-9])" + re.escape(n.encode()) + rb"(?![A-Za-z0-9])"))
+        for n in needles
+    ]
     out = []
     for f in sorted(Path(directory).rglob("*")):
         if f.is_file():
             data = f.read_bytes()
-            out += [(str(f.relative_to(directory)), n) for n in needles if n.encode() in data]
+            out += [(str(f.relative_to(directory)), n) for n, pat in patterns if pat.search(data)]
     return out

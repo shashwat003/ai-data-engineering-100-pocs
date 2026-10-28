@@ -164,3 +164,13 @@ def test_synthetic_data_is_deterministic():
     assert (
         date.fromisoformat(max(e["event_date"] for e in synth.events(synth.people(5), 50))) <= TODAY
     )
+
+
+def test_file_residue_ignores_ids_inside_random_ciphertext_but_not_delimited_plaintext(tmp_path):
+    (tmp_path / "blob.jsonl").write_text(
+        '{"blob": "gAAAAABkXu005Qzv9=="}\n'
+    )  # id embedded in a random base64 run
+    assert file_residue(tmp_path, ["u005"]) == []
+    (tmp_path / "leak.json").write_text('{"subject": "u005"}')
+    (tmp_path / "leak2.txt").write_text("user u005, ana")
+    assert file_residue(tmp_path, ["u005"]) == [("leak.json", "u005"), ("leak2.txt", "u005")]
