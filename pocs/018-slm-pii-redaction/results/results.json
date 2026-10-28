@@ -1,0 +1,368 @@
+{
+  "examples": [
+    "Refund to card [CREDIT_CARD] for [PERSON], IBAN [IBAN]. Customer [PERSON] lives at [ADDRESS] and can be reached on [PHONE]. Customer [PERSON] lives at [ADDRESS] and can be reached on [PHONE].",
+    "Customer [PERSON] lives at [ADDRESS] and can be reached on [PHONE]. Dear [PERSON], your order from Acme Cloud has shipped.",
+    "Refund to card [CREDIT_CARD] for [PERSON], IBAN [IBAN]. SSN [US_SSN] belongs to [PERSON]; verify with Quarterly Report."
+  ],
+  "hard_cases": [
+    [
+      "reach me at john [at] example [dot] com tonight",
+      "reach me at john [at] example [dot] com tonight"
+    ],
+    [
+      "call five five five 123 4567 after noon",
+      "call five five five [PHONE]after noon"
+    ],
+    [
+      "mail JOHN.SMITH@EXAMPLE.COM now",
+      "mail [EMAIL] now"
+    ],
+    [
+      "my friend maria gonzalez lives at 12 baker street",
+      "my friend maria gonzalez lives at 12 baker street"
+    ],
+    [
+      "Contact: Ana Ng (ana.ng@example.com), 555-123-4567",
+      "Contact: [PERSON] ([EMAIL]), [PHONE]"
+    ]
+  ],
+  "identity_features": {
+    "seen_names": {
+      "char_leak_rate": 0.0,
+      "over_redaction_rate": 0.0,
+      "per_type": {
+        "ADDRESS": {
+          "f1": 1.0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "support": 144
+        },
+        "CREDIT_CARD": {
+          "f1": 1.0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "support": 75
+        },
+        "EMAIL": {
+          "f1": 1.0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "support": 160
+        },
+        "IBAN": {
+          "f1": 1.0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "support": 75
+        },
+        "PERSON": {
+          "f1": 1.0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "support": 726
+        },
+        "PHONE": {
+          "f1": 1.0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "support": 144
+        },
+        "US_SSN": {
+          "f1": 1.0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "support": 94
+        }
+      }
+    },
+    "unseen_names": {
+      "char_leak_rate": 0.0458,
+      "over_redaction_rate": 0.0,
+      "per_type": {
+        "ADDRESS": {
+          "f1": 1.0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "support": 151
+        },
+        "CREDIT_CARD": {
+          "f1": 1.0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "support": 90
+        },
+        "EMAIL": {
+          "f1": 1.0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "support": 176
+        },
+        "IBAN": {
+          "f1": 1.0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "support": 90
+        },
+        "PERSON": {
+          "f1": 0.815,
+          "precision": 0.817,
+          "recall": 0.812,
+          "support": 719
+        },
+        "PHONE": {
+          "f1": 1.0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "support": 151
+        },
+        "US_SSN": {
+          "f1": 1.0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "support": 69
+        }
+      }
+    }
+  },
+  "identity_new_templates": {
+    "char_leak_rate": 0.2205,
+    "over_redaction_rate": 0.0,
+    "per_type": {
+      "ADDRESS": {
+        "f1": 0.935,
+        "precision": 0.909,
+        "recall": 0.962,
+        "support": 104
+      },
+      "CREDIT_CARD": {
+        "f1": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "support": 90
+      },
+      "EMAIL": {
+        "f1": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "support": 113
+      },
+      "IBAN": {
+        "f1": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "support": 98
+      },
+      "PERSON": {
+        "f1": 0.246,
+        "precision": 0.269,
+        "recall": 0.227,
+        "support": 679
+      },
+      "PHONE": {
+        "f1": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "support": 104
+      },
+      "US_SSN": {
+        "f1": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "support": 98
+      }
+    }
+  },
+  "patterns_only": {
+    "char_leak_rate": 0.4818,
+    "over_redaction_rate": 0.0,
+    "per_type": {
+      "ADDRESS": {
+        "f1": 0.0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "support": 151
+      },
+      "CREDIT_CARD": {
+        "f1": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "support": 90
+      },
+      "EMAIL": {
+        "f1": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "support": 176
+      },
+      "IBAN": {
+        "f1": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "support": 90
+      },
+      "PERSON": {
+        "f1": 0.0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "support": 719
+      },
+      "PHONE": {
+        "f1": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "support": 151
+      },
+      "US_SSN": {
+        "f1": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "support": 69
+      }
+    }
+  },
+  "seen_names": {
+    "char_leak_rate": 0.0,
+    "over_redaction_rate": 0.0,
+    "per_type": {
+      "ADDRESS": {
+        "f1": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "support": 144
+      },
+      "CREDIT_CARD": {
+        "f1": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "support": 75
+      },
+      "EMAIL": {
+        "f1": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "support": 160
+      },
+      "IBAN": {
+        "f1": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "support": 75
+      },
+      "PERSON": {
+        "f1": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "support": 726
+      },
+      "PHONE": {
+        "f1": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "support": 144
+      },
+      "US_SSN": {
+        "f1": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "support": 94
+      }
+    }
+  },
+  "texts_per_second": 830.2,
+  "unseen_names": {
+    "char_leak_rate": 0.0,
+    "over_redaction_rate": 0.0,
+    "per_type": {
+      "ADDRESS": {
+        "f1": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "support": 151
+      },
+      "CREDIT_CARD": {
+        "f1": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "support": 90
+      },
+      "EMAIL": {
+        "f1": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "support": 176
+      },
+      "IBAN": {
+        "f1": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "support": 90
+      },
+      "PERSON": {
+        "f1": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "support": 719
+      },
+      "PHONE": {
+        "f1": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "support": 151
+      },
+      "US_SSN": {
+        "f1": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "support": 69
+      }
+    }
+  },
+  "unseen_names_and_templates": {
+    "char_leak_rate": 0.2396,
+    "over_redaction_rate": 0.0,
+    "per_type": {
+      "ADDRESS": {
+        "f1": 0.962,
+        "precision": 0.962,
+        "recall": 0.962,
+        "support": 104
+      },
+      "CREDIT_CARD": {
+        "f1": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "support": 90
+      },
+      "EMAIL": {
+        "f1": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "support": 113
+      },
+      "IBAN": {
+        "f1": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "support": 98
+      },
+      "PERSON": {
+        "f1": 0.284,
+        "precision": 0.342,
+        "recall": 0.243,
+        "support": 679
+      },
+      "PHONE": {
+        "f1": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "support": 104
+      },
+      "US_SSN": {
+        "f1": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "support": 98
+      }
+    }
+  }
+}

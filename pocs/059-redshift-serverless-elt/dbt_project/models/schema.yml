@@ -1,0 +1,37 @@
+version: 2
+models:
+  - name: stg_orders
+    columns:
+      - name: order_id
+        tests: [unique, not_null]
+      - name: status
+        tests:
+          - accepted_values: {values: [completed, shipped, cancelled, returned]}
+  - name: stg_customer_snapshots
+    columns:
+      - name: customer_id
+        tests: [not_null]
+      - name: effective_date
+        tests: [not_null]
+  - name: dim_customer_history
+    columns:
+      - name: customer_id
+        tests: [not_null]
+      - name: valid_from
+        tests: [not_null]
+  - name: dim_customer
+    columns:
+      - name: customer_id
+        tests: [unique, not_null]
+  - name: fct_orders
+    columns:
+      - name: order_id
+        tests: [unique, not_null]
+      - name: customer_id
+        tests:
+          - not_null
+          - relationships: {to: ref('dim_customer'), field: customer_id}
+      - name: segment
+        tests: [not_null]
+      - name: amount
+        tests: [not_null]

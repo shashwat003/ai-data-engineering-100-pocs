@@ -1,0 +1,118 @@
+{
+  "best_reconciled": "WLS (structural)",
+  "best_vs_base_pct": -0.3,
+  "bottom_series": 12,
+  "horizon": 8,
+  "methods": {
+    "MinT (shrink)": {
+      "max_coherence_gap": 4.547473508864641e-13,
+      "rmsse_by_level": {
+        "all_levels_mean": 0.722,
+        "region": 0.75,
+        "store": 0.649,
+        "total": 0.768
+      }
+    },
+    "OLS": {
+      "max_coherence_gap": 6.821210263296962e-13,
+      "rmsse_by_level": {
+        "all_levels_mean": 0.722,
+        "region": 0.755,
+        "store": 0.654,
+        "total": 0.758
+      }
+    },
+    "WLS (structural)": {
+      "max_coherence_gap": 9.094947017729282e-13,
+      "rmsse_by_level": {
+        "all_levels_mean": 0.721,
+        "region": 0.751,
+        "store": 0.652,
+        "total": 0.76
+      }
+    },
+    "base (incoherent)": {
+      "max_coherence_gap": 14.282974182470127,
+      "rmsse_by_level": {
+        "all_levels_mean": 0.723,
+        "region": 0.754,
+        "store": 0.652,
+        "total": 0.764
+      }
+    },
+    "bottom-up": {
+      "max_coherence_gap": 0.0,
+      "rmsse_by_level": {
+        "all_levels_mean": 0.729,
+        "region": 0.752,
+        "store": 0.652,
+        "total": 0.782
+      }
+    },
+    "top-down": {
+      "max_coherence_gap": 2.2737367544323206e-13,
+      "rmsse_by_level": {
+        "all_levels_mean": 1.114,
+        "region": 1.254,
+        "store": 1.323,
+        "total": 0.764
+      }
+    }
+  },
+  "multi_seed": {
+    "methods": {
+      "MinT (shrink)": {
+        "better_than_base_in": "4/6",
+        "ci95": [
+          -2.38,
+          0.15
+        ],
+        "mean_change_pct": -0.82
+      },
+      "OLS": {
+        "better_than_base_in": "3/6",
+        "ci95": [
+          -0.2,
+          0.33
+        ],
+        "mean_change_pct": 0.06
+      },
+      "WLS (structural)": {
+        "better_than_base_in": "3/6",
+        "ci95": [
+          -1.32,
+          0.26
+        ],
+        "mean_change_pct": -0.39
+      },
+      "bottom-up": {
+        "better_than_base_in": "4/6",
+        "ci95": [
+          -2.73,
+          1.21
+        ],
+        "mean_change_pct": -0.5
+      },
+      "top-down": {
+        "better_than_base_in": "0/6",
+        "ci95": [
+          31.94,
+          40.77
+        ],
+        "mean_change_pct": 35.77
+      }
+    },
+    "n_obs": 60,
+    "origins": 3,
+    "seeds": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ]
+  },
+  "origins": 6,
+  "series": 16
+}

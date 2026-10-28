@@ -1,0 +1,7 @@
+scd2_demo:
+  target: local
+  outputs:
+    local:
+      type: duckdb
+      path: "{{ env_var('SCD2_DB_PATH') }}"
+      threads: 1

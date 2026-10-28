@@ -1,0 +1,103 @@
+{
+  "approval_rate_by_group_labels": {
+    "A": 0.5326,
+    "B": 0.2224
+  },
+  "baseline": {
+    "by_group": {
+      "A": {
+        "accuracy": 0.6698,
+        "fpr": 0.2551,
+        "selection_rate": 0.4459,
+        "tpr": 0.6065
+      },
+      "B": {
+        "accuracy": 0.7679,
+        "fpr": 0.1558,
+        "selection_rate": 0.237,
+        "tpr": 0.5106
+      }
+    },
+    "demographic_parity_diff": 0.2089,
+    "disparate_impact_ratio": 0.5315,
+    "dp_ci95": [
+      0.1647,
+      0.2422
+    ],
+    "equalized_odds_diff": 0.0993,
+    "overall_accuracy": 0.7033,
+    "passes_four_fifths": false
+  },
+  "mitigated_demographic_parity": {
+    "by_group": {
+      "A": {
+        "accuracy": 0.6309,
+        "fpr": 0.1165,
+        "selection_rate": 0.2804,
+        "tpr": 0.4184
+      },
+      "B": {
+        "accuracy": 0.737,
+        "fpr": 0.2211,
+        "selection_rate": 0.3068,
+        "tpr": 0.5957
+      }
+    },
+    "demographic_parity_diff": 0.0264,
+    "disparate_impact_ratio": 0.9139,
+    "equalized_odds_diff": 0.1774,
+    "overall_accuracy": 0.6672,
+    "passes_four_fifths": true
+  },
+  "mitigated_equalized_odds": {
+    "by_group": {
+      "A": {
+        "accuracy": 0.6655,
+        "fpr": 0.2237,
+        "selection_rate": 0.413,
+        "tpr": 0.5723
+      },
+      "B": {
+        "accuracy": 0.7305,
+        "fpr": 0.2358,
+        "selection_rate": 0.3231,
+        "tpr": 0.617
+      }
+    },
+    "demographic_parity_diff": 0.09,
+    "disparate_impact_ratio": 0.7822,
+    "equalized_odds_diff": 0.0447,
+    "overall_accuracy": 0.6878,
+    "passes_four_fifths": false
+  },
+  "n": 6000,
+  "proxy_auc": {
+    "debt_ratio": 0.5096,
+    "income": 0.5081,
+    "postcode_risk": 0.9238
+  },
+  "true_qualified_rate": {
+    "A": 0.4938,
+    "B": 0.5062
+  },
+  "without_proxy": {
+    "by_group": {
+      "A": {
+        "accuracy": 0.6613,
+        "fpr": 0.1497,
+        "selection_rate": 0.3412,
+        "tpr": 0.5023
+      },
+      "B": {
+        "accuracy": 0.7078,
+        "fpr": 0.28,
+        "selection_rate": 0.3685,
+        "tpr": 0.6667
+      }
+    },
+    "demographic_parity_diff": 0.0273,
+    "disparate_impact_ratio": 0.9259,
+    "equalized_odds_diff": 0.1643,
+    "overall_accuracy": 0.6772
+  }
+}

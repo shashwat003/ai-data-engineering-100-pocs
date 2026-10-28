@@ -1,0 +1,69 @@
+{
+  "compaction": {
+    "data_files_after": 10,
+    "old_snapshot_rows": 1200,
+    "same_checksum": true
+  },
+  "concurrent_writers": "both commits succeeded",
+  "delete": {
+    "rows_after": 0,
+    "rows_for_customer_before": 60,
+    "still_visible_in_old_snapshot": 60
+  },
+  "expire_snapshots": {
+    "deleted_data_removed_physically": true,
+    "files_on_disk_before": 51,
+    "snapshots_left": 1,
+    "unreferenced_files_on_disk_after": 40
+  },
+  "final_rows": 1151,
+  "glue_athena_on_mock": {
+    "glue_table_location": "s3://demo-iceberg-lake/warehouse/lake/orders",
+    "glue_table_params": {
+      "table_type": "ICEBERG"
+    },
+    "lake_public_access_blocked": true,
+    "planned_workgroup": {
+      "enforced": true,
+      "engine": "Athena engine version 3",
+      "result_encryption": "SSE_S3",
+      "scan_cutoff_bytes": 10737418240
+    },
+    "replan_exit_code": 0,
+    "results_bucket_encrypted": true,
+    "status": "RAN against local moto, not real AWS"
+  },
+  "partition_evolution": {
+    "default_spec_fields": [
+      "ts_month"
+    ],
+    "specs": 2
+  },
+  "partition_pruning": {
+    "files_planned_for_one_day": 3,
+    "files_total": 30,
+    "rows_returned": 120
+  },
+  "schema_enforcement": {
+    "missing required column": "ValueError",
+    "nullable column given nulls-allowed schema": "ValueError"
+  },
+  "schema_evolution": {
+    "columns": [
+      "order_id",
+      "customer_id",
+      "ts",
+      "total_amount",
+      "quantity",
+      "currency"
+    ],
+    "new_rows_currency_eur": 5,
+    "old_rows_currency_null": 1200,
+    "old_rows_total_amount_non_null": true
+  },
+  "small_appends": {
+    "data_files": 30,
+    "rows": 1200,
+    "snapshots": 30
+  }
+}

@@ -1,0 +1,147 @@
+{
+  "detection": [
+    {
+      "defect": "null_customer_id",
+      "exact": "yes",
+      "injected": 5,
+      "reported": 5,
+      "rule": "column.required:customer_id"
+    },
+    {
+      "defect": "negative_amount",
+      "exact": "yes",
+      "injected": 4,
+      "reported": 4,
+      "rule": "column.min:amount"
+    },
+    {
+      "defect": "bad_status",
+      "exact": "yes",
+      "injected": 6,
+      "reported": 6,
+      "rule": "column.enum:status"
+    },
+    {
+      "defect": "duplicate_order_id",
+      "exact": "yes",
+      "injected": 3,
+      "reported": 3,
+      "rule": "column.unique:order_id"
+    },
+    {
+      "defect": "bad_email",
+      "exact": "yes",
+      "injected": 4,
+      "reported": 4,
+      "rule": "column.pattern:email"
+    },
+    {
+      "defect": "ship_before_order",
+      "exact": "yes",
+      "injected": 3,
+      "reported": 3,
+      "rule": "quality.column_compare:ship_date>=order_date"
+    },
+    {
+      "defect": "non_numeric_amount",
+      "exact": "yes",
+      "injected": 2,
+      "reported": 2,
+      "rule": "column.type:amount"
+    },
+    {
+      "defect": "amount_too_large",
+      "exact": "yes",
+      "injected": 2,
+      "reported": 2,
+      "rule": "column.max:amount"
+    }
+  ],
+  "evolution": {
+    "orders_feed.v1.0.1_bad_bump": {
+      "actual": "patch",
+      "changes": [
+        "column_removed"
+      ],
+      "ok": false,
+      "required": "major"
+    },
+    "orders_feed.v1.1.0_compatible": {
+      "actual": "minor",
+      "changes": [
+        "column_added",
+        "constraint_loosened",
+        "constraint_loosened"
+      ],
+      "ok": true,
+      "required": "minor"
+    },
+    "orders_feed.v2.0.0_breaking": {
+      "actual": "major",
+      "changes": [
+        "column_removed",
+        "required_changed"
+      ],
+      "ok": true,
+      "required": "major"
+    }
+  },
+  "feeds": {
+    "orders_clean": {
+      "counts": {},
+      "passed": true,
+      "rows": 400
+    },
+    "orders_defective": {
+      "counts": {
+        "column.enum:status": 6,
+        "column.max:amount": 2,
+        "column.min:amount": 4,
+        "column.pattern:email": 4,
+        "column.required:customer_id": 5,
+        "column.type:amount": 2,
+        "column.unique:order_id": 3,
+        "quality.column_compare:ship_date>=order_date": 3,
+        "quality.max_null_rate:customer_id": 1
+      },
+      "passed": false,
+      "rows": 400
+    },
+    "orders_extra_column": {
+      "counts": {
+        "schema.extra_column:coupon": 1
+      },
+      "passed": true,
+      "rows": 400
+    },
+    "orders_missing_column": {
+      "counts": {
+        "schema.missing_column:amount": 1
+      },
+      "passed": false,
+      "rows": 400
+    },
+    "orders_stale": {
+      "counts": {
+        "quality.freshness:order_date": 1
+      },
+      "passed": false,
+      "rows": 362
+    }
+  },
+  "manifest": {
+    "injected": {
+      "amount_too_large": 2,
+      "bad_email": 4,
+      "bad_status": 6,
+      "duplicate_order_id": 3,
+      "negative_amount": 4,
+      "non_numeric_amount": 2,
+      "null_customer_id": 5,
+      "ship_before_order": 3
+    },
+    "newest_order_date": "2024-12-30",
+    "rows": 400,
+    "stale_rows": 362
+  }
+}

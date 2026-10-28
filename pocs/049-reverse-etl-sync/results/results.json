@@ -1,0 +1,96 @@
+{
+  "archived_in_crm": 10,
+  "changes_applied_on_day2": {
+    "deleted": 10,
+    "new": 20,
+    "updated": 50
+  },
+  "crm_calls": {
+    "archive": 1,
+    "failed_5xx": 4,
+    "records_written": 1120,
+    "rejected_429": 3,
+    "upsert": 12
+  },
+  "crm_fields_ever_sent": [
+    "churn_risk",
+    "email",
+    "first_name",
+    "last_name",
+    "lifetime_value",
+    "segment"
+  ],
+  "crm_in_sync_with_source": 1009,
+  "dead_letters": 1,
+  "mass_delete_blocked": true,
+  "naive_full_refresh_second_run": {
+    "api_calls": 13,
+    "archived": 0,
+    "bytes_sent": 243788,
+    "created": 1000,
+    "dead_lettered": 0,
+    "rate_limited": 3,
+    "retries": 3,
+    "unchanged_by_crm": 0,
+    "updated": 0
+  },
+  "source_rows": 1010,
+  "state_active": 1010,
+  "steps": {
+    "1. initial load (1000 rows, 3 requests per 10 s window)": {
+      "api_calls": 13,
+      "archived": 0,
+      "bytes_sent": 243762,
+      "created": 1000,
+      "dead_lettered": 0,
+      "rate_limited": 3,
+      "retries": 3,
+      "unchanged_by_crm": 0,
+      "updated": 0
+    },
+    "2. nothing changed": {
+      "api_calls": 0,
+      "archived": 0,
+      "bytes_sent": 0,
+      "created": 0,
+      "dead_lettered": 0,
+      "rate_limited": 0,
+      "retries": 0,
+      "unchanged_by_crm": 0,
+      "updated": 0
+    },
+    "3. next day: 5% updated, 10 deleted, 20 new, 1 bad email": {
+      "api_calls": 2,
+      "archived": 10,
+      "bytes_sent": 8102,
+      "created": 20,
+      "dead_lettered": 1,
+      "rate_limited": 0,
+      "retries": 0,
+      "unchanged_by_crm": 0,
+      "updated": 50
+    },
+    "4. 4 consecutive 503s during sync": {
+      "api_calls": 5,
+      "archived": 0,
+      "bytes_sent": 21470,
+      "created": 0,
+      "dead_lettered": 0,
+      "rate_limited": 0,
+      "retries": 4,
+      "unchanged_by_crm": 0,
+      "updated": 50
+    },
+    "5. re-run after the outage": {
+      "api_calls": 0,
+      "archived": 0,
+      "bytes_sent": 0,
+      "created": 0,
+      "dead_lettered": 0,
+      "rate_limited": 0,
+      "retries": 0,
+      "unchanged_by_crm": 0,
+      "updated": 0
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "calibration": {
+    "15 cases/cat, k=3": {
+      "-0.05": 0.1,
+      "-0.15": 0.475,
+      "-0.3": 1.0,
+      "0.0": 0.0
+    },
+    "8 cases/cat, k=1": {
+      "-0.05": 0.05,
+      "-0.15": 0.1,
+      "-0.3": 0.675,
+      "0.0": 0.0
+    }
+  },
+  "verdicts": {
+    "v2-better-extraction": true,
+    "v3-cosmetic-rewrite": true,
+    "v4-summary-regression": false,
+    "v5-safety-regression": false
+  }
+}

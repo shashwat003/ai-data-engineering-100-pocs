@@ -1,0 +1,16 @@
+# Extends the default gitleaks rules with an internal token format and a narrow allowlist.
+title = "kit config"
+
+[extend]
+useDefault = true
+
+[[rules]]
+id = "acme-internal-token"
+description = "Internal service token (acme_ followed by 32 lowercase hex characters)"
+regex = '''\bacme_[0-9a-f]{32}\b'''
+keywords = ["acme_"]
+
+[allowlist]
+description = "Documented examples and synthetic fixtures"
+paths = ['''(^|/)tests/fixtures/''', '''\.secrets\.baseline\.json$''']
+regexes = ['''AKIAIOSFODNN7EXAMPL[E]''']

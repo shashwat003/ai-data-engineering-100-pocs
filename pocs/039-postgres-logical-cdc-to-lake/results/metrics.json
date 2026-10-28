@@ -1,0 +1,133 @@
+{
+  "crash_and_replay": {
+    "bronze_files": 23,
+    "changelog_events": 206,
+    "crashed": true,
+    "distinct_events": 133,
+    "reconcile": {
+      "public.accounts": {
+        "differing": 0,
+        "extra_in_lake": 0,
+        "lake_rows": 8,
+        "missing_in_lake": 0,
+        "source_rows": 8
+      },
+      "public.orders": {
+        "differing": 0,
+        "extra_in_lake": 0,
+        "lake_rows": 78,
+        "missing_in_lake": 0,
+        "source_rows": 78
+      }
+    },
+    "slot_not_advanced_by_crash": true
+  },
+  "envelope_example": {
+    "after": {
+      "amount": "10.50",
+      "id": 7,
+      "note": null,
+      "status": "paid"
+    },
+    "before": {
+      "amount": "10.50",
+      "id": 7,
+      "note": null,
+      "status": "new"
+    },
+    "op": "u",
+    "source": {
+      "db": "postgres",
+      "lsn": 22000000,
+      "ordinal": 0,
+      "table": "public.orders",
+      "txId": 731
+    },
+    "ts": "2026-01-01 00:00:00+00"
+  },
+  "first_load_with_concurrent_writes": {
+    "background_txns": 678,
+    "reconcile": {
+      "public.accounts": {
+        "differing": 0,
+        "extra_in_lake": 0,
+        "lake_rows": 8,
+        "missing_in_lake": 0,
+        "source_rows": 8
+      },
+      "public.orders": {
+        "differing": 0,
+        "extra_in_lake": 0,
+        "lake_rows": 231,
+        "missing_in_lake": 0,
+        "source_rows": 231
+      }
+    },
+    "snapshot_rows": {
+      "public.accounts": 8,
+      "public.orders": 164
+    }
+  },
+  "schema_evolution": {
+    "after_repair": {
+      "differing": 0,
+      "extra_in_lake": 0,
+      "lake_rows": 66,
+      "missing_in_lake": 0,
+      "source_rows": 66
+    },
+    "column_with_default_before_repair": {
+      "differing": 53,
+      "extra_in_lake": 0,
+      "lake_rows": 66,
+      "missing_in_lake": 0,
+      "source_rows": 66
+    },
+    "nullable_column": {
+      "differing": 0,
+      "extra_in_lake": 0,
+      "lake_rows": 60,
+      "missing_in_lake": 0,
+      "source_rows": 60
+    },
+    "resnapshot_rows": 66
+  },
+  "slot_lag": {
+    "drain_seconds_measured": 0.56,
+    "drained_transactions": 265,
+    "idle_lag_bytes": 0,
+    "lag_after_drain_bytes": 0,
+    "lag_after_writes_bytes": 66192
+  },
+  "streaming_atomicity": {
+    "atomicity_violations": 0,
+    "changelog_events_orders": 522,
+    "committed": 341,
+    "distinct_total_balances_seen": 1,
+    "ghost_events_in_bronze": 0,
+    "ghost_rows_in_silver": 0,
+    "polls": 23,
+    "reconcile": {
+      "public.accounts": {
+        "differing": 0,
+        "extra_in_lake": 0,
+        "lake_rows": 8,
+        "missing_in_lake": 0,
+        "source_rows": 8
+      },
+      "public.orders": {
+        "differing": 0,
+        "extra_in_lake": 0,
+        "lake_rows": 163,
+        "missing_in_lake": 0,
+        "source_rows": 163
+      }
+    },
+    "rolled_back": 59
+  },
+  "unsupported_type_fails_closed": {
+    "bronze_files": 0,
+    "error": "UnsupportedChange: unsupported column type 'jsonb' (at 0/15180B8); stopping before the slot is advanced",
+    "lag_bytes_after_failure": 296
+  }
+}

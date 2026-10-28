@@ -1,0 +1,32 @@
+name: data-contracts
+# Blocks pull requests that change a data contract without the matching version bump,
+# delete a contract, or break the contract format. Runs POC 077's gate against the base branch.
+on:
+  pull_request:
+    paths:
+      - "pocs/077-data-contracts-ci-gate/contracts/**"
+      - ".github/workflows/data-contracts.yml"
+permissions:
+  contents: read
+jobs:
+  gate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0   # the gate reads the base branch's contract files via git
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+          cache: pip
+          cache-dependency-path: requirements*.txt
+      - run: pip install -r requirements.txt
+      - name: Contract evolution gate
+        working-directory: pocs/077-data-contracts-ci-gate
+        env:
+          PYTHONPATH: .:../../libs
+        run: >
+          python -m data_contracts_ci_gate.cli check
+          --repo ../..
+          --contracts-dir pocs/077-data-contracts-ci-gate/contracts
+          --base-ref origin/${{ github.base_ref }}

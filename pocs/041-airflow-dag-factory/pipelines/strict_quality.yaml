@@ -1,0 +1,10 @@
+dag_id: strict_quality
+description: Manual pipeline with dirty input; the validation gate must stop it from loading.
+schedule: null
+owner: data-quality
+tags: [quality]
+retries: 0
+tasks:
+  - {id: extract, type: python, callable: extract_orders, params: {work_dir: /tmp/poc041/strict_quality, n_rows: 100, bad_rows: 20}}
+  - {id: validate, type: python, callable: validate_rows, params: {work_dir: /tmp/poc041/strict_quality, max_bad_fraction: 0.05}, depends_on: [extract]}
+  - {id: load, type: python, callable: load_summary, params: {work_dir: /tmp/poc041/strict_quality}, depends_on: [validate]}

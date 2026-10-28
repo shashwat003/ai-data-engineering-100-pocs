@@ -1,0 +1,92 @@
+{
+  "budget_sweep": {
+    "40": {
+      "oracle": 0.768,
+      "student on human labels only": 0.551,
+      "student on teacher SOFT labels, T=1 (pool)": 0.566,
+      "teacher": 0.559
+    },
+    "80": {
+      "oracle": 0.768,
+      "student on human labels only": 0.621,
+      "student on teacher SOFT labels, T=1 (pool)": 0.669,
+      "teacher": 0.652
+    },
+    "160": {
+      "oracle": 0.768,
+      "student on human labels only": 0.711,
+      "student on teacher SOFT labels, T=1 (pool)": 0.725,
+      "teacher": 0.712
+    },
+    "320": {
+      "oracle": 0.768,
+      "student on human labels only": 0.752,
+      "student on teacher SOFT labels, T=1 (pool)": 0.757,
+      "teacher": 0.744
+    }
+  },
+  "n_labelled": 250,
+  "n_pool": 6000,
+  "results": {
+    "oracle: student on true labels of the pool": {
+      "accuracy": 0.7702,
+      "accuracy_std": 0.0096,
+      "ece": 0.0311,
+      "ms_per_ticket": 0.0099,
+      "params": 12294.0
+    },
+    "student on human labels + soft pool": {
+      "accuracy": 0.747,
+      "accuracy_std": 0.0039,
+      "ece": 0.1503,
+      "ms_per_ticket": 0.0097,
+      "params": 12294.0
+    },
+    "student on human labels only": {
+      "accuracy": 0.7403,
+      "accuracy_std": 0.0116,
+      "ece": 0.057,
+      "ms_per_ticket": 0.0099,
+      "params": 12294.0
+    },
+    "student on teacher HARD labels (pool)": {
+      "accuracy": 0.7532,
+      "accuracy_std": 0.0015,
+      "ece": 0.104,
+      "ms_per_ticket": 0.0096,
+      "params": 12294.0
+    },
+    "student on teacher SOFT labels, T=1 (pool)": {
+      "accuracy": 0.7523,
+      "accuracy_std": 0.0026,
+      "ece": 0.0368,
+      "ms_per_ticket": 0.012,
+      "params": 12294.0
+    },
+    "student on teacher SOFT labels, T=2 (pool)": {
+      "accuracy": 0.7497,
+      "accuracy_std": 0.0031,
+      "ece": 0.1619,
+      "ms_per_ticket": 0.0098,
+      "params": 12294.0
+    },
+    "student on teacher SOFT labels, T=4 (pool)": {
+      "accuracy": 0.7502,
+      "accuracy_std": 0.0025,
+      "ece": 0.3721,
+      "ms_per_ticket": 0.0096,
+      "params": 12294.0
+    },
+    "teacher": {
+      "accuracy": 0.7375,
+      "accuracy_std": 0.0036,
+      "ece": 0.0779,
+      "ms_per_ticket": 0.088
+    }
+  },
+  "seeds": [
+    0,
+    1,
+    2
+  ]
+}

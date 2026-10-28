@@ -1,0 +1,7 @@
+{{ name }}:
+  target: local
+  outputs:
+    local:
+      type: duckdb
+      path: "{{ '{{' }} env_var('DBT_DB_PATH') {{ '}}' }}"
+      threads: 1

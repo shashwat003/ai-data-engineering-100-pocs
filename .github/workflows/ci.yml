@@ -1,0 +1,46 @@
+name: ci
+# FAST CI: lint, unit tests, secret scan, catalogue, light demo smoke tests. Runs on every push.
+# Heavy validation (Spark, Terraform mock, long evaluations) lives in heavy.yml.
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.12", "3.13"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: pip
+          cache-dependency-path: requirements*.txt
+      - run: |
+          pip install -r requirements-dev.txt -r requirements-mlops.txt -r requirements-edge.txt -r requirements-logs.txt
+          pip install --no-deps drain3==0.9.11  # its exact pins conflict with MLflow; see requirements-logs.txt
+      - name: Install gitleaks (pinned release and sha256) for POC 086
+        run: |
+          curl -sSfL -o gl.tgz https://github.com/gitleaks/gitleaks/releases/download/v8.30.0/gitleaks_8.30.0_linux_x64.tar.gz
+          echo "79a3ab579b53f71efd634f3aaf7e04a0fa0cf206b7ed434638d1547a2470a66e  gl.tgz" | sha256sum -c -
+          tar -xzf gl.tgz gitleaks && sudo install -m 0755 gitleaks /usr/local/bin/gitleaks && rm gl.tgz gitleaks
+      - run: make lint
+      - run: python scripts/run_tests.py --fast
+      - run: make secrets
+      - name: MCP interoperability test (official client)
+        run: |
+          pip install -r requirements-interop.txt
+          python scripts/run_tests.py 024-mcp-server-data-catalog
+          python scripts/run_tests.py 025-mcp-server-repo-ops-readonly
+      - name: Light demo smoke tests
+        run: python scripts/run_demos.py --fast
+      - name: Catalogue is valid and up to date
+        run: |
+          python scripts/build_catalogue.py
+          python scripts/build_status.py
+          git diff --exit-code README.md docs/CATALOGUE.md docs/STATUS.md docs/FLAGSHIPS.md
+          python scripts/check_links.py

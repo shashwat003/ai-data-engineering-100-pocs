@@ -1,0 +1,10 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {"Sid": "DenyUnencryptedObjectUploads", "Effect": "Deny", "Action": "s3:PutObject", "Resource": "*",
+     "Condition": {"Null": {"s3:x-amz-server-side-encryption": "true"}}},
+    {"Sid": "DenyPublicAccessBlockChanges", "Effect": "Deny",
+     "Action": ["s3:PutBucketPublicAccessBlock", "s3:DeletePublicAccessBlock"], "Resource": "*",
+     "Condition": {"ArnNotLike": {"aws:PrincipalArn": "arn:aws:iam::*:role/OrganizationBreakGlass"}}}
+  ]
+}

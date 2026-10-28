@@ -1,0 +1,240 @@
+{
+  "model": {
+    "a": 0.018,
+    "b": 0.0004,
+    "c": 0.00025,
+    "kv_tokens": 40000,
+    "max_batch": 64,
+    "max_output": 512
+  },
+  "rates": {
+    "0.5": {
+      "configs": {
+        "continuous, paged KV": {
+          "completed": 102,
+          "e2e_p95_s": 9.78,
+          "gpu_busy_pct": 70.2,
+          "kv_peak_pct": 9.2,
+          "max_concurrency": 6,
+          "preemptions": 0,
+          "rejected": 0,
+          "throughput_tok_s": 71.4,
+          "tpot_p50_ms": 19.4,
+          "ttft_p50_s": 0.093,
+          "ttft_p95_s": 0.241
+        },
+        "continuous, reserved KV": {
+          "completed": 102,
+          "e2e_p95_s": 9.78,
+          "gpu_busy_pct": 70.2,
+          "kv_peak_pct": 12.9,
+          "max_concurrency": 6,
+          "preemptions": 0,
+          "rejected": 0,
+          "throughput_tok_s": 71.4,
+          "tpot_p50_ms": 19.4,
+          "ttft_p50_s": 0.093,
+          "ttft_p95_s": 0.241
+        },
+        "no batching": {
+          "completed": 102,
+          "e2e_p95_s": 103.77,
+          "gpu_busy_pct": 96.6,
+          "kv_peak_pct": 5.8,
+          "max_concurrency": 1,
+          "preemptions": 0,
+          "rejected": 0,
+          "throughput_tok_s": 51.0,
+          "tpot_p50_ms": 18.4,
+          "ttft_p50_s": 81.507,
+          "ttft_p95_s": 99.648
+        },
+        "static batching (8, 250 ms fill)": {
+          "completed": 102,
+          "e2e_p95_s": 12.56,
+          "gpu_busy_pct": 82.7,
+          "kv_peak_pct": 17.7,
+          "max_concurrency": 7,
+          "preemptions": 0,
+          "rejected": 0,
+          "throughput_tok_s": 70.5,
+          "tpot_p50_ms": 18.8,
+          "ttft_p50_s": 2.292,
+          "ttft_p95_s": 8.73
+        }
+      },
+      "requests": 102
+    },
+    "2.0": {
+      "configs": {
+        "continuous, paged KV": {
+          "completed": 449,
+          "e2e_p95_s": 12.39,
+          "gpu_busy_pct": 99.6,
+          "kv_peak_pct": 25.2,
+          "max_concurrency": 18,
+          "preemptions": 0,
+          "rejected": 0,
+          "throughput_tok_s": 288.5,
+          "tpot_p50_ms": 25.6,
+          "ttft_p50_s": 0.119,
+          "ttft_p95_s": 0.292
+        },
+        "continuous, reserved KV": {
+          "completed": 449,
+          "e2e_p95_s": 12.39,
+          "gpu_busy_pct": 99.6,
+          "kv_peak_pct": 42.4,
+          "max_concurrency": 18,
+          "preemptions": 0,
+          "rejected": 0,
+          "throughput_tok_s": 288.5,
+          "tpot_p50_ms": 25.6,
+          "ttft_p50_s": 0.119,
+          "ttft_p95_s": 0.292
+        },
+        "no batching": {
+          "completed": 449,
+          "e2e_p95_s": 1037.23,
+          "gpu_busy_pct": 100.0,
+          "kv_peak_pct": 5.8,
+          "max_concurrency": 1,
+          "preemptions": 0,
+          "rejected": 0,
+          "throughput_tok_s": 52.7,
+          "tpot_p50_ms": 18.4,
+          "ttft_p50_s": 610.437,
+          "ttft_p95_s": 1034.189
+        },
+        "static batching (8, 250 ms fill)": {
+          "completed": 449,
+          "e2e_p95_s": 174.59,
+          "gpu_busy_pct": 99.9,
+          "kv_peak_pct": 22.2,
+          "max_concurrency": 8,
+          "preemptions": 0,
+          "rejected": 0,
+          "throughput_tok_s": 164.0,
+          "tpot_p50_ms": 20.6,
+          "ttft_p50_s": 105.436,
+          "ttft_p95_s": 168.599
+        }
+      },
+      "requests": 449
+    },
+    "6.0": {
+      "configs": {
+        "continuous, paged KV": {
+          "completed": 1411,
+          "e2e_p95_s": 62.26,
+          "gpu_busy_pct": 100.0,
+          "kv_peak_pct": 91.2,
+          "max_concurrency": 64,
+          "preemptions": 0,
+          "rejected": 0,
+          "throughput_tok_s": 789.9,
+          "tpot_p50_ms": 77.0,
+          "ttft_p50_s": 21.094,
+          "ttft_p95_s": 42.108
+        },
+        "continuous, reserved KV": {
+          "completed": 1411,
+          "e2e_p95_s": 79.86,
+          "gpu_busy_pct": 100.0,
+          "kv_peak_pct": 100.0,
+          "max_concurrency": 50,
+          "preemptions": 0,
+          "rejected": 0,
+          "throughput_tok_s": 727.9,
+          "tpot_p50_ms": 60.0,
+          "ttft_p50_s": 33.753,
+          "ttft_p95_s": 67.837
+        },
+        "no batching": {
+          "completed": 1411,
+          "e2e_p95_s": 3997.78,
+          "gpu_busy_pct": 100.0,
+          "kv_peak_pct": 5.8,
+          "max_concurrency": 1,
+          "preemptions": 0,
+          "rejected": 0,
+          "throughput_tok_s": 52.8,
+          "tpot_p50_ms": 18.4,
+          "ttft_p50_s": 2047.877,
+          "ttft_p95_s": 3997.078
+        },
+        "static batching (8, 250 ms fill)": {
+          "completed": 1411,
+          "e2e_p95_s": 1139.59,
+          "gpu_busy_pct": 100.0,
+          "kv_peak_pct": 25.2,
+          "max_concurrency": 8,
+          "preemptions": 0,
+          "rejected": 0,
+          "throughput_tok_s": 164.0,
+          "tpot_p50_ms": 20.6,
+          "ttft_p50_s": 579.164,
+          "ttft_p95_s": 1137.801
+        }
+      },
+      "requests": 1411
+    },
+    "12.0": {
+      "configs": {
+        "continuous, paged KV": {
+          "completed": 2881,
+          "e2e_p95_s": 343.32,
+          "gpu_busy_pct": 100.0,
+          "kv_peak_pct": 99.8,
+          "max_concurrency": 64,
+          "preemptions": 2,
+          "rejected": 0,
+          "throughput_tok_s": 783.7,
+          "tpot_p50_ms": 80.1,
+          "ttft_p50_s": 167.508,
+          "ttft_p95_s": 331.073
+        },
+        "continuous, reserved KV": {
+          "completed": 2881,
+          "e2e_p95_s": 395.64,
+          "gpu_busy_pct": 100.0,
+          "kv_peak_pct": 100.0,
+          "max_concurrency": 50,
+          "preemptions": 0,
+          "rejected": 0,
+          "throughput_tok_s": 715.2,
+          "tpot_p50_ms": 60.8,
+          "ttft_p50_s": 196.252,
+          "ttft_p95_s": 387.269
+        },
+        "no batching": {
+          "completed": 2881,
+          "e2e_p95_s": 8265.4,
+          "gpu_busy_pct": 100.0,
+          "kv_peak_pct": 5.8,
+          "max_concurrency": 1,
+          "preemptions": 0,
+          "rejected": 0,
+          "throughput_tok_s": 52.7,
+          "tpot_p50_ms": 18.4,
+          "ttft_p50_s": 4432.786,
+          "ttft_p95_s": 8264.756
+        },
+        "static batching (8, 250 ms fill)": {
+          "completed": 2881,
+          "e2e_p95_s": 2523.47,
+          "gpu_busy_pct": 100.0,
+          "kv_peak_pct": 25.3,
+          "max_concurrency": 8,
+          "preemptions": 0,
+          "rejected": 0,
+          "throughput_tok_s": 162.5,
+          "tpot_p50_ms": 20.6,
+          "ttft_p50_s": 1335.376,
+          "ttft_p95_s": 2520.756
+        }
+      },
+      "requests": 2881
+    }
+  }
+}

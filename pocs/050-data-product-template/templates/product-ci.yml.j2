@@ -1,0 +1,16 @@
+name: {{ name }}-product-ci
+on:
+  pull_request:
+    paths: ["products/{{ name }}/**"]
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - run: pip install -r requirements.txt
+      - run: python -m data_product_template.cli validate products/{{ name }}
+      - run: python -m data_product_template.cli dbt-schema products/{{ name }} --check

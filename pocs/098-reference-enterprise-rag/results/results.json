@@ -1,0 +1,101 @@
+{
+  "before_erasure": {
+    "answer_mentions_subject": true,
+    "cached_text_contains_name": true,
+    "second_ask_cache_hit": true
+  },
+  "cache_across_customers": {
+    "answers_differ": true,
+    "different_customer_cache_hit": false,
+    "first_cached": true
+  },
+  "erasure": {
+    "answer_mentions_subject": false,
+    "audit_chain_rows": 2,
+    "audit_contains_name_or_email": false,
+    "cache_entries_purged": 1,
+    "docs_removed_from_index": 2,
+    "identifiers_still_visible_in_index_or_cache": [],
+    "other_subject_still_answerable": true,
+    "pipeline_status": "completed",
+    "same_question_after": "answered"
+  },
+  "grounded_answer": {
+    "answer": "Runbook code: RB-3484. [doc-driftwood-deployment#1] This policy describes access handling for the Beacon platform, also referred to as permission. [doc-beacon-a",
+    "cited_docs": [
+      "doc-driftwood-deployment",
+      "doc-beacon-access"
+    ],
+    "second_user_cache_hit": true,
+    "stages_ms": {
+      "admit": 0.03,
+      "cache_lookup": 0.02,
+      "cache_store": 0.16,
+      "citation_guard": 0.3,
+      "generate": 0.32,
+      "input_guard": 0.08,
+      "output_guard": 0.11,
+      "retrieve": 0.56
+    },
+    "status": "answered"
+  },
+  "hallucinating_generator": {
+    "answer_has_400_days": false,
+    "cached": true,
+    "status": "answered"
+  },
+  "injection": "blocked_input",
+  "naive_erasure_without_cache_purge": {
+    "cache_entries_purged": 0,
+    "docs_removed_from_index": 2,
+    "identifiers_still_visible_in_index_or_cache": [
+      "Gus Adams"
+    ],
+    "pipeline_status": "completed",
+    "stale_answer_still_served": true
+  },
+  "pii_gate_after_unannounced_column": {
+    "declared_found": [
+      [
+        "customer_notes",
+        "contact_email"
+      ]
+    ],
+    "passed": false,
+    "undeclared_pii_columns": [
+      [
+        "customer_notes",
+        "backup_phone",
+        "phone"
+      ]
+    ]
+  },
+  "pii_gate_clean_catalog": {
+    "declared_found": [
+      [
+        "customer_notes",
+        "contact_email"
+      ]
+    ],
+    "passed": true,
+    "undeclared_pii_columns": []
+  },
+  "pii_in_question": {
+    "card_in_audit": false,
+    "card_in_cache": false,
+    "status": "answered"
+  },
+  "rate_limit": {
+    "limited_after": 20
+  },
+  "tenant_isolation": {
+    "other_tenant_cache_hit": false
+  },
+  "unknown_role": "forbidden",
+  "visibility": {
+    "employee_sees_notes": false,
+    "support_sees_other_customers_notes": false,
+    "support_with_case_sees_own_notes": true,
+    "support_without_case_sees_notes": false
+  }
+}

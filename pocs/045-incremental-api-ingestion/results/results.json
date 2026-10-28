@@ -1,0 +1,51 @@
+[
+  {
+    "complete": true,
+    "complete_after_change": true,
+    "rate_limited": 0,
+    "requests_first_run": 20,
+    "retries": 0,
+    "scenario": "clean full sync + incremental after 22 changes",
+    "second_run_requests": 1,
+    "second_run_rows": 22
+  },
+  {
+    "complete": true,
+    "complete_after_change": true,
+    "rate_limited": 4,
+    "requests_first_run": 27,
+    "retries": 7,
+    "scenario": "flaky API: 429 every 6th, 500 every 7th request",
+    "second_run_requests": 2,
+    "second_run_rows": 22
+  },
+  {
+    "complete": true,
+    "rate_limited": 0,
+    "requests_first_run": 16,
+    "retries": 0,
+    "scenario": "crash after 4 pages, then resume"
+  },
+  {
+    "complete": true,
+    "rate_limited": 0,
+    "requests_first_run": 20,
+    "retries": 0,
+    "rows_with_extra_field": 750,
+    "scenario": "schema drift (extra field mid-run)"
+  },
+  {
+    "complete": false,
+    "scenario": "late update, no overlap"
+  },
+  {
+    "complete": true,
+    "scenario": "late update, overlap of 50 ticks"
+  },
+  {
+    "fails_fast": true,
+    "requests": 1,
+    "retries": 0,
+    "scenario": "bad token"
+  }
+]

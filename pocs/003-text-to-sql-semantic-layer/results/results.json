@@ -1,0 +1,289 @@
+{
+  "accuracy": {
+    "by_kind": {
+      "canonical": {
+        "correct": 15,
+        "n": 15
+      },
+      "out_of_scope": {
+        "correct": 5,
+        "n": 5
+      },
+      "paraphrase": {
+        "correct": 10,
+        "n": 10
+      }
+    },
+    "failures": []
+  },
+  "guard": {
+    "attacks": 43,
+    "benign": 13,
+    "benign_rejected": [],
+    "detail": [
+      {
+        "category": "stacked",
+        "executor_only": "error",
+        "sql": "SELECT 1; DROP TABLE orders",
+        "validator_blocked": true
+      },
+      {
+        "category": "stacked",
+        "executor_only": "error",
+        "sql": "SELECT COUNT(*) FROM orders; DELETE FROM orders",
+        "validator_blocked": true
+      },
+      {
+        "category": "write",
+        "executor_only": "denied",
+        "sql": "DROP TABLE orders",
+        "validator_blocked": true
+      },
+      {
+        "category": "write",
+        "executor_only": "denied",
+        "sql": "DELETE FROM orders",
+        "validator_blocked": true
+      },
+      {
+        "category": "write",
+        "executor_only": "denied",
+        "sql": "UPDATE customers SET country = 'X'",
+        "validator_blocked": true
+      },
+      {
+        "category": "write",
+        "executor_only": "denied",
+        "sql": "INSERT INTO orders VALUES (1, 1, '2024-01-01', 'completed')",
+        "validator_blocked": true
+      },
+      {
+        "category": "write",
+        "executor_only": "denied",
+        "sql": "CREATE TABLE x (a INTEGER)",
+        "validator_blocked": true
+      },
+      {
+        "category": "write",
+        "executor_only": "denied",
+        "sql": "ALTER TABLE orders ADD COLUMN z TEXT",
+        "validator_blocked": true
+      },
+      {
+        "category": "write",
+        "executor_only": "denied",
+        "sql": "REPLACE INTO orders VALUES (1, 1, 'x', 'y')",
+        "validator_blocked": true
+      },
+      {
+        "category": "engine",
+        "executor_only": "denied",
+        "sql": "PRAGMA table_info(customers)",
+        "validator_blocked": true
+      },
+      {
+        "category": "engine",
+        "executor_only": "denied",
+        "sql": "ATTACH DATABASE '/tmp/evil.db' AS e",
+        "validator_blocked": true
+      },
+      {
+        "category": "engine",
+        "executor_only": "error",
+        "sql": "VACUUM INTO '/tmp/copy.db'",
+        "validator_blocked": true
+      },
+      {
+        "category": "engine",
+        "executor_only": "denied",
+        "sql": "BEGIN; SELECT 1",
+        "validator_blocked": true
+      },
+      {
+        "category": "schema",
+        "executor_only": "denied",
+        "sql": "SELECT name FROM sqlite_master",
+        "validator_blocked": true
+      },
+      {
+        "category": "schema",
+        "executor_only": "denied",
+        "sql": "SELECT sql FROM sqlite_schema",
+        "validator_blocked": true
+      },
+      {
+        "category": "schema",
+        "executor_only": "denied",
+        "sql": "SELECT * FROM pragma_table_info('customers')",
+        "validator_blocked": true
+      },
+      {
+        "category": "schema",
+        "executor_only": "denied",
+        "sql": "SELECT * FROM main.customers",
+        "validator_blocked": true
+      },
+      {
+        "category": "function",
+        "executor_only": "denied",
+        "sql": "SELECT load_extension('/tmp/x.so')",
+        "validator_blocked": true
+      },
+      {
+        "category": "function",
+        "executor_only": "error",
+        "sql": "SELECT readfile('/etc/passwd')",
+        "validator_blocked": true
+      },
+      {
+        "category": "function",
+        "executor_only": "denied",
+        "sql": "SELECT randomblob(1000000000)",
+        "validator_blocked": true
+      },
+      {
+        "category": "function",
+        "executor_only": "denied",
+        "sql": "SELECT zeroblob(1000000000)",
+        "validator_blocked": true
+      },
+      {
+        "category": "function",
+        "executor_only": "denied",
+        "sql": "SELECT sqlite_version()",
+        "validator_blocked": true
+      },
+      {
+        "category": "function",
+        "executor_only": "denied",
+        "sql": "SELECT json_extract('{}', '$')",
+        "validator_blocked": true
+      },
+      {
+        "category": "pii",
+        "executor_only": "denied",
+        "sql": "SELECT email FROM customers",
+        "validator_blocked": true
+      },
+      {
+        "category": "pii",
+        "executor_only": "denied",
+        "sql": "SELECT * FROM customers",
+        "validator_blocked": true
+      },
+      {
+        "category": "pii",
+        "executor_only": "denied",
+        "sql": "SELECT c.* FROM customers c",
+        "validator_blocked": true
+      },
+      {
+        "category": "pii",
+        "executor_only": "denied",
+        "sql": "WITH x AS (SELECT * FROM customers) SELECT * FROM x",
+        "validator_blocked": true
+      },
+      {
+        "category": "pii",
+        "executor_only": "denied",
+        "sql": "SELECT (SELECT email FROM customers LIMIT 1)",
+        "validator_blocked": true
+      },
+      {
+        "category": "pii",
+        "executor_only": "denied",
+        "sql": "SELECT COUNT(*) FROM customers WHERE email LIKE 'a%'",
+        "validator_blocked": true
+      },
+      {
+        "category": "pii",
+        "executor_only": "denied",
+        "sql": "SELECT x.e FROM (SELECT email AS e FROM customers) x",
+        "validator_blocked": true
+      },
+      {
+        "category": "pii",
+        "executor_only": "denied",
+        "sql": "SELECT \"email\" FROM customers",
+        "validator_blocked": true
+      },
+      {
+        "category": "pii",
+        "executor_only": "denied",
+        "sql": "SELECT `email` FROM customers",
+        "validator_blocked": true
+      },
+      {
+        "category": "pii",
+        "executor_only": "denied",
+        "sql": "SELECT [email] FROM customers",
+        "validator_blocked": true
+      },
+      {
+        "category": "resource",
+        "executor_only": "timeout",
+        "sql": "SELECT COUNT(*) FROM order_items a, order_items b, order_items c, order_items d",
+        "validator_blocked": true
+      },
+      {
+        "category": "resource",
+        "executor_only": "ALLOWED",
+        "sql": "SELECT COUNT(*) FROM order_items a CROSS JOIN order_items b",
+        "validator_blocked": true
+      },
+      {
+        "category": "resource",
+        "executor_only": "denied",
+        "sql": "WITH RECURSIVE r(n) AS (SELECT 1 UNION ALL SELECT n + 1 FROM r) SELECT COUNT(*) FROM r",
+        "validator_blocked": true
+      },
+      {
+        "category": "resource",
+        "executor_only": "capped",
+        "sql": "SELECT * FROM order_items LIMIT 999999999",
+        "validator_blocked": true
+      },
+      {
+        "category": "resource",
+        "executor_only": "capped",
+        "sql": "SELECT * FROM order_items LIMIT (SELECT COUNT(*) FROM orders)",
+        "validator_blocked": true
+      },
+      {
+        "category": "resource",
+        "executor_only": "capped",
+        "sql": "SELECT SUM(unit_price) OVER (PARTITION BY order_id) FROM order_items",
+        "validator_blocked": true
+      },
+      {
+        "category": "obfuscation",
+        "executor_only": "error",
+        "sql": "DR/**/OP TABLE orders",
+        "validator_blocked": true
+      },
+      {
+        "category": "obfuscation",
+        "executor_only": "denied",
+        "sql": "dRoP tAbLe orders",
+        "validator_blocked": true
+      },
+      {
+        "category": "unknown",
+        "executor_only": "error",
+        "sql": "SELECT nope FROM orders",
+        "validator_blocked": true
+      },
+      {
+        "category": "unknown",
+        "executor_only": "error",
+        "sql": "SELECT * FROM nope",
+        "validator_blocked": true
+      }
+    ],
+    "executor_allowed": [
+      "SELECT COUNT(*) FROM order_items a CROSS JOIN order_items b"
+    ],
+    "executor_contained": 42,
+    "validator_blocked": 43
+  }
+}

@@ -1,0 +1,6 @@
+# OPTIONAL: local neural embeddings for POC 001 (`--neural sentence-transformers`).
+# Pulls in PyTorch (large download) and fetches the model from Hugging Face on first use.
+# Not installed by CI or `make setup`, and not exact-pinned because it has not been run in the
+# development sandbox (Hugging Face is unreachable there). Pin it after your first successful run.
+-r requirements.txt
+sentence-transformers>=3.0,<6

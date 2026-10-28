@@ -1,0 +1,50 @@
+{
+  "error rate 1% -> 3%": {
+    "excess_errors_big_bang_60min": 720.0,
+    "mean_excess_errors_canary": 41.5,
+    "median_minutes_to_decision": 50.0,
+    "median_minutes_to_rollback": 50.0,
+    "rollback_rate": 1.0,
+    "rollbacks_by_deadline_not_evidence": 0.0
+  },
+  "healthy (identical)": {
+    "excess_errors_big_bang_60min": 0.0,
+    "mean_excess_errors_canary": 0.0,
+    "median_minutes_to_decision": 105.0,
+    "median_minutes_to_rollback": 190.0,
+    "rollback_rate": 0.005,
+    "rollbacks_by_deadline_not_evidence": 0.005
+  },
+  "latency +35%": {
+    "excess_errors_big_bang_60min": 0.0,
+    "mean_excess_errors_canary": 0.0,
+    "median_minutes_to_decision": 50.0,
+    "median_minutes_to_rollback": 50.0,
+    "rollback_rate": 1.0,
+    "rollbacks_by_deadline_not_evidence": 0.0
+  },
+  "latency tail blow-up (sigma 0.3 -> 0.7)": {
+    "excess_errors_big_bang_60min": 0.0,
+    "mean_excess_errors_canary": 0.0,
+    "median_minutes_to_decision": 50.0,
+    "median_minutes_to_rollback": 50.0,
+    "rollback_rate": 1.0,
+    "rollbacks_by_deadline_not_evidence": 0.0
+  },
+  "mild error rise (1.0% -> 1.3%, inside tolerance)": {
+    "excess_errors_big_bang_60min": 108.0,
+    "mean_excess_errors_canary": 105.0,
+    "median_minutes_to_decision": 190.0,
+    "median_minutes_to_rollback": 190.0,
+    "rollback_rate": 0.5,
+    "rollbacks_by_deadline_not_evidence": 0.5
+  },
+  "silent accuracy drop 92% -> 87%": {
+    "excess_errors_big_bang_60min": 0.0,
+    "mean_excess_errors_canary": 0.0,
+    "median_minutes_to_decision": 80.0,
+    "median_minutes_to_rollback": 80.0,
+    "rollback_rate": 1.0,
+    "rollbacks_by_deadline_not_evidence": 0.0
+  }
+}

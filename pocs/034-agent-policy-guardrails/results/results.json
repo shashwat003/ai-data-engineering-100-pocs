@@ -1,0 +1,66 @@
+{
+  "checks_per_second": 49556,
+  "false_negatives": 0,
+  "false_positives": 2,
+  "items": 480,
+  "lint": [],
+  "per_kind": {
+    "benign_date_phone_like": [
+      40,
+      40
+    ],
+    "benign_invoice": [
+      40,
+      40
+    ],
+    "benign_order_number": [
+      38,
+      40
+    ],
+    "benign_text": [
+      40,
+      40
+    ],
+    "card": [
+      40,
+      40
+    ],
+    "email_out": [
+      40,
+      40
+    ],
+    "iban": [
+      40,
+      40
+    ],
+    "injection": [
+      40,
+      40
+    ],
+    "malware": [
+      40,
+      40
+    ],
+    "secret": [
+      40,
+      40
+    ],
+    "self_harm": [
+      40,
+      40
+    ],
+    "ssn": [
+      40,
+      40
+    ]
+  },
+  "rate_limit": {
+    "admitted_after_window": true,
+    "admitted_of_30": 20,
+    "token_budget": [
+      true,
+      true,
+      false
+    ]
+  }
+}

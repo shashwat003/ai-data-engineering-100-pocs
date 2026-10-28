@@ -1,0 +1,49 @@
+{
+  "combo_three_bugs_all_found": true,
+  "correct": "7/7",
+  "queries": 1500,
+  "rows": [
+    [
+      "clean (no bug)",
+      "yes",
+      "-",
+      "avg_order_value_30d 0.0%"
+    ],
+    [
+      "unit_scaling",
+      "yes",
+      "unit_scaling(x100)",
+      "avg_order_value_30d 100.0%"
+    ],
+    [
+      "window_off_by_one",
+      "yes",
+      "window_off_by_one",
+      "n_orders_7d 29.7%"
+    ],
+    [
+      "null_default",
+      "yes",
+      "null_default",
+      "last_login_hours 19.8%"
+    ],
+    [
+      "category_case",
+      "yes",
+      "category_case",
+      "country 26.7%"
+    ],
+    [
+      "stale_cache",
+      "yes",
+      "stale_cache",
+      "avg_order_value_30d 9.1%"
+    ],
+    [
+      "future_leak",
+      "yes",
+      "future_leak, unexplained_numeric_difference, window_off_by_one",
+      "avg_order_value_30d 29.5%"
+    ]
+  ]
+}

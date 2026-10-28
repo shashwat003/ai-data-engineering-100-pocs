@@ -1,0 +1,3 @@
+# POC 039: PostgreSQL logical-decoding CDC (needs a local PostgreSQL 16 server binary; psycopg is only the client).
+-r requirements.txt
+psycopg[binary]==3.3.6

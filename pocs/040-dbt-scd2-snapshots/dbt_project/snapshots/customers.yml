@@ -1,0 +1,21 @@
+snapshots:
+  # Strategy 'check': a new version is written only when a TRACKED column changes.
+  - name: customers_check
+    relation: source('raw', 'customers')
+    config:
+      schema: snapshots
+      unique_key: customer_id
+      strategy: check
+      check_cols: [tier, country]
+      hard_deletes: invalidate
+      dbt_valid_to_current: "cast('9999-12-31' as timestamp)"
+  # Strategy 'timestamp': a new version whenever the source's updated_at moves forward.
+  - name: customers_ts
+    relation: source('raw', 'customers')
+    config:
+      schema: snapshots
+      unique_key: customer_id
+      strategy: timestamp
+      updated_at: updated_at
+      hard_deletes: invalidate
+      dbt_valid_to_current: "cast('9999-12-31' as timestamp)"

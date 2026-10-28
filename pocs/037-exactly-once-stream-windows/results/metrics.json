@@ -1,0 +1,38 @@
+{
+  "batches": 24,
+  "events": 600,
+  "modes": {
+    "at_least_once": {
+      "restarts": 84,
+      "runs_exactly_correct": 0,
+      "total_duplicate_records": 15,
+      "total_windows_missing": 67,
+      "total_windows_with_wrong_values": 206
+    },
+    "at_most_once": {
+      "restarts": 37,
+      "runs_exactly_correct": 6,
+      "total_duplicate_records": 0,
+      "total_windows_missing": 69,
+      "total_windows_with_wrong_values": 91
+    },
+    "exactly_once": {
+      "restarts": 113,
+      "runs_exactly_correct": 30,
+      "total_duplicate_records": 0,
+      "total_windows_missing": 0,
+      "total_windows_with_wrong_values": 0
+    }
+  },
+  "no_crash_exactly_once": {
+    "duplicate_records": 0,
+    "exact": true,
+    "late_events": 19,
+    "late_expected": 19,
+    "output_records": 48,
+    "windows_expected": 48,
+    "windows_missing": 0,
+    "windows_with_wrong_values": 0
+  },
+  "trials": 30
+}

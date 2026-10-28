@@ -1,0 +1,11 @@
+name: redshift_elt
+version: "1.0"
+profile: redshift_elt
+model-paths: ["models"]
+test-paths: ["tests"]
+models:
+  redshift_elt:
+    staging:
+      +materialized: view
+    marts:
+      +materialized: table

@@ -1,0 +1,42 @@
+{
+  "champion_after_rollback": 1,
+  "champion_before_rollback": 2,
+  "gate_decisions": [
+    [
+      "v1 baseline (first model)",
+      true,
+      "no champion yet: first version passes smoke test"
+    ],
+    [
+      "v2 trained on 10x more data",
+      true,
+      "improvement +0.0286..+0.0368 above margin; no subgroup regression"
+    ],
+    [
+      "v3 small-data model again (worse than the new champion)",
+      false,
+      "subgroup 0 AUC regressed 0.971 -> 0.931; AUC improvement not demonstrated: 95% interval [-0.0368, -0.0286] vs required lower bound 0.002"
+    ],
+    [
+      "v4 drops a feature (signature change)",
+      false,
+      "signature mismatch: candidate expects 5 features, serving sends 6"
+    ],
+    [
+      "v5 over-regularised (C=1e-4)",
+      false,
+      "AUC improvement not demonstrated: 95% interval [-0.0006, -0.0000] vs required lower bound 0.002"
+    ],
+    [
+      "v6 trained on one subgroup only",
+      false,
+      "AUC improvement not demonstrated: 95% interval [-0.0005, +0.0003] vs required lower bound 0.002"
+    ]
+  ],
+  "rolled_back_to": 1,
+  "tags_on_promoted": {
+    "note": "v2 trained on 10x more data",
+    "promoted_by": "ci-bot",
+    "promotion_reason": "improvement +0.0286..+0.0368 above margin; no subgroup regression"
+  }
+}

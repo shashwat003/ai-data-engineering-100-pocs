@@ -1,0 +1,33 @@
+{
+  "bias_when_violated": 0.6155669188438361,
+  "bootstrap_se_example": 0.1302820829151794,
+  "coverage_2x2": 0.9733333333333334,
+  "pretrend_reject_when_parallel": 0.06666666666666667,
+  "pretrend_reject_when_violated": 1.0,
+  "staggered": [
+    [
+      "homogeneous, static effect (dynamic=0)",
+      2.0,
+      2.0,
+      0.0,
+      2.0,
+      0.0
+    ],
+    [
+      "heterogeneous + growing effect (dynamic=0.6)",
+      4.36,
+      3.23,
+      -1.13,
+      4.36,
+      0.0
+    ],
+    [
+      "strongly growing effect (dynamic=1.2)",
+      7.06,
+      4.92,
+      -2.14,
+      7.06,
+      0.0
+    ]
+  ]
+}

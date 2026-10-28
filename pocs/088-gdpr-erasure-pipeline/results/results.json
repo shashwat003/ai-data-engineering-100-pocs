@@ -1,0 +1,57 @@
+{
+  "after_erasure": {
+    "lake_rows_left": 0,
+    "readable_old_versions": [],
+    "residue_hits": 0,
+    "status": "completed",
+    "tickets_left": 0
+  },
+  "audit_chain_valid": true,
+  "backups": {
+    "lake_backup_still_has_subject": true,
+    "ticket_backup_plaintext_hits": 0,
+    "ticket_backup_readable_for_subject": 0
+  },
+  "before": {
+    "lake_rows": 20,
+    "old_versions_with_subject": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "residue_files_before": 7,
+    "tickets": 2
+  },
+  "collateral": {
+    "other_events_kept": true,
+    "other_tickets_kept": true,
+    "search_still_works": true
+  },
+  "legal_hold": "refused_legal_hold",
+  "naive_delete_only": {
+    "old_versions_exposing": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "residue_hits": 7,
+    "rows_visible": 0
+  },
+  "overdue_requests": [],
+  "resumed_after_crash": 20,
+  "retention": {
+    "cutoff": "2025-03-03",
+    "expired_rows_left_without_hold": 0,
+    "files_vacuumed": 8,
+    "rows_deleted": 426
+  },
+  "second_request": "already_completed"
+}

@@ -1,0 +1,6 @@
+name: scd2_demo
+version: "1.0"
+profile: scd2_demo
+model-paths: ["models"]
+snapshot-paths: ["snapshots"]
+test-paths: ["tests"]

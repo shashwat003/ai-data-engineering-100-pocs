@@ -1,0 +1,63 @@
+{
+  "classical_cpu_usd_per_1k_reviews": "~0 (CPU time above)",
+  "modelled_slm_usd_per_1k_reviews": 0.035,
+  "note": "Cost of the SLM arm is MODELLED from assumed token price; classical times are measured.",
+  "rows": [
+    {
+      "acc_easy": 0.903,
+      "acc_hard": 0.209,
+      "accuracy": 0.615,
+      "ci95": [
+        0.578,
+        0.647
+      ],
+      "macro_f1": 0.599,
+      "model": "lexicon",
+      "ms_per_1k": 4.6,
+      "n": 600
+    },
+    {
+      "acc_easy": 0.909,
+      "acc_hard": 0.759,
+      "accuracy": 0.847,
+      "ci95": [
+        0.818,
+        0.875
+      ],
+      "macro_f1": 0.844,
+      "model": "naive_bayes_unigram",
+      "ms_per_1k": 12.8,
+      "n": 600
+    },
+    {
+      "acc_easy": 0.954,
+      "acc_hard": 0.831,
+      "accuracy": 0.903,
+      "ci95": [
+        0.88,
+        0.925
+      ],
+      "macro_f1": 0.903,
+      "model": "logreg_unigram",
+      "ms_per_1k": 10.6,
+      "n": 600
+    },
+    {
+      "acc_easy": 0.954,
+      "acc_hard": 0.932,
+      "accuracy": 0.945,
+      "ci95": [
+        0.928,
+        0.962
+      ],
+      "macro_f1": 0.935,
+      "model": "logreg_bigram",
+      "ms_per_1k": 15.0,
+      "n": 600
+    }
+  ],
+  "slm": {
+    "reason": "no local Ollama reachable (LLMError); SLM arm unverified",
+    "status": "NOT RUN"
+  }
+}

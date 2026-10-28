@@ -1,0 +1,15 @@
+{
+  "bad_run_merged": false,
+  "conflict_detected": true,
+  "fast_forward": true,
+  "gc_removed_unreachable": 1,
+  "later_work_kept_after_revert": true,
+  "main_unchanged_after_rejection": true,
+  "objects_stored": 10,
+  "revert_restores_previous": true,
+  "tamper_detected": true,
+  "three_way_merge_parents": 2,
+  "time_travel_old_version_readable": true,
+  "unique_file_versions": 10,
+  "verify_clean": true
+}

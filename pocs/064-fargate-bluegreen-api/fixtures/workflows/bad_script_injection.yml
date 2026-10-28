@@ -1,0 +1,22 @@
+name: deploy
+on:
+  push:
+    branches: [main]
+permissions:
+  contents: read
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    environment: production
+    concurrency: deploy-production
+    permissions:
+      id-token: write
+      contents: read
+    steps:
+      - uses: actions/checkout@aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+      - uses: aws-actions/configure-aws-credentials@aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+        with:
+          role-to-assume: arn:aws:iam::123456789012:role/inference-github-deploy
+          aws-region: eu-west-1
+      - run: echo "deploying ${{ github.event.pull_request.title }}"

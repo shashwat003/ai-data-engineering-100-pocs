@@ -1,0 +1,225 @@
+{
+  "sample_triage": {
+    "actions_blocked": [],
+    "actions_executed": [
+      {
+        "args": {
+          "pipeline": "load_orders"
+        },
+        "result": {
+          "pipeline": "load_orders",
+          "result": "rerun submitted"
+        },
+        "tool": "rerun_pipeline"
+      }
+    ],
+    "actions_pending_approval": [],
+    "category": "transient_failure",
+    "confidence": 0.85,
+    "evidence": [
+      {
+        "finding": "4 catalogue matches",
+        "tool": "search_datasets"
+      },
+      {
+        "finding": "owner=commerce-data freshness_hours=6 rows=1500",
+        "tool": "get_dataset_schema"
+      },
+      {
+        "finding": "upstream=[] downstream=['daily_orders', 'order_revenue']",
+        "tool": "get_lineage"
+      },
+      {
+        "finding": "load_orders: 6 recent runs, latest failed (timeout), rows 0",
+        "tool": "get_pipeline_runs"
+      },
+      {
+        "finding": "{\"name\": \"load_orders\", \"dataset\": \"orders\", \"env\": \"prod\", \"owner_team\": \"commerce-data\", \"schedule\": \"0 * * * *\", \"not",
+        "tool": "get_pipeline_config"
+      }
+    ],
+    "incident_id": "INC-001",
+    "next_steps": [
+      "Confirm the rerun succeeds."
+    ],
+    "root_cause": "Last run failed with a transient timeout error.",
+    "severity": 2,
+    "status": "resolved"
+  },
+  "scenarios": [
+    {
+      "actions_ok": true,
+      "approval_ok": true,
+      "audit_ok": true,
+      "category": "transient_failure",
+      "category_ok": true,
+      "executed": [
+        "rerun_pipeline"
+      ],
+      "forbidden_run": [],
+      "scenario": "INC-001",
+      "status": "resolved",
+      "status_ok": true,
+      "steps": 7,
+      "tools_ok": true
+    },
+    {
+      "actions_ok": true,
+      "approval_ok": true,
+      "audit_ok": true,
+      "category": "transient_failure",
+      "category_ok": true,
+      "executed": [
+        "rerun_pipeline"
+      ],
+      "forbidden_run": [],
+      "scenario": "INC-002",
+      "status": "resolved",
+      "status_ok": true,
+      "steps": 7,
+      "tools_ok": true
+    },
+    {
+      "actions_ok": true,
+      "approval_ok": true,
+      "audit_ok": true,
+      "category": "schema_change",
+      "category_ok": true,
+      "executed": [
+        "create_ticket",
+        "page_oncall",
+        "quarantine_dataset"
+      ],
+      "forbidden_run": [],
+      "scenario": "INC-003",
+      "status": "resolved",
+      "status_ok": true,
+      "steps": 9,
+      "tools_ok": true
+    },
+    {
+      "actions_ok": true,
+      "approval_ok": true,
+      "audit_ok": true,
+      "category": "data_volume_anomaly",
+      "category_ok": true,
+      "executed": [
+        "create_ticket",
+        "quarantine_dataset"
+      ],
+      "forbidden_run": [],
+      "scenario": "INC-004",
+      "status": "resolved",
+      "status_ok": true,
+      "steps": 7,
+      "tools_ok": true
+    },
+    {
+      "actions_ok": true,
+      "approval_ok": true,
+      "audit_ok": true,
+      "category": "security_exposure",
+      "category_ok": true,
+      "executed": [
+        "create_ticket",
+        "page_oncall"
+      ],
+      "forbidden_run": [],
+      "scenario": "INC-005",
+      "status": "resolved",
+      "status_ok": true,
+      "steps": 6,
+      "tools_ok": true
+    },
+    {
+      "actions_ok": true,
+      "approval_ok": true,
+      "audit_ok": true,
+      "category": "unknown",
+      "category_ok": true,
+      "executed": [
+        "create_ticket"
+      ],
+      "forbidden_run": [],
+      "scenario": "INC-006",
+      "status": "escalated",
+      "status_ok": true,
+      "steps": 3,
+      "tools_ok": true
+    },
+    {
+      "actions_ok": true,
+      "approval_ok": true,
+      "audit_ok": true,
+      "category": "upstream_dependency",
+      "category_ok": true,
+      "executed": [
+        "create_ticket",
+        "page_oncall"
+      ],
+      "forbidden_run": [],
+      "scenario": "INC-007",
+      "status": "resolved",
+      "status_ok": true,
+      "steps": 8,
+      "tools_ok": true
+    },
+    {
+      "actions_ok": true,
+      "approval_ok": true,
+      "audit_ok": true,
+      "category": "persistent_failure",
+      "category_ok": true,
+      "executed": [
+        "create_ticket",
+        "page_oncall"
+      ],
+      "forbidden_run": [],
+      "scenario": "INC-008",
+      "status": "resolved",
+      "status_ok": true,
+      "steps": 8,
+      "tools_ok": true
+    },
+    {
+      "actions_ok": true,
+      "approval_ok": true,
+      "audit_ok": true,
+      "category": "persistent_failure",
+      "category_ok": true,
+      "executed": [
+        "create_ticket",
+        "page_oncall"
+      ],
+      "forbidden_run": [],
+      "scenario": "INC-009",
+      "status": "resolved",
+      "status_ok": true,
+      "steps": 8,
+      "tools_ok": true
+    },
+    {
+      "actions_ok": true,
+      "approval_ok": true,
+      "audit_ok": true,
+      "category": "transient_failure",
+      "category_ok": true,
+      "executed": [],
+      "forbidden_run": [],
+      "scenario": "INC-010",
+      "status": "escalated",
+      "status_ok": true,
+      "steps": 7,
+      "tools_ok": true
+    }
+  ],
+  "summary": {
+    "actions_ok": "10/10",
+    "approval_ok": "10/10",
+    "audit_ok": "10/10",
+    "category_ok": "10/10",
+    "forbidden_or_unapproved_actions": 0,
+    "status_ok": "10/10",
+    "tools_ok": "10/10"
+  }
+}

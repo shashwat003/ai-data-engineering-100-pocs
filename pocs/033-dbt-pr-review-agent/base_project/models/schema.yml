@@ -1,0 +1,27 @@
+version: 2
+models:
+  - name: stg_orders
+    description: Orders from the raw seed with typed dates.
+    columns:
+      - name: order_id
+        tests: [unique, not_null]
+  - name: dim_customers
+    description: One row per customer.
+    columns:
+      - name: customer_id
+        tests: [unique, not_null]
+  - name: fct_orders
+    description: Non-cancelled orders enriched with the customer segment.
+    columns:
+      - name: order_id
+        tests: [unique, not_null]
+      - name: status
+        tests:
+          - accepted_values:
+              arguments:
+                values: [completed, shipped]
+  - name: mart_revenue_daily
+    description: Revenue and order counts per day and segment.
+    columns:
+      - name: order_date
+        tests: [not_null]

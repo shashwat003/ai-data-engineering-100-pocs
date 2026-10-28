@@ -1,0 +1,184 @@
+{
+  "all_results_identical": true,
+  "dataset": {
+    "customers": 200000,
+    "customers_parquet_mb": 0.77,
+    "events": 4000000,
+    "events_parquet_mb": 161.0,
+    "hot_key_rows": 1998477,
+    "hot_key_share": 0.4996
+  },
+  "dim_rows_after_salt_all": 3400000,
+  "dim_rows_after_salting": 200016,
+  "environment": {
+    "driver_memory": "4g",
+    "java": "openjdk version \"21.0.12.1\" 2026-08-18",
+    "logical_cpus": 4,
+    "machine": "x86_64",
+    "master": "local[4]",
+    "physical_memory_gb": 15.7,
+    "python": "3.13.16",
+    "shuffle_partitions": "32",
+    "spark": "4.2.0"
+  },
+  "heavy_hitters": [
+    {
+      "key": 0,
+      "sample_rows": 40243,
+      "share": 0.501
+    }
+  ],
+  "n_salt": 17,
+  "partition_stats_after_salting": {
+    "cv": 0.642,
+    "largest_share": 0.083,
+    "max": 330507,
+    "max_over_median": 5.111,
+    "mean": 125000.0,
+    "median": 64668.5,
+    "partitions": 32,
+    "rows": 4000000
+  },
+  "partition_stats_before": {
+    "cv": 2.828,
+    "largest_share": 0.523,
+    "max": 2093043,
+    "max_over_median": 34.212,
+    "mean": 125000.0,
+    "median": 61178.0,
+    "partitions": 32,
+    "rows": 4000000
+  },
+  "results": {
+    "aqe": {
+      "digest": "61381f4a86a6072f",
+      "label": "aqe",
+      "max_s": 7.35,
+      "median_s": 5.79,
+      "min_s": 5.35,
+      "output_rows": 35,
+      "repeats": 5,
+      "seconds": [
+        7.35,
+        6.17,
+        5.43,
+        5.35,
+        5.79
+      ],
+      "stdev_s": 0.82,
+      "tasks": {
+        "records_max": 268200,
+        "records_max_over_median": 3.9,
+        "records_median": 68694,
+        "task_ms_max": 806,
+        "task_ms_median": 233,
+        "task_ms_sum": 12294,
+        "tasks": 39
+      }
+    },
+    "baseline": {
+      "digest": "61381f4a86a6072f",
+      "label": "baseline",
+      "max_s": 9.5,
+      "median_s": 8.1,
+      "min_s": 7.68,
+      "output_rows": 35,
+      "repeats": 5,
+      "seconds": [
+        8.1,
+        7.93,
+        7.68,
+        9.5,
+        8.86
+      ],
+      "stdev_s": 0.75,
+      "tasks": {
+        "records_max": 2099379,
+        "records_max_over_median": 31.15,
+        "records_median": 67405.0,
+        "task_ms_max": 4033,
+        "task_ms_median": 184.5,
+        "task_ms_sum": 9892,
+        "tasks": 32
+      }
+    },
+    "broadcast": {
+      "digest": "61381f4a86a6072f",
+      "label": "broadcast",
+      "max_s": 3.81,
+      "median_s": 3.34,
+      "min_s": 3.29,
+      "output_rows": 35,
+      "repeats": 5,
+      "seconds": [
+        3.81,
+        3.8,
+        3.33,
+        3.34,
+        3.29
+      ],
+      "stdev_s": 0.27,
+      "tasks": {
+        "records_max": 32,
+        "records_max_over_median": 4.0,
+        "records_median": 8.0,
+        "task_ms_max": 31,
+        "task_ms_median": 16.0,
+        "task_ms_sum": 513,
+        "tasks": 32
+      }
+    },
+    "salt_all": {
+      "digest": "61381f4a86a6072f",
+      "label": "salt_all",
+      "max_s": 8.07,
+      "median_s": 7.27,
+      "min_s": 6.42,
+      "output_rows": 35,
+      "repeats": 5,
+      "seconds": [
+        8.07,
+        6.42,
+        7.14,
+        7.32,
+        7.27
+      ],
+      "stdev_s": 0.59,
+      "tasks": {
+        "records_max": 406298,
+        "records_max_over_median": 2.39,
+        "records_median": 170306.0,
+        "task_ms_max": 1019,
+        "task_ms_median": 395.0,
+        "task_ms_sum": 14945,
+        "tasks": 32
+      }
+    },
+    "salt_hot": {
+      "digest": "61381f4a86a6072f",
+      "label": "salt_hot",
+      "max_s": 6.96,
+      "median_s": 6.68,
+      "min_s": 6.27,
+      "output_rows": 35,
+      "repeats": 5,
+      "seconds": [
+        6.58,
+        6.96,
+        6.27,
+        6.79,
+        6.68
+      ],
+      "stdev_s": 0.26,
+      "tasks": {
+        "records_max": 336748,
+        "records_max_over_median": 4.75,
+        "records_median": 70968.5,
+        "task_ms_max": 1211,
+        "task_ms_median": 318.0,
+        "task_ms_sum": 12922,
+        "tasks": 32
+      }
+    }
+  }
+}

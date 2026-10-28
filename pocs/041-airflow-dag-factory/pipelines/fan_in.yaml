@@ -1,0 +1,10 @@
+dag_id: fan_in
+description: Two independent extracts feeding one validation step.
+schedule: "@hourly"
+owner: platform
+tags: [demo]
+tasks:
+  - {id: extract_a, type: python, callable: extract_orders, params: {work_dir: /tmp/poc041/fan_in_a, n_rows: 50}}
+  - {id: extract_b, type: python, callable: extract_orders, params: {work_dir: /tmp/poc041/fan_in_b, n_rows: 50, seed: 9}}
+  - {id: validate_a, type: python, callable: validate_rows, params: {work_dir: /tmp/poc041/fan_in_a}, depends_on: [extract_a, extract_b]}
+  - {id: date, type: bash, command: show_date, depends_on: [validate_a]}

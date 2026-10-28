@@ -1,0 +1,131 @@
+{
+  "fp32": {
+    "accuracy": 0.7652,
+    "perplexity": 1.8939
+  },
+  "mixed": {
+    "output layer Q8_0, rest Q4_0": {
+      "accuracy": 0.7648,
+      "bytes": 85548,
+      "effective_bits_per_weight": 4.74,
+      "perplexity": 1.8932
+    },
+    "uniform Q4_0": {
+      "accuracy": 0.7633,
+      "bytes": 83948,
+      "effective_bits_per_weight": 4.65,
+      "perplexity": 1.903
+    },
+    "uniform Q8_0": {
+      "accuracy": 0.7659,
+      "bytes": 156204,
+      "effective_bits_per_weight": 8.65,
+      "perplexity": 1.8941
+    }
+  },
+  "modelled_sizes_gb": {
+    "13B params": {
+      "F16": 26.0,
+      "Q2S": 4.06,
+      "Q4_0": 7.31,
+      "Q4_1": 8.12,
+      "Q5_0": 8.94,
+      "Q8_0": 13.81
+    },
+    "7B params": {
+      "F16": 14.0,
+      "Q2S": 2.19,
+      "Q4_0": 3.94,
+      "Q4_1": 4.38,
+      "Q5_0": 4.81,
+      "Q8_0": 7.44
+    }
+  },
+  "params": 144512,
+  "per_layer_q4_0": {
+    "layer 0": 1.8949,
+    "layer 1": 1.8935,
+    "layer 2": 1.8925,
+    "layer 3": 1.9039
+  },
+  "uniform": {
+    "Q2S": {
+      "accuracy": 0.7215,
+      "bits_per_weight": 2.5,
+      "bytes": 47820,
+      "perplexity": 2.2378,
+      "perplexity_vs_fp32_pct": 18.16
+    },
+    "Q3S": {
+      "accuracy": 0.7635,
+      "bits_per_weight": 3.5,
+      "bytes": 65884,
+      "perplexity": 1.9037,
+      "perplexity_vs_fp32_pct": 0.52
+    },
+    "Q4_0": {
+      "accuracy": 0.7633,
+      "bits_per_weight": 4.5,
+      "bytes": 83948,
+      "perplexity": 1.903,
+      "perplexity_vs_fp32_pct": 0.48
+    },
+    "Q4_1": {
+      "accuracy": 0.7632,
+      "bits_per_weight": 5.0,
+      "bytes": 92980,
+      "perplexity": 1.9031,
+      "perplexity_vs_fp32_pct": 0.49
+    },
+    "Q5_0": {
+      "accuracy": 0.7645,
+      "bits_per_weight": 5.5,
+      "bytes": 102012,
+      "perplexity": 1.8989,
+      "perplexity_vs_fp32_pct": 0.26
+    },
+    "Q5_1": {
+      "accuracy": 0.7651,
+      "bits_per_weight": 6.0,
+      "bytes": 111044,
+      "perplexity": 1.8934,
+      "perplexity_vs_fp32_pct": -0.03
+    },
+    "Q8_0": {
+      "accuracy": 0.7659,
+      "bits_per_weight": 8.5,
+      "bytes": 156204,
+      "perplexity": 1.8941,
+      "perplexity_vs_fp32_pct": 0.01
+    }
+  },
+  "weight_sqnr_db": {
+    "gaussian": {
+      "Q2S": 8.8,
+      "Q3S": 15.2,
+      "Q4_0": 21.3,
+      "Q4_1": 22.1,
+      "Q5_0": 27.4,
+      "Q5_1": 28.4,
+      "Q8_0": 45.4
+    },
+    "gaussian + 0.2% outliers (x25)": {
+      "Q2S": 11.3,
+      "Q3S": 15.2,
+      "Q4_0": 18.3,
+      "Q4_1": 19.7,
+      "Q5_0": 22.4,
+      "Q5_1": 26.4,
+      "Q8_0": 40.0
+    },
+    "laplace (heavy tail)": {
+      "Q2S": 7.8,
+      "Q3S": 13.5,
+      "Q4_0": 19.4,
+      "Q4_1": 20.8,
+      "Q5_0": 25.4,
+      "Q5_1": 27.0,
+      "Q8_0": 43.5
+    }
+  }
+}

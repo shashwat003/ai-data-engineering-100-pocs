@@ -1,0 +1,37 @@
+{
+  "expected_valid_records": 36,
+  "naive": {
+    "false_records": 0,
+    "pages_failed": [
+      2,
+      3
+    ],
+    "pages_ok": 1,
+    "quarantine_reasons": [
+      "could not convert string to float: 'N/A'"
+    ],
+    "quarantined": 1,
+    "recall": 0.25,
+    "records": 9,
+    "retries": 0,
+    "seconds": 4.51,
+    "selector_fallbacks": 0
+  },
+  "resilient": {
+    "false_records": 0,
+    "pages_failed": [],
+    "pages_ok": 4,
+    "quarantine_reasons": [
+      "Value error, empty name",
+      "Value error, negative price",
+      "could not convert string to float: 'N/A'",
+      "duplicate id"
+    ],
+    "quarantined": 4,
+    "recall": 1.0,
+    "records": 36,
+    "retries": 2,
+    "seconds": 3.37,
+    "selector_fallbacks": 42
+  }
+}

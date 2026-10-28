@@ -1,0 +1,16 @@
+{
+  "leaky_join": {
+    "auc_at_serving_time": 0.623,
+    "auc_offline_same_join": 0.976
+  },
+  "n_test": 200,
+  "n_train": 400,
+  "online_materialised_entities": 600,
+  "online_stale_returns_none": true,
+  "online_unknown_entity_none": true,
+  "parity_mismatches_of_50": 0,
+  "point_in_time": {
+    "auc_at_serving_time": 0.779,
+    "auc_offline_same_join": 0.779
+  }
+}

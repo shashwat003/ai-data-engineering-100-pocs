@@ -1,0 +1,65 @@
+# Synthetic AI system inventory for a fictional company ("Northwind Retail Bank"). Not real systems.
+- id: SYS-01
+  name: Credit scoring model
+  purpose: Rank consumer loan applicants by default risk
+  domains: [credit_scoring]
+  affects_natural_persons: true
+  interacts_with_humans: false
+  generates_content: false
+  autonomy: advisory
+  controls: [human_oversight, logging, risk_management, data_governance, technical_documentation, accuracy_monitoring]
+- id: SYS-02
+  name: CV screening assistant
+  purpose: Shortlist job applicants from submitted CVs
+  domains: [employment]
+  affects_natural_persons: true
+  interacts_with_humans: false
+  generates_content: false
+  autonomy: advisory
+  controls: [logging, technical_documentation]
+- id: SYS-03
+  name: Support chatbot
+  purpose: Answer customer questions about card fees
+  domains: []
+  affects_natural_persons: true
+  interacts_with_humans: true
+  generates_content: true
+  autonomy: autonomous
+  controls: [disclosure_to_users]
+- id: SYS-04
+  name: Marketing copy generator
+  purpose: Draft promotional emails reviewed by staff
+  domains: []
+  affects_natural_persons: false
+  interacts_with_humans: false
+  generates_content: true
+  autonomy: advisory
+  controls: []
+- id: SYS-05
+  name: Invoice anomaly detector
+  purpose: Flag unusual supplier invoices for finance review
+  domains: []
+  affects_natural_persons: false
+  interacts_with_humans: false
+  generates_content: false
+  autonomy: advisory
+  controls: []
+- id: SYS-06
+  name: Emotion tracking in call centre
+  purpose: Infer agent emotions from voice to rank staff
+  domains: [emotion_recognition_workplace]
+  affects_natural_persons: true
+  interacts_with_humans: false
+  generates_content: false
+  autonomy: advisory
+  controls: [logging]
+- id: SYS-07
+  name: Deepfake voice for ads
+  purpose: Synthetic celebrity-style voice for radio ads
+  domains: []
+  affects_natural_persons: true
+  interacts_with_humans: false
+  generates_content: true
+  deepfake: true
+  autonomy: advisory
+  controls: []

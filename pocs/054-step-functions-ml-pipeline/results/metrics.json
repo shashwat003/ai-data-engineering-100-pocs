@@ -1,0 +1,96 @@
+{
+  "mock_stack": {
+    "listed": [
+      "ml-training-pipeline"
+    ],
+    "logging_level": "ERROR",
+    "status": "deployed to local moto (boto3), not real AWS",
+    "stored_definition_matches": true,
+    "type": "STANDARD",
+    "update_roundtrip": true
+  },
+  "scenarios": [
+    {
+      "error": "",
+      "notifications": 0,
+      "path": "Prepare > QualityGate > Tune > TrainOne > SelectBest > EvaluateGate > Register",
+      "registered": {
+        "auc": 0.8414,
+        "c": 1.0,
+        "model": "churn-lr"
+      },
+      "retries": [],
+      "scenario": "happy path",
+      "slept_seconds": 0.0,
+      "status": "SUCCEEDED"
+    },
+    {
+      "error": "",
+      "notifications": 0,
+      "path": "Prepare > QualityGate > Tune > TrainOne > SelectBest > EvaluateGate > Register",
+      "registered": {
+        "auc": 0.8414,
+        "c": 1.0,
+        "model": "churn-lr"
+      },
+      "retries": [
+        "Retry 1 after 2s on TransientStorageError",
+        "Retry 2 after 4s on TransientStorageError"
+      ],
+      "scenario": "transient storage errors (2 failures) are retried with backoff",
+      "slept_seconds": 6.0,
+      "status": "SUCCEEDED"
+    },
+    {
+      "error": "PipelineFailed",
+      "notifications": 1,
+      "path": "Prepare > NotifyFailure > Failed",
+      "registered": null,
+      "retries": [
+        "Retry 1 after 2s on TransientStorageError",
+        "Retry 2 after 4s on TransientStorageError",
+        "Retry 3 after 8s on TransientStorageError"
+      ],
+      "scenario": "storage keeps failing -> Catch -> notify",
+      "slept_seconds": 14.0,
+      "status": "FAILED"
+    },
+    {
+      "error": "",
+      "notifications": 0,
+      "path": "Prepare > QualityGate > Tune > TrainOne > SelectBest > EvaluateGate > Register",
+      "registered": {
+        "auc": 0.8414,
+        "c": 1.0,
+        "model": "churn-lr"
+      },
+      "retries": [
+        "Retry 1 after 1s on TrainingTimeout"
+      ],
+      "scenario": "one candidate times out once -> Map item retried",
+      "slept_seconds": 1.0,
+      "status": "SUCCEEDED"
+    },
+    {
+      "error": "DataQualityError",
+      "notifications": 0,
+      "path": "Prepare > QualityGate > DataQualityFail",
+      "registered": null,
+      "retries": [],
+      "scenario": "too few positives -> quality gate fails",
+      "slept_seconds": 0.0,
+      "status": "FAILED"
+    },
+    {
+      "error": "PipelineFailed",
+      "notifications": 1,
+      "path": "Prepare > QualityGate > Tune > TrainOne > SelectBest > EvaluateGate > NotifyFailure > Failed",
+      "registered": null,
+      "retries": [],
+      "scenario": "weak model (noisy labels) -> evaluation gate -> notify",
+      "slept_seconds": 0.0,
+      "status": "FAILED"
+    }
+  ],
+  "validation_errors": []
+}

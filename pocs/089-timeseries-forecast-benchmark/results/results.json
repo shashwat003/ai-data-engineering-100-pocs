@@ -1,0 +1,127 @@
+{
+  "best_model": "ETS (AICc)",
+  "best_vs_seasonal_naive_mase_diff_ci95": [
+    -0.444,
+    -0.243
+  ],
+  "foundation_models": "not run: no pretrained weights or network access in this environment (adapter interface only)",
+  "horizon": 12,
+  "mean_rank": {
+    "ETS (AICc)": 2.67,
+    "LightGBM global": 4.93,
+    "Theta (simplified)": 3.81,
+    "combo: ETS+Theta+LightGBM": 3.54,
+    "drift": 6.24,
+    "naive": 5.79,
+    "seasonal naive": 4.75,
+    "seasonal-diff ARMA": 4.27
+  },
+  "models": {
+    "ETS (AICc)": {
+      "mase": 0.905,
+      "mase_by_pattern": {
+        "changing_seasonality": 1.09,
+        "intermittent": 0.99,
+        "level_shift": 1.42,
+        "random_walk": 0.76,
+        "stable_seasonal": 0.74,
+        "trend_seasonal": 0.44
+      },
+      "seconds_per_forecast": 0.1681,
+      "smape": 31.97
+    },
+    "LightGBM global": {
+      "mase": 1.272,
+      "mase_by_pattern": {
+        "changing_seasonality": 1.75,
+        "intermittent": 1.01,
+        "level_shift": 2.01,
+        "random_walk": 0.98,
+        "stable_seasonal": 1.28,
+        "trend_seasonal": 0.6
+      },
+      "seconds_per_forecast": 0.0096,
+      "smape": 33.37
+    },
+    "Theta (simplified)": {
+      "mase": 1.09,
+      "mase_by_pattern": {
+        "changing_seasonality": 1.84,
+        "intermittent": 0.91,
+        "level_shift": 1.48,
+        "random_walk": 0.81,
+        "stable_seasonal": 0.75,
+        "trend_seasonal": 0.76
+      },
+      "seconds_per_forecast": 0.0077,
+      "smape": 33.11
+    },
+    "combo: ETS+Theta+LightGBM": {
+      "mase": 1.016,
+      "mase_by_pattern": {
+        "changing_seasonality": 1.44,
+        "intermittent": 0.96,
+        "level_shift": 1.54,
+        "random_walk": 0.81,
+        "stable_seasonal": 0.82,
+        "trend_seasonal": 0.53
+      },
+      "seconds_per_forecast": null,
+      "smape": 32.26
+    },
+    "drift": {
+      "mase": 2.456,
+      "mase_by_pattern": {
+        "changing_seasonality": 5.05,
+        "intermittent": 1.35,
+        "level_shift": 2.04,
+        "random_walk": 0.86,
+        "stable_seasonal": 4.08,
+        "trend_seasonal": 1.35
+      },
+      "seconds_per_forecast": 0.0,
+      "smape": 27.75
+    },
+    "naive": {
+      "mase": 2.383,
+      "mase_by_pattern": {
+        "changing_seasonality": 4.88,
+        "intermittent": 1.3,
+        "level_shift": 1.96,
+        "random_walk": 0.77,
+        "stable_seasonal": 3.94,
+        "trend_seasonal": 1.44
+      },
+      "seconds_per_forecast": 0.0,
+      "smape": 27.28
+    },
+    "seasonal naive": {
+      "mase": 1.245,
+      "mase_by_pattern": {
+        "changing_seasonality": 1.05,
+        "intermittent": 1.06,
+        "level_shift": 2.18,
+        "random_walk": 1.12,
+        "stable_seasonal": 1.02,
+        "trend_seasonal": 1.04
+      },
+      "seconds_per_forecast": 0.0,
+      "smape": 18.94
+    },
+    "seasonal-diff ARMA": {
+      "mase": 1.165,
+      "mase_by_pattern": {
+        "changing_seasonality": 1.0,
+        "intermittent": 1.08,
+        "level_shift": 2.33,
+        "random_walk": 1.04,
+        "stable_seasonal": 1.02,
+        "trend_seasonal": 0.52
+      },
+      "seconds_per_forecast": 0.0469,
+      "smape": 23.96
+    }
+  },
+  "n_series": 48,
+  "origins": 2
+}

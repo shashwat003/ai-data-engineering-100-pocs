@@ -1,0 +1,188 @@
+{
+  "environment": {
+    "cpu_count": 4,
+    "duckdb": "1.5.6",
+    "machine": "x86_64",
+    "python": "3.13.16"
+  },
+  "first_run": {
+    "ingested": 8,
+    "ms": 863,
+    "skipped": 0
+  },
+  "gates": [
+    [
+      "reconcile bronze = accepted + quarantined",
+      true,
+      "mismatches: []"
+    ],
+    [
+      "quarantine table matches ledger",
+      true,
+      "18 vs 18"
+    ],
+    [
+      "gold rows = silver rows",
+      true,
+      "586 vs 586"
+    ],
+    [
+      "gold amount = silver amount",
+      true,
+      "438759.03 vs 438759.03"
+    ],
+    [
+      "daily revenue mart = silver net revenue",
+      true,
+      "373334.53 vs 373334.53"
+    ],
+    [
+      "no orders without a customer version",
+      true,
+      "0 orphans"
+    ],
+    [
+      "one current version per customer",
+      true,
+      "0 violations"
+    ],
+    [
+      "silver orders satisfy data contract (POC 077)",
+      true,
+      "contract orders_feed@1.0.0, 586 rows, no errors"
+    ]
+  ],
+  "hash_after_first": "82901567a4eb30a9",
+  "hash_after_rebuild": "82901567a4eb30a9",
+  "hash_after_replay": "82901567a4eb30a9",
+  "manifest": {
+    "batches": [
+      {
+        "batch_id": "b001",
+        "customers": 112,
+        "effective_date": "2023-07-05",
+        "orders": 150
+      },
+      {
+        "batch_id": "b002",
+        "customers": 158,
+        "effective_date": "2024-01-01",
+        "orders": 160
+      },
+      {
+        "batch_id": "b003",
+        "customers": 180,
+        "effective_date": "2024-07-17",
+        "orders": 158
+      },
+      {
+        "batch_id": "b004",
+        "customers": 193,
+        "effective_date": "2024-12-31",
+        "orders": 158
+      }
+    ],
+    "customer_changes": {
+      "b001": [],
+      "b002": [
+        "50",
+        "63",
+        "123",
+        "140",
+        "157",
+        "194"
+      ],
+      "b003": [
+        "28",
+        "30",
+        "40",
+        "79",
+        "86",
+        "127"
+      ],
+      "b004": [
+        "4",
+        "7",
+        "68",
+        "83",
+        "165",
+        "188"
+      ]
+    },
+    "injected": {
+      "b001": {},
+      "b002": {
+        "enum:status": 3,
+        "pattern:email": 2,
+        "range:amount_max": 1,
+        "range:amount_min": 2,
+        "required:customer_id": 2,
+        "rule:ship_before_order": 2,
+        "type:amount": 1,
+        "unique:order_id": 2
+      },
+      "b003": {},
+      "b004": {
+        "enum:status": 2,
+        "range:amount_min": 1
+      }
+    },
+    "newest_order_date": "2024-12-30",
+    "resent": {
+      "b001": [],
+      "b002": [
+        "118",
+        "119",
+        "241",
+        "250",
+        "253",
+        "310",
+        "343",
+        "436"
+      ],
+      "b003": [
+        "6",
+        "15",
+        "167",
+        "185",
+        "218",
+        "345",
+        "346",
+        "518"
+      ],
+      "b004": [
+        "123",
+        "176",
+        "268",
+        "394",
+        "468",
+        "499",
+        "509",
+        "524"
+      ]
+    }
+  },
+  "quarantine_matches_injected": true,
+  "replay": {
+    "ingested": 0,
+    "ms": 54,
+    "skipped": 8
+  },
+  "scale": {
+    "accepted": 990000,
+    "bronze_s": [
+      2.05,
+      1.8,
+      1.93
+    ],
+    "median_total_s": 4.3,
+    "quarantined": 10000,
+    "rows": 1000000,
+    "runs": 3,
+    "silver_s": [
+      2.56,
+      2.49,
+      2.37
+    ]
+  }
+}

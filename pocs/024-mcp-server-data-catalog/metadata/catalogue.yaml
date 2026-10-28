@@ -1,0 +1,90 @@
+# Synthetic catalogue metadata for the demo warehouse. Fictional teams; no real data.
+datasets:
+  customers:
+    description: One row per customer account with country, segment and signup date.
+    domain: customer
+    owner: customer-analytics
+    tags: [dimension, pii, accounts]
+    classification: restricted
+    freshness_hours: 24
+    columns:
+      customer_id: {description: Surrogate key of the customer.}
+      name: {description: Customer display name., pii: true}
+      email: {description: Contact email address., pii: true}
+      country: {description: Billing country.}
+      segment: {description: "Commercial segment: consumer, smb or enterprise."}
+      signup_date: {description: Date the account was created (ISO 8601).}
+  products:
+    description: Product catalogue with category, unit cost and list price.
+    domain: product
+    owner: merchandising-data
+    tags: [dimension, pricing, catalogue]
+    classification: internal
+    freshness_hours: 72
+    columns:
+      product_id: {description: Surrogate key of the product.}
+      name: {description: Product display name.}
+      category: {description: Merchandising category.}
+      unit_cost: {description: Cost to the business per unit.}
+      list_price: {description: Standard selling price per unit.}
+  orders:
+    description: Order headers, one row per order, with status and order date.
+    domain: sales
+    owner: commerce-data
+    tags: [fact, orders, transactions]
+    classification: internal
+    freshness_hours: 6
+    columns:
+      order_id: {description: Surrogate key of the order.}
+      customer_id: {description: Customer who placed the order.}
+      order_date: {description: Date the order was placed (ISO 8601).}
+      status: {description: "Lifecycle status: completed, shipped, cancelled or returned."}
+  order_items:
+    description: Order line items with quantity and the unit price actually charged.
+    domain: sales
+    owner: commerce-data
+    tags: [fact, orders, line-items, revenue]
+    classification: internal
+    freshness_hours: 6
+    columns:
+      order_item_id: {description: Surrogate key of the line item.}
+      order_id: {description: Parent order.}
+      product_id: {description: Product sold.}
+      quantity: {description: Units sold on this line.}
+      unit_price: {description: Price charged per unit after discounts.}
+  daily_orders:
+    description: Daily order counts and distinct customers, derived from orders.
+    domain: sales
+    owner: commerce-data
+    tags: [aggregate, daily, orders]
+    classification: internal
+    freshness_hours: 24
+    columns:
+      order_date: {description: Calendar day.}
+      orders: {description: Number of orders placed that day.}
+      customers: {description: Distinct customers who ordered that day.}
+  order_revenue:
+    description: Revenue per order (quantity x unit price summed over lines).
+    domain: sales
+    owner: finance-analytics
+    tags: [derived, revenue, orders]
+    classification: internal
+    freshness_hours: 24
+    columns:
+      order_id: {description: Order identifier.}
+      customer_id: {description: Customer who placed the order.}
+      order_date: {description: Date the order was placed.}
+      status: {description: Order lifecycle status.}
+      revenue: {description: Order revenue before cost.}
+  product_margin:
+    description: Gross margin per product over all order lines.
+    domain: product
+    owner: finance-analytics
+    tags: [derived, margin, profitability]
+    classification: internal
+    freshness_hours: 24
+    columns:
+      product_id: {description: Product identifier.}
+      name: {description: Product name.}
+      category: {description: Merchandising category.}
+      margin: {description: Revenue minus unit cost times quantity.}

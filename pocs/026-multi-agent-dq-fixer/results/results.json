@@ -1,0 +1,148 @@
+{
+  "auto_applied": [
+    [
+      "drop_duplicates",
+      [
+        "unique",
+        "order_id"
+      ],
+      20
+    ],
+    [
+      "map_values",
+      [
+        "in_set",
+        "status"
+      ],
+      40
+    ]
+  ],
+  "detect": {
+    "duplicate_order_id": {
+      "extra": 0,
+      "found": 20,
+      "injected": 20
+    },
+    "future_date": {
+      "extra": 0,
+      "found": 25,
+      "injected": 25
+    },
+    "negative_amount": {
+      "extra": 0,
+      "found": 15,
+      "injected": 15
+    },
+    "null_customer_id": {
+      "extra": 0,
+      "found": 30,
+      "injected": 30
+    },
+    "orphan_customer": {
+      "extra": 0,
+      "found": 20,
+      "injected": 20
+    },
+    "status_typo": {
+      "extra": 0,
+      "found": 40,
+      "injected": 40
+    }
+  },
+  "queued": [
+    [
+      "quarantine",
+      [
+        "not_null",
+        "customer_id"
+      ],
+      30,
+      "queued_for_human"
+    ],
+    [
+      "quarantine",
+      [
+        "range_min",
+        "amount"
+      ],
+      15,
+      "queued_for_human"
+    ],
+    [
+      "quarantine",
+      [
+        "not_future",
+        "order_date"
+      ],
+      25,
+      "queued_for_human"
+    ],
+    [
+      "quarantine",
+      [
+        "fk_exists",
+        "customer_id"
+      ],
+      20,
+      "queued_for_human"
+    ]
+  ],
+  "remaining_issues_after_auto": 4,
+  "rows_in": 2020,
+  "rows_out": 2000,
+  "second_run_auto_applied": 0,
+  "status_fixed_correctly": 40,
+  "status_still_wrong_vs_truth": 0,
+  "status_typos": 40,
+  "trace_steps": 4,
+  "triage": [
+    {
+      "category": "needs_human",
+      "check": "not_null",
+      "column": "customer_id",
+      "n": 30,
+      "owner": "source-system-owner",
+      "severity": "medium"
+    },
+    {
+      "category": "auto_fixable",
+      "check": "unique",
+      "column": "order_id",
+      "n": 20,
+      "owner": "ingestion-team",
+      "severity": "high"
+    },
+    {
+      "category": "auto_fixable",
+      "check": "in_set",
+      "column": "status",
+      "n": 40,
+      "owner": "data-steward",
+      "severity": "medium"
+    },
+    {
+      "category": "needs_human",
+      "check": "range_min",
+      "column": "amount",
+      "n": 15,
+      "owner": "source-system-owner",
+      "severity": "medium"
+    },
+    {
+      "category": "needs_human",
+      "check": "not_future",
+      "column": "order_date",
+      "n": 25,
+      "owner": "source-system-owner",
+      "severity": "medium"
+    },
+    {
+      "category": "needs_human",
+      "check": "fk_exists",
+      "column": "customer_id",
+      "n": 20,
+      "owner": "ingestion-team",
+      "severity": "high"
+    }
+  ]
+}

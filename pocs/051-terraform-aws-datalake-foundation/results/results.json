@@ -1,0 +1,48 @@
+{
+  "applied_state": {
+    "DEFERRED": 0,
+    "FAIL": 0,
+    "PASS": 43
+  },
+  "buckets_after_destroy": 0,
+  "drift_exit_code": 0,
+  "failed_rules_insecure": [
+    "budget-guard",
+    "iam-explicit-denies",
+    "iam-no-wildcards",
+    "iam-trust-not-open",
+    "kms-deletion-window",
+    "kms-rotation-enabled",
+    "required-tags",
+    "s3-access-logging",
+    "s3-acls-disabled",
+    "s3-deny-unencrypted-put",
+    "s3-encrypted-with-cmk",
+    "s3-lifecycle-cleanup",
+    "s3-public-access-blocked",
+    "s3-tls-only",
+    "s3-versioning-enabled"
+  ],
+  "fmt_clean": true,
+  "insecure_example": {
+    "DEFERRED": 0,
+    "FAIL": 17,
+    "PASS": 0
+  },
+  "plan": {
+    "DEFERRED": 7,
+    "FAIL": 0,
+    "PASS": 31
+  },
+  "terraform": "1.9.8",
+  "timings_s": {
+    "apply_s": 49.8,
+    "fmt_init_validate_s": 24.1,
+    "plan_s": 24.9
+  },
+  "validate": {
+    "envs/dev": "ok",
+    "envs/local-mock": "ok",
+    "examples/insecure": "ok"
+  }
+}

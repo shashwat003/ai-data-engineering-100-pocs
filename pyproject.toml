@@ -1,0 +1,17 @@
+[project]
+name = "ai-data-engineering-pocs"
+version = "0.1.0"
+description = "100 practical AI, data engineering and cloud POCs"
+requires-python = ">=3.12"
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+extend-exclude = ["templates"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+ignore = ["E501"]  # line length is enforced by `ruff format`; long docstrings are fine
+
+[tool.ruff.lint.isort]
+known-first-party = ["pocs_common", "llm_client", "eval_kit", "retrieval_kit", "data_gen"]

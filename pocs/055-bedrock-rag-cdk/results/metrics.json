@@ -1,0 +1,76 @@
+{
+  "cfn_lint_errors": [],
+  "check_findings": [],
+  "cost_model": {
+    "standby_replicas_off": {
+      "lambda_usd": 0.02,
+      "opensearch_serverless_usd": 350.4,
+      "total_excl_model_tokens_usd": 350.42
+    },
+    "standby_replicas_on": {
+      "lambda_usd": 0.02,
+      "opensearch_serverless_usd": 700.8,
+      "total_excl_model_tokens_usd": 700.82
+    }
+  },
+  "n_docs": 60,
+  "n_questions": 40,
+  "n_resources": 15,
+  "resources": [
+    "AWS::Bedrock::DataSource",
+    "AWS::Bedrock::KnowledgeBase",
+    "AWS::IAM::Policy",
+    "AWS::IAM::Role",
+    "AWS::Lambda::Function",
+    "AWS::Logs::LogGroup",
+    "AWS::OpenSearchServerless::AccessPolicy",
+    "AWS::OpenSearchServerless::Collection",
+    "AWS::OpenSearchServerless::CollectionIndex",
+    "AWS::OpenSearchServerless::SecurityPolicy",
+    "AWS::S3::Bucket",
+    "AWS::S3::BucketPolicy"
+  ],
+  "retrieval": [
+    {
+      "answer_contains_gold": 0.4,
+      "chunks": 60,
+      "citation_correct": 0.425,
+      "config": "stack default",
+      "embedded": 60,
+      "hit@1": 0.425,
+      "hit@5": 0.775,
+      "max_tokens": 300,
+      "overlap_pct": 20
+    },
+    {
+      "answer_contains_gold": 0.25,
+      "chunks": 120,
+      "citation_correct": 0.45,
+      "config": "small chunks",
+      "embedded": 102,
+      "hit@1": 0.475,
+      "hit@5": 0.725,
+      "max_tokens": 40,
+      "overlap_pct": 0
+    },
+    {
+      "answer_contains_gold": 0.175,
+      "chunks": 267,
+      "citation_correct": 0.55,
+      "config": "tiny chunks + overlap",
+      "embedded": 264,
+      "hit@1": 0.55,
+      "hit@5": 0.8,
+      "max_tokens": 15,
+      "overlap_pct": 30
+    }
+  ],
+  "standby_default": false,
+  "template_settings": {
+    "embedding_model": "amazon.titan-embed-text-v2:0",
+    "index_name": "kb-index",
+    "max_tokens": 300,
+    "overlap_percentage": 20,
+    "top_k": 5
+  }
+}

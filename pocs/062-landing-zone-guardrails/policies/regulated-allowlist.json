@@ -1,0 +1,8 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {"Sid": "AllowApprovedServicesOnly", "Effect": "Allow",
+     "Action": ["s3:*", "kms:*", "athena:*", "glue:*", "lakeformation:*", "logs:*", "cloudwatch:*", "iam:*", "sts:*", "cloudtrail:*", "config:*"],
+     "Resource": "*"}
+  ]
+}

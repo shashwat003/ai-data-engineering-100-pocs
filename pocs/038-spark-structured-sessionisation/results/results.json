@@ -1,0 +1,47 @@
+{
+  "gap": "30 minutes",
+  "n_batches": 12,
+  "n_events": 517,
+  "oracle_sessions": 94,
+  "results": [
+    {
+      "dropped_events": 4,
+      "emitted_only_at_flush": 0.202,
+      "events_in_oracle": 517,
+      "events_in_spark": 513,
+      "exact_matches": 90,
+      "match_rate": 0.957,
+      "median_emit_lag_batches": 2,
+      "python_model_dropped": 8,
+      "sessions_oracle": 94,
+      "sessions_spark": 94,
+      "watermark": "5 minutes"
+    },
+    {
+      "dropped_events": 4,
+      "emitted_only_at_flush": 0.287,
+      "events_in_oracle": 517,
+      "events_in_spark": 513,
+      "exact_matches": 90,
+      "match_rate": 0.957,
+      "median_emit_lag_batches": 3,
+      "python_model_dropped": 4,
+      "sessions_oracle": 94,
+      "sessions_spark": 94,
+      "watermark": "30 minutes"
+    },
+    {
+      "dropped_events": 0,
+      "emitted_only_at_flush": 0.691,
+      "events_in_oracle": 517,
+      "events_in_spark": 517,
+      "exact_matches": 94,
+      "match_rate": 1.0,
+      "median_emit_lag_batches": 7,
+      "python_model_dropped": 0,
+      "sessions_oracle": 94,
+      "sessions_spark": 94,
+      "watermark": "3 hours"
+    }
+  ]
+}

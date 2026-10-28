@@ -1,0 +1,93 @@
+{
+  "attacks": {
+    "SELECT * returns only permitted columns": "OK: returned 90 rows (limit 90)",
+    "UNION tries to widen rows (non-EU orders)": "OK: returned 30 rows (limit 30)",
+    "forbidden column in WHERE (inference oracle)": "OK: denied (column email is not accessible)",
+    "forbidden column via CTE": "OK: denied (column email is not accessible)",
+    "forbidden column via subquery": "OK: denied (column email is not accessible)",
+    "multi-statement": "OK: denied (exactly one SELECT statement is allowed)",
+    "select forbidden column": "OK: denied (column email is not accessible)",
+    "table function reads a file": "OK: denied (table functions are not allowed)",
+    "table with no grant": "OK: denied (table sales.orders does not exist or access is denied)",
+    "unknown role": "OK: denied (table sales.customers does not exist or access is denied)",
+    "write attempt": "OK: denied (exactly one SELECT statement is allowed)"
+  },
+  "lint": [
+    "analyst_eu can read PII column sales.customers.name without clearance",
+    "support can read PII column sales.customers.name without clearance"
+  ],
+  "row_counts": {
+    "analyst_eu": {
+      "sales.customers": 30,
+      "sales.orders": 100
+    },
+    "compliance": {
+      "sales.customers": 90,
+      "sales.orders": 300
+    },
+    "data_scientist": {
+      "sales.customers": 90,
+      "sales.orders": 300
+    },
+    "support": {
+      "sales.customers": 90
+    }
+  },
+  "visible_columns": {
+    "analyst_eu": {
+      "sales.customers": [
+        "customer_id",
+        "name",
+        "region",
+        "segment"
+      ],
+      "sales.orders": [
+        "amount",
+        "customer_id",
+        "order_id",
+        "region"
+      ]
+    },
+    "compliance": {
+      "sales.customers": [
+        "customer_id",
+        "email",
+        "name",
+        "region",
+        "segment"
+      ],
+      "sales.orders": [
+        "amount",
+        "card_last4",
+        "customer_id",
+        "order_id",
+        "region"
+      ]
+    },
+    "data_scientist": {
+      "sales.customers": [
+        "customer_id",
+        "region",
+        "segment"
+      ],
+      "sales.orders": [
+        "amount",
+        "customer_id",
+        "order_id",
+        "region"
+      ]
+    },
+    "stranger": {
+      "sales.customers": [],
+      "sales.orders": []
+    },
+    "support": {
+      "sales.customers": [
+        "customer_id",
+        "name",
+        "region"
+      ],
+      "sales.orders": []
+    }
+  }
+}

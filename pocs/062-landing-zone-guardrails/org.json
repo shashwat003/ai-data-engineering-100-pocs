@@ -1,0 +1,14 @@
+{
+  "management_account": "999999999999",
+  "break_glass_role": "OrganizationBreakGlass",
+  "approved_regions": ["eu-west-1", "eu-central-1"],
+  "required_config_rules": ["S3_BUCKET_SERVER_SIDE_ENCRYPTION_ENABLED", "S3_BUCKET_PUBLIC_READ_PROHIBITED", "CLOUD_TRAIL_ENABLED", "ENCRYPTED_VOLUMES"],
+  "root": {
+    "policies": ["FullAWSAccess", "deny-leave-org", "deny-root-user", "protect-security-services"],
+    "ous": {
+      "prod": {"policies": ["FullAWSAccess", "region-lock", "require-s3-encryption"], "accounts": ["111111111111", "222222222222"]},
+      "sandbox": {"policies": ["FullAWSAccess", "region-lock", "sandbox-cost-guard"], "accounts": ["333333333333"]},
+      "regulated": {"policies": ["regulated-allowlist", "region-lock", "require-s3-encryption"], "accounts": ["444444444444"]}
+    }
+  }
+}

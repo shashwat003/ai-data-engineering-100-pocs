@@ -1,0 +1,65 @@
+{
+  "parity_all_rounds": true,
+  "rows": [
+    [
+      "initial load",
+      480,
+      120,
+      0,
+      0,
+      0,
+      "-"
+    ],
+    [
+      "round 1: 6 edited, 2 new, 2 deleted",
+      14,
+      2,
+      6,
+      112,
+      2,
+      "yes"
+    ],
+    [
+      "round 2: 6 edited, 2 new, 2 deleted",
+      14,
+      2,
+      6,
+      112,
+      2,
+      "yes"
+    ],
+    [
+      "round 3: 6 edited, 2 new, 2 deleted",
+      14,
+      2,
+      6,
+      112,
+      2,
+      "yes"
+    ],
+    [
+      "round 4: 6 edited, 2 new, 2 deleted",
+      13,
+      2,
+      5,
+      113,
+      2,
+      "yes"
+    ],
+    [
+      "re-run with no change",
+      0,
+      0,
+      0,
+      120,
+      0,
+      "-"
+    ]
+  ],
+  "stats": {
+    "chunk_refs": 480,
+    "docs": 120,
+    "vectors": 480
+  },
+  "total_chunks_now": 480
+}

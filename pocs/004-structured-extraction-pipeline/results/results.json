@@ -1,0 +1,46 @@
+{
+  "n_docs": 200,
+  "n_injected": 8,
+  "sweep": [
+    {
+      "dead_letter": 84,
+      "exact_match_of_accepted": 1.0,
+      "injected_docs_accepted": 4,
+      "injected_total_zero": 0,
+      "max_attempts": 1,
+      "mean_attempts": 1.0,
+      "tokens_in_total": 24762,
+      "valid_rate": 0.58
+    },
+    {
+      "dead_letter": 24,
+      "exact_match_of_accepted": 1.0,
+      "injected_docs_accepted": 8,
+      "injected_total_zero": 0,
+      "max_attempts": 2,
+      "mean_attempts": 1.42,
+      "tokens_in_total": 38249,
+      "valid_rate": 0.88
+    },
+    {
+      "dead_letter": 5,
+      "exact_match_of_accepted": 1.0,
+      "injected_docs_accepted": 8,
+      "injected_total_zero": 0,
+      "max_attempts": 3,
+      "mean_attempts": 1.54,
+      "tokens_in_total": 42041,
+      "valid_rate": 0.975
+    },
+    {
+      "dead_letter": 1,
+      "exact_match_of_accepted": 1.0,
+      "injected_docs_accepted": 8,
+      "injected_total_zero": 0,
+      "max_attempts": 5,
+      "mean_attempts": 1.575,
+      "tokens_in_total": 43209,
+      "valid_rate": 0.995
+    }
+  ]
+}

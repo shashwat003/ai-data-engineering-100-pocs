@@ -1,0 +1,19 @@
+{
+  "_note": "HYPOTHETICAL placeholder prices in USD per million tokens, used only to show relative cost structure. They are NOT quotes from any provider and NOT what local inference costs (local models have no per-token bill). Edit to match a deployment or contract you want to model.",
+  "sim-slm-3b": {
+    "input_per_mtok": 0.05,
+    "output_per_mtok": 0.1
+  },
+  "sim-llm-xl": {
+    "input_per_mtok": 3.0,
+    "output_per_mtok": 15.0
+  },
+  "llama3.2:3b": {
+    "input_per_mtok": 0.05,
+    "output_per_mtok": 0.1
+  },
+  "llama3.1:8b": {
+    "input_per_mtok": 0.2,
+    "output_per_mtok": 0.4
+  }
+}

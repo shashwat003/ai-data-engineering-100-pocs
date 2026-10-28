@@ -1,0 +1,134 @@
+{
+  "accuracy_vs_shift": [
+    [
+      0.0,
+      0.923
+    ],
+    [
+      0.5,
+      0.924
+    ],
+    [
+      1.0,
+      0.942
+    ],
+    [
+      2.0,
+      0.975
+    ]
+  ],
+  "grid": {
+    "categorical_shift": {
+      "0.05": {
+        "detection_rate": 0.975,
+        "median_delay_windows": 1.0,
+        "streams_with_pre_onset_alert": 0.0,
+        "trials": 40
+      },
+      "0.15": {
+        "detection_rate": 1.0,
+        "median_delay_windows": 1.0,
+        "streams_with_pre_onset_alert": 0.0,
+        "trials": 40
+      },
+      "0.3": {
+        "detection_rate": 1.0,
+        "median_delay_windows": 1.0,
+        "streams_with_pre_onset_alert": 0.0,
+        "trials": 40
+      }
+    },
+    "heavy_tail": {
+      "0.02": {
+        "detection_rate": 0.0,
+        "median_delay_windows": null,
+        "streams_with_pre_onset_alert": 0.0,
+        "trials": 40
+      },
+      "0.05": {
+        "detection_rate": 0.0,
+        "median_delay_windows": null,
+        "streams_with_pre_onset_alert": 0.0,
+        "trials": 40
+      },
+      "0.15": {
+        "detection_rate": 1.0,
+        "median_delay_windows": 1.0,
+        "streams_with_pre_onset_alert": 0.0,
+        "trials": 40
+      }
+    },
+    "mean_shift": {
+      "0.1": {
+        "detection_rate": 0.0,
+        "median_delay_windows": null,
+        "streams_with_pre_onset_alert": 0.0,
+        "trials": 40
+      },
+      "0.3": {
+        "detection_rate": 0.875,
+        "median_delay_windows": 2.0,
+        "streams_with_pre_onset_alert": 0.0,
+        "trials": 40
+      },
+      "0.6": {
+        "detection_rate": 1.0,
+        "median_delay_windows": 1.0,
+        "streams_with_pre_onset_alert": 0.0,
+        "trials": 40
+      }
+    },
+    "missing_rate": {
+      "0.02": {
+        "detection_rate": 1.0,
+        "median_delay_windows": 1.0,
+        "streams_with_pre_onset_alert": 0.0,
+        "trials": 40
+      },
+      "0.05": {
+        "detection_rate": 1.0,
+        "median_delay_windows": 1.0,
+        "streams_with_pre_onset_alert": 0.0,
+        "trials": 40
+      },
+      "0.15": {
+        "detection_rate": 1.0,
+        "median_delay_windows": 1.0,
+        "streams_with_pre_onset_alert": 0.0,
+        "trials": 40
+      }
+    },
+    "variance_change": {
+      "0.1": {
+        "detection_rate": 0.0,
+        "median_delay_windows": null,
+        "streams_with_pre_onset_alert": 0.0,
+        "trials": 40
+      },
+      "0.3": {
+        "detection_rate": 0.575,
+        "median_delay_windows": 3.0,
+        "streams_with_pre_onset_alert": 0.0,
+        "trials": 40
+      },
+      "0.6": {
+        "detection_rate": 1.0,
+        "median_delay_windows": 1.0,
+        "streams_with_pre_onset_alert": 0.0,
+        "trials": 40
+      }
+    }
+  },
+  "stable": {
+    "detection_rate": 0.0,
+    "median_delay_windows": null,
+    "streams_with_pre_onset_alert": 0.0,
+    "trials": 40
+  },
+  "stable_loose": {
+    "detection_rate": 0.4,
+    "median_delay_windows": 1.5,
+    "streams_with_pre_onset_alert": 0.3,
+    "trials": 40
+  }
+}

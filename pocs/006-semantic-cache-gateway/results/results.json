@@ -1,0 +1,78 @@
+{
+  "gateway": {
+    "model_calls": 242,
+    "stats": {
+      "evicted": 0,
+      "expired": 0,
+      "hits": 758,
+      "lookups": 1000,
+      "misses": 242,
+      "not_cached": 0,
+      "rejected_by_fact_guard": 3487
+    },
+    "tokens_saved": 52281,
+    "usd_saved_at_0.002_per_1k": 0.1046
+  },
+  "grid": [
+    {
+      "fact_guard": false,
+      "false_hit_rate": 0.658,
+      "paraphrase_hit_rate": 0.525,
+      "threshold": 0.5
+    },
+    {
+      "fact_guard": false,
+      "false_hit_rate": 0.658,
+      "paraphrase_hit_rate": 0.375,
+      "threshold": 0.6
+    },
+    {
+      "fact_guard": false,
+      "false_hit_rate": 0.658,
+      "paraphrase_hit_rate": 0.175,
+      "threshold": 0.7
+    },
+    {
+      "fact_guard": false,
+      "false_hit_rate": 0.65,
+      "paraphrase_hit_rate": 0.067,
+      "threshold": 0.8
+    },
+    {
+      "fact_guard": false,
+      "false_hit_rate": 0.258,
+      "paraphrase_hit_rate": 0.0,
+      "threshold": 0.9
+    },
+    {
+      "fact_guard": true,
+      "false_hit_rate": 0.0,
+      "paraphrase_hit_rate": 0.533,
+      "threshold": 0.5
+    },
+    {
+      "fact_guard": true,
+      "false_hit_rate": 0.0,
+      "paraphrase_hit_rate": 0.375,
+      "threshold": 0.6
+    },
+    {
+      "fact_guard": true,
+      "false_hit_rate": 0.0,
+      "paraphrase_hit_rate": 0.175,
+      "threshold": 0.7
+    },
+    {
+      "fact_guard": true,
+      "false_hit_rate": 0.0,
+      "paraphrase_hit_rate": 0.067,
+      "threshold": 0.8
+    },
+    {
+      "fact_guard": true,
+      "false_hit_rate": 0.0,
+      "paraphrase_hit_rate": 0.0,
+      "threshold": 0.9
+    }
+  ]
+}

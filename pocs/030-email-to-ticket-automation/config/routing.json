@@ -1,0 +1,13 @@
+{
+  "queues": {
+    "billing": {"queue": "finance-support", "sla_hours": 24},
+    "shipping": {"queue": "logistics", "sla_hours": 24},
+    "technical": {"queue": "tier2-engineering", "sla_hours": 8},
+    "account": {"queue": "account-services", "sla_hours": 24},
+    "feedback": {"queue": "product-feedback", "sla_hours": 72},
+    "unknown": {"queue": "triage", "sla_hours": 24}
+  },
+  "urgent_sla_factor": 0.25,
+  "vip_domains": ["bigcorp.example"],
+  "min_confidence": 0.5
+}

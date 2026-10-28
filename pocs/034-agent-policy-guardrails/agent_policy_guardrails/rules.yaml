@@ -1,0 +1,16 @@
+# Guardrail policy. Evaluated top to bottom; the strictest action wins (block > escalate > redact > allow).
+# stage: input (user -> agent) or output (agent -> user).
+rules:
+  - {id: pii-card, stage: [input, output], detector: credit_card, action: redact, replacement: "[CARD]"}
+  - {id: pii-iban, stage: [input, output], detector: iban, action: redact, replacement: "[IBAN]"}
+  - {id: pii-ssn, stage: [input, output], detector: us_ssn, action: redact, replacement: "[SSN]"}
+  - {id: pii-email, stage: [output], detector: email, action: redact, replacement: "[EMAIL]"}
+  - {id: pii-phone, stage: [output], detector: phone, action: redact, replacement: "[PHONE]"}
+  - {id: secret-key, stage: [input, output], detector: secret_token, action: block}
+  - {id: injection, stage: [input], detector: injection_phrase, action: block}
+  - {id: self-harm, stage: [input], detector: topic_self_harm, action: escalate}
+  - {id: malware-howto, stage: [input], detector: topic_malware, action: block}
+  - {id: output-too-long, stage: [output], detector: too_long, action: block, params: {max_chars: 4000}}
+limits:
+  requests_per_minute: 20
+  tokens_per_hour: 20000

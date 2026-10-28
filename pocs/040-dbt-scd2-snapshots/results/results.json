@@ -1,0 +1,5 @@
+{
+  "check_strategy_matches_oracle": true,
+  "dbt_tests_pass": true,
+  "timestamp_strategy_versions_match": true
+}

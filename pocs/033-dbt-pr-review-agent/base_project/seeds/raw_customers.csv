@@ -1,0 +1,16 @@
+customer_id,name,segment,country
+1,Customer 1,consumer,US
+2,Customer 2,consumer,DE
+3,Customer 3,consumer,IN
+4,Customer 4,enterprise,DE
+5,Customer 5,smb,IN
+6,Customer 6,consumer,IN
+7,Customer 7,consumer,IN
+8,Customer 8,enterprise,US
+9,Customer 9,smb,IN
+10,Customer 10,smb,IN
+11,Customer 11,enterprise,DE
+12,Customer 12,enterprise,DE
+13,Customer 13,enterprise,DE
+14,Customer 14,consumer,US
+15,Customer 15,smb,DE

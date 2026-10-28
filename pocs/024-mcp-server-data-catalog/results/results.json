@@ -1,0 +1,101 @@
+[
+  {
+    "protocol": "2025-06-18",
+    "step": "initialize",
+    "tools": [
+      "list_datasets",
+      "search_datasets",
+      "get_dataset_schema",
+      "sample_rows",
+      "profile_column",
+      "get_lineage"
+    ]
+  },
+  {
+    "arguments": {
+      "limit": 3,
+      "query": "revenue per order"
+    },
+    "response": "[{\"name\": \"order_revenue\", \"score\": 2.574, \"kind\": \"view\", \"domain\": \"sales\", \"description\": \"Revenue per order (quantity x unit price summed over lines).\"}, {\"name\": \"order_items\", \"score\": 1.663, \"kind\": \"table\", \"domain\": \"sales\", \"description\": \"Order line ...",
+    "step": "Discover what exists",
+    "tool": "search_datasets"
+  },
+  {
+    "arguments": {
+      "dataset": "order_revenue"
+    },
+    "response": "{\"name\": \"order_revenue\", \"kind\": \"view\", \"description\": \"Revenue per order (quantity x unit price summed over lines).\", \"domain\": \"sales\", \"owner\": \"finance-analytics\", \"tags\": [\"derived\", \"revenue\", \"orders\"], \"classification\": \"internal\", \"freshness_hours\": ...",
+    "step": "Inspect a schema",
+    "tool": "get_dataset_schema"
+  },
+  {
+    "arguments": {
+      "dataset": "orders"
+    },
+    "response": "{\"dataset\": \"orders\", \"kind\": \"table\", \"upstream\": [], \"downstream\": [\"daily_orders\", \"order_revenue\"]}",
+    "step": "Trace lineage",
+    "tool": "get_lineage"
+  },
+  {
+    "arguments": {
+      "column": "status",
+      "dataset": "orders"
+    },
+    "response": "{\"dataset\": \"orders\", \"column\": \"status\", \"type\": \"TEXT\", \"rows\": 1500, \"null_count\": 0, \"null_rate\": 0.0, \"distinct\": 4, \"min\": \"cancelled\", \"max\": \"shipped\", \"top_values\": [{\"value\": \"completed\", \"count\": 1192}, {\"value\": \"shipped\", \"count\": 141}, {\"value\":  ...",
+    "step": "Profile a column",
+    "tool": "profile_column"
+  },
+  {
+    "arguments": {
+      "dataset": "customers",
+      "rows": 2
+    },
+    "response": "{\"dataset\": \"customers\", \"rows\": [{\"customer_id\": 1, \"name\": \"[REDACTED]\", \"email\": \"[REDACTED]\", \"country\": \"India\", \"segment\": \"consumer\", \"signup_date\": \"2024-09-10\"}, {\"customer_id\": 2, \"name\": \"[REDACTED]\", \"email\": \"[REDACTED]\", \"country\": \"Germany\", \"se ...",
+    "step": "Sample rows (PII is redacted)",
+    "tool": "sample_rows"
+  },
+  {
+    "arguments": {
+      "column": "email",
+      "dataset": "customers"
+    },
+    "response": "tool error: column 'email' is PII and cannot be profiled",
+    "step": "Refused: profile a PII column",
+    "tool": "profile_column"
+  },
+  {
+    "arguments": {
+      "column": "status\" FROM customers --",
+      "dataset": "orders"
+    },
+    "response": "tool error: unknown column 'status\" FROM customers --' in dataset 'orders'",
+    "step": "Refused: identifier injection",
+    "tool": "profile_column"
+  },
+  {
+    "arguments": {
+      "dataset": "sqlite_master"
+    },
+    "response": "JSON-RPC error -32602: dataset must be one of ['customers', 'daily_orders', 'order_items', 'order_revenue', 'orders', 'product_margin', 'products']",
+    "step": "Refused: unknown dataset",
+    "tool": "get_dataset_schema"
+  },
+  {
+    "arguments": {
+      "dataset": "orders",
+      "sql": "DROP TABLE orders"
+    },
+    "response": "JSON-RPC error -32602: unexpected argument(s): ['sql']",
+    "step": "Rejected: extra argument",
+    "tool": "sample_rows"
+  },
+  {
+    "arguments": {
+      "dataset": "orders",
+      "rows": 1000
+    },
+    "response": "JSON-RPC error -32602: rows out of range",
+    "step": "Rejected: out-of-range bound",
+    "tool": "sample_rows"
+  }
+]

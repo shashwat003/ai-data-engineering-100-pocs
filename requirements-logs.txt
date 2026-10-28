@@ -1,0 +1,9 @@
+# Extra deps for POCs 022 (drain3), 071 (OpenTelemetry) and 048 (OpenLineage). Original note on drain3:
+# POC 022: Drain log-template mining. drain3 0.9.11 hard-pins cachetools==4.2.1 and jsonpickle==1.5.1,
+# which conflict with MLflow, so install it separately WITHOUT its pins (verified to work):
+#   pip install --no-deps drain3==0.9.11
+-r requirements.txt
+opentelemetry-sdk==1.45.1   # POC 071
+openlineage-python==1.54.0   # POC 048
+cachetools>=5,<8
+jsonpickle>=3,<5

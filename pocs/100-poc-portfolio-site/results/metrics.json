@@ -1,0 +1,24 @@
+{
+  "check_problems": [],
+  "label_counts": {
+    "mock": 5,
+    "modelled": 2,
+    "simulated": 13,
+    "unverified": 61
+  },
+  "maturity": {
+    "planned": 25,
+    "verified": 75
+  },
+  "summary": {
+    "built": 75,
+    "by_maturity": {
+      "planned": 25,
+      "scaffold": 0,
+      "tested": 0,
+      "verified": 75
+    },
+    "pages": 76,
+    "total": 100
+  }
+}

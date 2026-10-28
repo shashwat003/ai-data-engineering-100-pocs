@@ -1,0 +1,35 @@
+{
+  "consumer_after_replay": {
+    "batches": 6,
+    "poison_skipped": 0,
+    "records": 505
+  },
+  "crashed_once": true,
+  "effectively_once": true,
+  "firehose_compaction": {
+    "duplicates_dropped": 100,
+    "events_in": 600,
+    "events_out": 500,
+    "objects_after": 3,
+    "objects_before": 6
+  },
+  "firehose_objects_before_compaction": 6,
+  "firehose_unique_after": 500,
+  "missing_stream_error": "ResourceNotFoundException",
+  "oversize_rejected": [
+    "big1"
+  ],
+  "poison_skipped": 1,
+  "producer": {
+    "gave_up": 0,
+    "retried_records": 100,
+    "sent_records": 605
+  },
+  "sink": {
+    "events": 605,
+    "expected": 605,
+    "late_prefix_events": 50,
+    "objects": 21,
+    "unique_event_ids": 605
+  }
+}

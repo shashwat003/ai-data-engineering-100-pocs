@@ -1,0 +1,26 @@
+# Runtime dependencies for the libs and all default demos (exact pins for reproducibility).
+numpy==2.5.4
+sqlglot==30.23.0   # POC 003 SQL validation
+PyYAML==6.0.3      # POC 024 / 077 metadata and contracts (safe_load only)
+duckdb==1.5.6        # POC 035 lakehouse engine
+deltalake==1.6.6      # POC 036 Delta Lake (delta-rs)
+pyarrow==26.0.0       # POC 036
+cryptography==50.0.2   # POC 084 Ed25519 signing
+networkx==3.7          # POC 082
+statsmodels==0.15.0    # POCs 069, 093
+scikit-learn==1.9.1    # POCs 070, 081, 091
+scipy==1.18.1          # POC 069 (via statsmodels)
+fairlearn==0.15.0      # POC 081 fairness metrics and post-processing
+pandas==3.0.6          # POC 081 (fairlearn dependency)
+river==0.26.1          # POC 090 online anomaly detection
+lightgbm==4.7.0        # POC 089 global forecasting model
+splink==5.0.0          # POC 095 probabilistic record linkage
+fastapi==0.149.0       # POC 069
+httpx==0.28.1          # POC 069 test client
+pydantic==2.14.1       # POC 004 (already pulled in by fastapi)
+markdown-it-py==4.2.0   # POC 100 README rendering (html disabled)
+pdfplumber==0.11.10    # POC 010 PDF layout/table extraction (MIT)
+reportlab==5.0.1       # POC 010 synthetic PDF generation (BSD)
+pyiceberg==0.12.0      # POC 052 Iceberg tables (SQLite catalog, local files)
+pyiceberg-core==0.10.1 # POC 052 partition transforms
+faiss-cpu==1.13.2     # POC 092 approximate nearest-neighbour retrieval

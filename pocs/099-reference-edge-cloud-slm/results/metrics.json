@@ -1,0 +1,135 @@
+{
+  "calibration": {
+    "cloud_accuracy": 0.8913,
+    "edge_accuracy": 0.841,
+    "sweep": [
+      {
+        "accuracy": 0.841,
+        "cloud_share": 0.0,
+        "threshold": 0.5
+      },
+      {
+        "accuracy": 0.855,
+        "cloud_share": 0.064,
+        "threshold": 0.55
+      },
+      {
+        "accuracy": 0.864,
+        "cloud_share": 0.119,
+        "threshold": 0.6
+      },
+      {
+        "accuracy": 0.8737,
+        "cloud_share": 0.174,
+        "threshold": 0.65
+      },
+      {
+        "accuracy": 0.881,
+        "cloud_share": 0.227,
+        "threshold": 0.7
+      },
+      {
+        "accuracy": 0.8817,
+        "cloud_share": 0.297,
+        "threshold": 0.75
+      },
+      {
+        "accuracy": 0.8847,
+        "cloud_share": 0.379,
+        "threshold": 0.8
+      },
+      {
+        "accuracy": 0.887,
+        "cloud_share": 0.482,
+        "threshold": 0.85
+      },
+      {
+        "accuracy": 0.8897,
+        "cloud_share": 0.613,
+        "threshold": 0.9
+      },
+      {
+        "accuracy": 0.891,
+        "cloud_share": 0.799,
+        "threshold": 0.95
+      },
+      {
+        "accuracy": 0.8913,
+        "cloud_share": 1.0,
+        "threshold": 1.0
+      }
+    ],
+    "threshold": 0.75
+  },
+  "drift": {
+    "100% hard cases, controlled": {
+      "accuracy_after_onset": 0.8357,
+      "cloud_share_after_onset": 0.829,
+      "false_alert_windows_before_onset": 0,
+      "windows_to_first_alert": 2
+    },
+    "100% hard cases, static threshold": {
+      "accuracy_after_onset": 0.828,
+      "cloud_share_after_onset": 0.42,
+      "false_alert_windows_before_onset": 0,
+      "windows_to_first_alert": 2
+    },
+    "50% hard cases, controlled": {
+      "accuracy_after_onset": 0.8662,
+      "cloud_share_after_onset": 0.785,
+      "false_alert_windows_before_onset": 0,
+      "windows_to_first_alert": 2
+    },
+    "50% hard cases, static threshold": {
+      "accuracy_after_onset": 0.8588,
+      "cloud_share_after_onset": 0.363,
+      "false_alert_windows_before_onset": 0,
+      "windows_to_first_alert": 2
+    }
+  },
+  "edge_median_ms_measured": 0.04,
+  "outage": {
+    "with circuit breaker": {
+      "accuracy": 0.8733333333333333,
+      "cloud_share": 0.22466666666666665,
+      "degraded_share": 0.094,
+      "mean_latency_ms": 30.36,
+      "p95_latency_ms": 121.0,
+      "usd_per_1k": 0.08986666666666666
+    },
+    "without circuit breaker": {
+      "accuracy": 0.8726666666666667,
+      "cloud_share": 0.23266666666666666,
+      "degraded_share": 0.086,
+      "mean_latency_ms": 63.32,
+      "p95_latency_ms": 401.0,
+      "usd_per_1k": 0.09306666666666667
+    }
+  },
+  "policies": {
+    "cloud only": {
+      "accuracy": 0.8806666666666667,
+      "cloud_share": 1.0,
+      "degraded_share": 0.0,
+      "mean_latency_ms": 120.03999999999998,
+      "p95_latency_ms": 120.04,
+      "usd_per_1k": 0.39999999999999997
+    },
+    "edge only": {
+      "accuracy": 0.8506666666666667,
+      "cloud_share": 0.0,
+      "degraded_share": 0.0,
+      "mean_latency_ms": 0.04,
+      "p95_latency_ms": 0.04,
+      "usd_per_1k": 0.0
+    },
+    "hybrid (threshold 0.75)": {
+      "accuracy": 0.88,
+      "cloud_share": 0.31866666666666665,
+      "degraded_share": 0.0,
+      "mean_latency_ms": 38.28,
+      "p95_latency_ms": 120.04,
+      "usd_per_1k": 0.12746666666666667
+    }
+  }
+}

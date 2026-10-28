@@ -1,0 +1,56 @@
+{
+  "appends_per_second": 45560,
+  "attacks": [
+    [
+      "edit a field (no re-hash)",
+      "detected",
+      "detected"
+    ],
+    [
+      "edit a field and re-hash the rest of the chain",
+      "missed",
+      "detected"
+    ],
+    [
+      "delete a middle entry and re-number + re-hash",
+      "missed",
+      "detected"
+    ],
+    [
+      "delete the last 10 entries",
+      "missed",
+      "detected"
+    ],
+    [
+      "swap two entries (no re-hash)",
+      "detected",
+      "detected"
+    ],
+    [
+      "insert a forged entry and re-hash",
+      "missed",
+      "detected"
+    ],
+    [
+      "replace the whole log with a fresh valid chain",
+      "missed",
+      "detected"
+    ]
+  ],
+  "baseline_ok": true,
+  "exhaustive_proofs_ok": "1560/1560",
+  "proof_sizes": {
+    "100": [
+      7,
+      7
+    ],
+    "1000": [
+      10,
+      9
+    ],
+    "8": [
+      3,
+      1
+    ]
+  }
+}

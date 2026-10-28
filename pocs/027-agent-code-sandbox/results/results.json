@@ -1,0 +1,69 @@
+{
+  "attacks_succeeded": {
+    "all layers (+ network namespace if available)": {
+      "dos": 0,
+      "escape": 0,
+      "exec": 0,
+      "fs_read": 0,
+      "fs_write": 0,
+      "net": 0
+    },
+    "no static policy": {
+      "dos": 0,
+      "escape": 1,
+      "exec": 0,
+      "fs_read": 0,
+      "fs_write": 0,
+      "net": 0
+    },
+    "no static policy, no restricted builtins": {
+      "dos": 0,
+      "escape": 2,
+      "exec": 4,
+      "fs_read": 3,
+      "fs_write": 1,
+      "net": 0
+    },
+    "wall clock only": {
+      "dos": 0,
+      "escape": 2,
+      "exec": 4,
+      "fs_read": 3,
+      "fs_write": 1,
+      "net": 2
+    }
+  },
+  "legit_ok": "4/4",
+  "netns_available": true,
+  "stopped_by": {
+    "all layers (+ network namespace if available)": {
+      "rlimit": 2,
+      "runtime_restriction": 3,
+      "static_policy": 13
+    },
+    "no static policy": {
+      "none": 2,
+      "rlimit": 2,
+      "runtime_restriction": 14
+    },
+    "no static policy, no restricted builtins": {
+      "none": 12,
+      "rlimit": 2,
+      "runtime_restriction": 4
+    },
+    "wall clock only": {
+      "none": 13,
+      "output_cap": 1,
+      "runtime_restriction": 1,
+      "wall_clock": 3
+    }
+  },
+  "totals": {
+    "dos": 5,
+    "escape": 3,
+    "exec": 4,
+    "fs_read": 3,
+    "fs_write": 1,
+    "net": 2
+  }
+}

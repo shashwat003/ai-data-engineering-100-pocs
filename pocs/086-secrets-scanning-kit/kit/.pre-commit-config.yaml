@@ -1,0 +1,15 @@
+# Copy to the root of a repository, then: pip install pre-commit && pre-commit install
+repos:
+  - repo: https://github.com/gitleaks/gitleaks
+    rev: v8.30.0
+    hooks:
+      - id: gitleaks
+        args: ["--config", ".gitleaks.toml"]
+  - repo: local
+    hooks:
+      - id: secrets-scanning-kit
+        name: dependency-free secret scan (staged files)
+        entry: python -m secrets_scanning_kit.cli --staged --baseline .secrets.baseline.json
+        language: system
+        pass_filenames: false
+        stages: [pre-commit]

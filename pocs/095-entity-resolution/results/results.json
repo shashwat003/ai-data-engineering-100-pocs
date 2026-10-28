@@ -1,0 +1,79 @@
+{
+  "all_possible_pairs": 14394295,
+  "blocking_pair_recall": 0.892,
+  "methods": {
+    "Splink @ 0.5": {
+      "bcubed_f1": 0.973,
+      "clusters": 3193,
+      "f1": 0.905,
+      "pairs": 3257,
+      "precision": 0.997,
+      "recall": 0.829
+    },
+    "Splink @ 0.8": {
+      "bcubed_f1": 0.967,
+      "clusters": 3257,
+      "f1": 0.889,
+      "pairs": 3137,
+      "precision": 0.999,
+      "recall": 0.8
+    },
+    "Splink @ 0.95": {
+      "bcubed_f1": 0.963,
+      "clusters": 3290,
+      "f1": 0.875,
+      "pairs": 3046,
+      "precision": 1.0,
+      "recall": 0.777
+    },
+    "Splink @ 0.99": {
+      "bcubed_f1": 0.944,
+      "clusters": 3429,
+      "f1": 0.833,
+      "pairs": 2799,
+      "precision": 1.0,
+      "recall": 0.714
+    },
+    "exact name+dob": {
+      "bcubed_f1": 0.816,
+      "clusters": 4462,
+      "f1": 0.448,
+      "pairs": 1131,
+      "precision": 1.0,
+      "recall": 0.289
+    },
+    "fuzzy rules": {
+      "bcubed_f1": 0.943,
+      "clusters": 3446,
+      "f1": 0.824,
+      "pairs": 2746,
+      "precision": 1.0,
+      "recall": 0.701
+    }
+  },
+  "n_entities": 3000,
+  "n_records": 5366,
+  "scaling": [
+    {
+      "possible_pairs": 1010331,
+      "records": 1422,
+      "scored_pairs": 966,
+      "seconds": 3.4
+    },
+    {
+      "possible_pairs": 4094091,
+      "records": 2862,
+      "scored_pairs": 2012,
+      "seconds": 5.9
+    },
+    {
+      "possible_pairs": 16413585,
+      "records": 5730,
+      "scored_pairs": 4064,
+      "seconds": 5.8
+    }
+  ],
+  "splink_scored_pairs": 3681,
+  "splink_seconds": 6.1,
+  "true_pairs": 3919
+}

@@ -1,0 +1,16 @@
+{
+  "batches": 40,
+  "compact_preserves_state": true,
+  "delivered_rows": 43971,
+  "events": 40000,
+  "files_after_compact": 1,
+  "files_before_compact": 40,
+  "final_matches_oracle": true,
+  "merge_seconds_total": 1.83,
+  "replay_skipped": true,
+  "rows": 1746,
+  "table_version": 40,
+  "time_travel_matches_oracle": true,
+  "tombstones_before_purge": 254,
+  "tombstones_purged": 0
+}

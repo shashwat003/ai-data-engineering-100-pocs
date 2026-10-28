@@ -1,0 +1,120 @@
+{
+  "anomaly_in_report": true,
+  "distinct_keys": 4,
+  "facts": {
+    "anomalies": [
+      [
+        "2025-04-12",
+        -3.9
+      ],
+      [
+        "2025-04-13",
+        -4.1
+      ]
+    ],
+    "aov": 90.9,
+    "baseline_avg": 154507,
+    "days": 7,
+    "history_days": 96,
+    "orders": 1635,
+    "orders_change_pct": -8.9,
+    "orders_prev": 1795,
+    "period": "2025-04-07 to 2025-04-13",
+    "revenue": 148619,
+    "revenue_change_pct": -4.7,
+    "revenue_prev": 155883,
+    "segment_revenue": {
+      "consumer": 38909,
+      "enterprise": 75212,
+      "smb": 34497
+    },
+    "top_mover": "consumer",
+    "top_mover_change": -10248,
+    "vs_baseline_pct": -3.8
+  },
+  "files_in_outbox": 4,
+  "first_run": [
+    {
+      "action": "send_failed",
+      "attempt": 1,
+      "error": "ConnectionError",
+      "period": "2025-04-06"
+    },
+    {
+      "action": "delivered",
+      "attempts": 2,
+      "period": "2025-04-06",
+      "source": "template",
+      "verified": true
+    },
+    {
+      "action": "delivered",
+      "attempts": 1,
+      "period": "2025-04-13",
+      "source": "template",
+      "verified": true
+    },
+    {
+      "action": "delivered",
+      "attempts": 1,
+      "period": "2025-04-20",
+      "source": "template",
+      "verified": true
+    },
+    {
+      "action": "delivered",
+      "attempts": 1,
+      "period": "2025-04-27",
+      "source": "template",
+      "verified": true
+    }
+  ],
+  "second_run": [
+    {
+      "action": "already_delivered",
+      "period": "2025-04-06"
+    },
+    {
+      "action": "already_delivered",
+      "period": "2025-04-13"
+    },
+    {
+      "action": "already_delivered",
+      "period": "2025-04-20"
+    },
+    {
+      "action": "already_delivered",
+      "period": "2025-04-27"
+    }
+  ],
+  "template": "Weekly revenue report for 2025-04-07 to 2025-04-13.\nRevenue was $148,619, down 4.7% from $155,883 the week before, and 3.8% below the four-week average of $154,507.\nOrders were 1,635 (8.9% down), with an average order value of $90.9.\nThe largest segment mover was consumer, down $10,248.\nUnusual days (z-score of the ratio to the same weekday in the prior four weeks, against the usual spread): 2025-04-12 (-3.9), 2025-04-13 (-4.1).",
+  "template_check": {
+    "links": [],
+    "ok": true,
+    "ungrounded_numbers": []
+  },
+  "writers": {
+    "faithful": {
+      "links": 0,
+      "ok": true,
+      "source": "writer",
+      "ungrounded": []
+    },
+    "hallucinating": {
+      "links": 0,
+      "ok": false,
+      "source": "template_fallback",
+      "ungrounded": [
+        "11.7%",
+        "14%",
+        "61"
+      ]
+    },
+    "linking": {
+      "links": 3,
+      "ok": false,
+      "source": "template_fallback",
+      "ungrounded": []
+    }
+  }
+}

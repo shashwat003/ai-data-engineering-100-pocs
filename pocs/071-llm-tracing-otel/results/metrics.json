@@ -1,0 +1,50 @@
+{
+  "alerts": [
+    "budget exceeded: $0.8262 > $0.5000",
+    "legacy-bloated|large-model: cost/call 0.01444 is 7.9x the median route"
+  ],
+  "content_captured_by_default": false,
+  "llm_spans": 400,
+  "llm_spans_with_request_parent": 400,
+  "propagation_same_trace": true,
+  "spans": 1200,
+  "summary": {
+    "faq|small-model": {
+      "avg_in_tokens": 121.0,
+      "calls": 155,
+      "cost_per_call": 0.000244,
+      "cost_usd": 0.0363,
+      "error_rate": 0.039,
+      "p50_ms": 132.8,
+      "p95_ms": 157.3
+    },
+    "legacy-bloated|large-model": {
+      "avg_in_tokens": 2501.0,
+      "calls": 34,
+      "cost_per_call": 0.014439,
+      "cost_usd": 0.4621,
+      "error_rate": 0.059,
+      "p50_ms": 1493.0,
+      "p95_ms": 1606.8
+    },
+    "report|large-model": {
+      "avg_in_tokens": 301.0,
+      "calls": 89,
+      "cost_per_call": 0.003286,
+      "cost_usd": 0.2826,
+      "error_rate": 0.034,
+      "p50_ms": 595.0,
+      "p95_ms": 734.8
+    },
+    "search|small-model": {
+      "avg_in_tokens": 401.0,
+      "calls": 122,
+      "cost_per_call": 0.000383,
+      "cost_usd": 0.0452,
+      "error_rate": 0.033,
+      "p50_ms": 246.0,
+      "p95_ms": 270.1
+    }
+  },
+  "trace_api_global_provider_untouched": true
+}

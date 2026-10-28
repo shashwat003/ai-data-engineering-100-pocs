@@ -1,0 +1,187 @@
+{
+  "arrivals": [
+    {
+      "arrival": "in order",
+      "builds": 4,
+      "equal_to_full_refresh": true,
+      "final_build_passed": true,
+      "interim_failed_builds": 0,
+      "reconcile_ok": true,
+      "wrong_segments": 0
+    },
+    {
+      "arrival": "customers one batch late",
+      "builds": 5,
+      "equal_to_full_refresh": true,
+      "final_build_passed": true,
+      "interim_failed_builds": 1,
+      "reconcile_ok": true,
+      "wrong_segments": 0
+    },
+    {
+      "arrival": "batches reversed",
+      "builds": 4,
+      "equal_to_full_refresh": true,
+      "final_build_passed": true,
+      "interim_failed_builds": 0,
+      "reconcile_ok": true,
+      "wrong_segments": 0
+    },
+    {
+      "arrival": "random interleaving",
+      "builds": 4,
+      "equal_to_full_refresh": true,
+      "final_build_passed": true,
+      "interim_failed_builds": 0,
+      "reconcile_ok": true,
+      "wrong_segments": 0
+    }
+  ],
+  "copy_example": "COPY raw.orders FROM 's3://elt-landing-123456789012/b001/orders.csv' IAM_ROLE 'arn:aws:iam::123456789012:role/redshift-copy-role' FORMAT AS CSV IGNOREHEADER 1 MAXERROR 5 TIMEFORMAT 'auto' TRUNCATECOLUMNS",
+  "cost_model": {
+    "32 RPU, 4 runs/day x 5 min": {
+      "compute_usd": 120.0,
+      "idle_usd": 0.0,
+      "rpu_hours": 320.0
+    },
+    "8 RPU, 4 runs/day x 5 min": {
+      "compute_usd": 30.0,
+      "idle_usd": 0.0,
+      "rpu_hours": 80.0
+    }
+  },
+  "dbt_build": {
+    "by_status": {
+      "pass": 18,
+      "success": 10
+    },
+    "nodes": 28,
+    "success": true
+  },
+  "expected_defects": {
+    "copy_rejects": 3,
+    "late_new_orders": 6,
+    "late_updates": 30,
+    "sql_rejects": 5
+  },
+  "history": {
+    "customers": 150,
+    "history_rows": 162,
+    "orders_whose_segment_at_order_differs_from_current": 70,
+    "segment_changes": 12
+  },
+  "load_errors": [
+    [
+      "orders",
+      "b002",
+      "amount",
+      "12,50"
+    ],
+    [
+      "orders",
+      "b002",
+      "amount",
+      "12,50"
+    ],
+    [
+      "orders",
+      "b002",
+      "amount",
+      "12,50"
+    ]
+  ],
+  "loads": [
+    {
+      "batch": "b002",
+      "entity": "customers",
+      "rows_loaded": 150,
+      "rows_rejected": 0,
+      "status": "loaded"
+    },
+    {
+      "batch": "b002",
+      "entity": "orders",
+      "rows_loaded": 257,
+      "rows_rejected": 3,
+      "status": "loaded"
+    },
+    {
+      "batch": "b003",
+      "entity": "customers",
+      "rows_loaded": 150,
+      "rows_rejected": 0,
+      "status": "loaded"
+    },
+    {
+      "batch": "b003",
+      "entity": "orders",
+      "rows_loaded": 266,
+      "rows_rejected": 0,
+      "status": "loaded"
+    },
+    {
+      "batch": "b004",
+      "entity": "customers",
+      "rows_loaded": 150,
+      "rows_rejected": 0,
+      "status": "loaded"
+    },
+    {
+      "batch": "b004",
+      "entity": "orders",
+      "rows_loaded": 260,
+      "rows_rejected": 0,
+      "status": "loaded"
+    }
+  ],
+  "maxerror_1_on_batch_2": {
+    "orders_rows_after": 250,
+    "result": "CopyError: orders/b002: 3 rejected rows exceed MAXERROR 1; nothing loaded"
+  },
+  "reconcile": {
+    "current_segment_revenue_matches": true,
+    "fct_orders": 998,
+    "ok": true,
+    "orders_with_wrong_point_in_time_segment": 0,
+    "rejected_expected": 5,
+    "rejected_orders": 5,
+    "segment_revenue_matches": true,
+    "segments_differ_between_rules": true,
+    "valid_orders_expected": 998
+  },
+  "redshift_configs": [],
+  "redshift_sql": {
+    "daily_revenue": [],
+    "dim_customer": [],
+    "dim_customer_history": [],
+    "fct_orders": [],
+    "rejected_orders": [],
+    "revenue_by_current_segment": [],
+    "revenue_by_segment": [],
+    "stg_customer_snapshots": [],
+    "stg_orders": [],
+    "stg_orders_ranked": []
+  },
+  "replay": {
+    "loaded": 0,
+    "skipped": 8
+  },
+  "terraform": {
+    "default": [],
+    "oversized base capacity": [
+      "base capacity 128 RPU exceeds 32"
+    ],
+    "publicly accessible": [
+      "workgroup is publicly accessible"
+    ]
+  },
+  "unsupported_examples": {
+    "select a from": [
+      "does not parse as Redshift SQL: Expected table name but got <Token token_type: TokenType.SENTINEL, text: SENTINEL, line: 1, col: 1, start: 0, end: 0, co"
+    ],
+    "select try_cast(a as int) from t": [
+      "TRY_CAST does not exist in Redshift"
+    ],
+    "select unnest(x) from t": []
+  }
+}

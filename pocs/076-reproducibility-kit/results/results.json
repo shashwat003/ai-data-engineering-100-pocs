@@ -1,0 +1,94 @@
+{
+  "drift": {
+    "config edited": [
+      {
+        "changed": null,
+        "field": "config_hash",
+        "severity": "high"
+      }
+    ],
+    "data file edited": [
+      {
+        "changed": [
+          "train.csv"
+        ],
+        "field": "data",
+        "severity": "high"
+      }
+    ],
+    "nothing changed": [],
+    "package version differs": [
+      {
+        "changed": [
+          "numpy"
+        ],
+        "field": "packages",
+        "severity": "medium"
+      }
+    ],
+    "seed changed": [
+      {
+        "changed": null,
+        "field": "seed",
+        "severity": "high"
+      }
+    ]
+  },
+  "experiments": {
+    "clock_id": {
+      "distinct_outputs": 4,
+      "likely_causes": [
+        "run-to-run randomness with everything fixed (unseeded RNG, clock, thread race)"
+      ],
+      "reproducible": false
+    },
+    "hash_order": {
+      "distinct_outputs": 2,
+      "likely_causes": [
+        "PYTHONHASHSEED (set/dict-of-str iteration order)"
+      ],
+      "reproducible": false
+    },
+    "hash_order_fixed": {
+      "distinct_outputs": 1,
+      "likely_causes": [],
+      "reproducible": true
+    },
+    "linear": {
+      "distinct_outputs": 1,
+      "likely_causes": [],
+      "reproducible": true
+    },
+    "seeded": {
+      "distinct_outputs": 1,
+      "likely_causes": [],
+      "reproducible": true
+    },
+    "thread_fixed": {
+      "distinct_outputs": 1,
+      "likely_causes": [],
+      "reproducible": true
+    },
+    "thread_race": {
+      "distinct_outputs": 3,
+      "likely_causes": [
+        "run-to-run randomness with everything fixed (unseeded RNG, clock, thread race)"
+      ],
+      "reproducible": false
+    },
+    "unseeded": {
+      "distinct_outputs": 4,
+      "likely_causes": [
+        "run-to-run randomness with everything fixed (unseeded RNG, clock, thread race)"
+      ],
+      "reproducible": false
+    }
+  },
+  "manifest_id": "e2a2e621925b1c90",
+  "tracked_packages": {
+    "numpy": "2.5.4",
+    "pandas": "3.0.6",
+    "scikit-learn": "1.9.1",
+    "scipy": "1.18.1"
+  }
+}

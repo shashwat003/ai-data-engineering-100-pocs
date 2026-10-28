@@ -1,0 +1,6 @@
+# POCs 065, 072, 073: real MLflow tracking + model registry on a local SQLite store, plus Jinja2 templates.
+-r requirements.txt
+mlflow-skinny==3.17.1
+SQLAlchemy==2.1.5
+alembic==1.20.0
+Jinja2==3.1.6

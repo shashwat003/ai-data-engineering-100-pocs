@@ -1,0 +1,3 @@
+# POC 042: Dagster assets, partitions and asset checks (runs fully in-process, no daemon or webserver).
+-r requirements.txt
+dagster==1.13.26

@@ -1,0 +1,103 @@
+{
+  "all_read_only": true,
+  "attacks": [
+    {
+      "args": "{'run_id': 1000, 'repo': 'other/private'}",
+      "rejected": true,
+      "tool": "get_run_failure"
+    },
+    {
+      "args": "{'title': 'x'}",
+      "rejected": true,
+      "tool": "create_issue"
+    },
+    {
+      "args": "{'branch': 'main; rm -rf /'}",
+      "rejected": true,
+      "tool": "list_workflow_runs"
+    },
+    {
+      "args": "{'limit': 10000}",
+      "rejected": true,
+      "tool": "list_pull_requests"
+    },
+    {
+      "args": "{'number': '17 OR 1=1'}",
+      "rejected": true,
+      "tool": "get_pull_request"
+    },
+    {
+      "args": "{'query': 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "rejected": true,
+      "tool": "search_commits"
+    }
+  ],
+  "calls": [
+    {
+      "args": {
+        "days": 7
+      },
+      "chars": 259,
+      "is_error": false,
+      "tool": "ci_health_summary"
+    },
+    {
+      "args": {
+        "branch": "main",
+        "conclusion": "failure",
+        "limit": 3
+      },
+      "chars": 515,
+      "is_error": false,
+      "tool": "list_workflow_runs"
+    },
+    {
+      "args": {
+        "run_id": 1150
+      },
+      "chars": 425,
+      "is_error": false,
+      "tool": "get_run_failure"
+    },
+    {
+      "args": {
+        "number": 17
+      },
+      "chars": 521,
+      "is_error": false,
+      "tool": "get_pull_request"
+    },
+    {
+      "args": {
+        "limit": 3,
+        "state": "open"
+      },
+      "chars": 610,
+      "is_error": false,
+      "tool": "list_pull_requests"
+    },
+    {
+      "args": {
+        "limit": 3,
+        "query": "cdc"
+      },
+      "chars": 436,
+      "is_error": false,
+      "tool": "search_commits"
+    }
+  ],
+  "email_leaked": false,
+  "server": {
+    "name": "repo-ops-readonly",
+    "version": "0.1.0"
+  },
+  "token_leaked": false,
+  "tools": [
+    "list_pull_requests",
+    "get_pull_request",
+    "list_workflow_runs",
+    "get_run_failure",
+    "ci_health_summary",
+    "search_commits"
+  ]
+}

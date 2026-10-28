@@ -1,0 +1,180 @@
+{
+  "differential_mismatches": 0,
+  "missing_attribute_allowed": [],
+  "opa_version": "1.2.0",
+  "random_allowed": 33,
+  "random_requests": 1500,
+  "scenarios": [
+    {
+      "allow": true,
+      "expected_allow": true,
+      "expected_reasons": [],
+      "name": "analyst reads internal data",
+      "ok": true,
+      "reasons": []
+    },
+    {
+      "allow": false,
+      "expected_allow": false,
+      "expected_reasons": [
+        "no_role_grants_action"
+      ],
+      "name": "analyst cannot write",
+      "ok": true,
+      "reasons": [
+        "no_role_grants_action"
+      ]
+    },
+    {
+      "allow": true,
+      "expected_allow": true,
+      "expected_reasons": [],
+      "name": "engineer writes own dept",
+      "ok": true,
+      "reasons": []
+    },
+    {
+      "allow": false,
+      "expected_allow": false,
+      "expected_reasons": [
+        "write_outside_own_department"
+      ],
+      "name": "engineer writes other dept",
+      "ok": true,
+      "reasons": [
+        "write_outside_own_department"
+      ]
+    },
+    {
+      "allow": true,
+      "expected_allow": true,
+      "expected_reasons": [],
+      "name": "steward grants own dept",
+      "ok": true,
+      "reasons": []
+    },
+    {
+      "allow": false,
+      "expected_allow": false,
+      "expected_reasons": [
+        "pii_requires_purpose"
+      ],
+      "name": "PII without approved purpose",
+      "ok": true,
+      "reasons": [
+        "pii_requires_purpose"
+      ]
+    },
+    {
+      "allow": true,
+      "expected_allow": true,
+      "expected_reasons": [],
+      "name": "PII with approved purpose",
+      "ok": true,
+      "reasons": []
+    },
+    {
+      "allow": false,
+      "expected_allow": false,
+      "expected_reasons": [
+        "clearance_too_low"
+      ],
+      "name": "restricted data above clearance",
+      "ok": true,
+      "reasons": [
+        "clearance_too_low"
+      ]
+    },
+    {
+      "allow": false,
+      "expected_allow": false,
+      "expected_reasons": [
+        "mfa_required"
+      ],
+      "name": "confidential without MFA",
+      "ok": true,
+      "reasons": [
+        "mfa_required"
+      ]
+    },
+    {
+      "allow": false,
+      "expected_allow": false,
+      "expected_reasons": [
+        "region_mismatch"
+      ],
+      "name": "cross-region read denied",
+      "ok": true,
+      "reasons": [
+        "region_mismatch"
+      ]
+    },
+    {
+      "allow": true,
+      "expected_allow": true,
+      "expected_reasons": [],
+      "name": "cross-region read with approval",
+      "ok": true,
+      "reasons": []
+    },
+    {
+      "allow": false,
+      "expected_allow": false,
+      "expected_reasons": [
+        "user_inactive"
+      ],
+      "name": "inactive (departed) user",
+      "ok": true,
+      "reasons": [
+        "user_inactive"
+      ]
+    },
+    {
+      "allow": true,
+      "expected_allow": true,
+      "expected_reasons": [],
+      "name": "auditor reads",
+      "ok": true,
+      "reasons": []
+    },
+    {
+      "allow": false,
+      "expected_allow": false,
+      "expected_reasons": [
+        "auditors_are_read_only"
+      ],
+      "name": "auditor + engineer role cannot write (auditor wins)",
+      "ok": true,
+      "reasons": [
+        "auditors_are_read_only"
+      ]
+    },
+    {
+      "allow": false,
+      "expected_allow": false,
+      "expected_reasons": [
+        "clearance_too_low",
+        "unknown_classification"
+      ],
+      "name": "unknown classification",
+      "ok": true,
+      "reasons": [
+        "clearance_too_low",
+        "unknown_classification"
+      ]
+    },
+    {
+      "allow": false,
+      "expected_allow": false,
+      "expected_reasons": [
+        "no_role_grants_action"
+      ],
+      "name": "no roles at all",
+      "ok": true,
+      "reasons": [
+        "no_role_grants_action"
+      ]
+    }
+  ],
+  "scenarios_ok": 16
+}

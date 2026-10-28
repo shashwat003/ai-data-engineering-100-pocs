@@ -1,0 +1,64 @@
+{
+  "http": {
+    "budget_p99_ms": 50.0,
+    "n": 400,
+    "p50_ms": 0.426,
+    "p95_ms": 0.601,
+    "p99_ms": 0.738,
+    "slo_met": true
+  },
+  "test_rows": 1500,
+  "variants": {
+    "onnx fp32": {
+      "accuracy": 0.836,
+      "agreement_with_sklearn": 1.0,
+      "auc": 0.9138,
+      "batch1": {
+        "p50_ms": 0.0289,
+        "p95_ms": 0.0706,
+        "p99_ms": 0.1129
+      },
+      "batch32": {
+        "p50_ms": 0.0808,
+        "p95_ms": 0.1649,
+        "p99_ms": 0.1956
+      },
+      "max_abs_diff_vs_sklearn": 0.0,
+      "size_kb": 151.4
+    },
+    "onnx int8 (dynamic)": {
+      "accuracy": 0.8367,
+      "agreement_with_sklearn": 0.994,
+      "auc": 0.9137,
+      "batch1": {
+        "p50_ms": 0.0397,
+        "p95_ms": 0.1143,
+        "p99_ms": 0.2244
+      },
+      "batch32": {
+        "p50_ms": 0.0613,
+        "p95_ms": 0.1183,
+        "p99_ms": 0.1305
+      },
+      "max_abs_diff_vs_sklearn": 0.031586,
+      "size_kb": 42.5
+    },
+    "sklearn fp32": {
+      "accuracy": 0.836,
+      "agreement_with_sklearn": 1.0,
+      "auc": 0.9138,
+      "batch1": {
+        "p50_ms": 0.238,
+        "p95_ms": 0.4407,
+        "p99_ms": 0.4693
+      },
+      "batch32": {
+        "p50_ms": 0.3428,
+        "p95_ms": 0.6011,
+        "p99_ms": 0.9308
+      },
+      "max_abs_diff_vs_sklearn": 0.0,
+      "size_kb": null
+    }
+  }
+}

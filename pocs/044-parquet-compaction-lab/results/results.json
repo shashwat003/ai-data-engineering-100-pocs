@@ -1,0 +1,46 @@
+{
+  "codec_mb": {
+    "snappy": 29.96,
+    "uncompressed": 40.48,
+    "zstd": 21.81
+  },
+  "rows": 3000000,
+  "variants": {
+    "compacted + sorted by day": {
+      "files": 3,
+      "max_ms": 8.8,
+      "median_file_kb": 7447.9,
+      "median_ms": 7.5,
+      "min_ms": 6.7,
+      "result_digest": "a50e6e5225c1",
+      "row_groups": 12,
+      "row_groups_skippable": 11,
+      "same_rows": true,
+      "total_mb": 21.82
+    },
+    "compacted, unsorted": {
+      "files": 3,
+      "max_ms": 16.6,
+      "median_file_kb": 6869.6,
+      "median_ms": 15.3,
+      "min_ms": 14.9,
+      "result_digest": "a50e6e5225c1",
+      "row_groups": 12,
+      "row_groups_skippable": 0,
+      "same_rows": true,
+      "total_mb": 20.16
+    },
+    "small files (as ingested)": {
+      "files": 1500,
+      "max_ms": 161.4,
+      "median_file_kb": 36.1,
+      "median_ms": 145.5,
+      "min_ms": 135.7,
+      "result_digest": "a50e6e5225c1",
+      "row_groups": 1500,
+      "row_groups_skippable": 0,
+      "same_rows": true,
+      "total_mb": 52.93
+    }
+  }
+}

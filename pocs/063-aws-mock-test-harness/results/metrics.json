@@ -1,0 +1,72 @@
+{
+  "ms_per_test_cycle": 50.4,
+  "probes": {
+    "athena": {
+      "detail": "",
+      "supported": true
+    },
+    "dynamodb": {
+      "detail": "",
+      "supported": true
+    },
+    "events": {
+      "detail": "",
+      "supported": true
+    },
+    "firehose": {
+      "detail": "",
+      "supported": true
+    },
+    "glue": {
+      "detail": "",
+      "supported": true
+    },
+    "kinesis": {
+      "detail": "",
+      "supported": true
+    },
+    "kms": {
+      "detail": "",
+      "supported": true
+    },
+    "lambda_create": {
+      "detail": "",
+      "supported": true
+    },
+    "lambda_invoke": {
+      "detail": "AssertionError: ",
+      "supported": false
+    },
+    "organizations": {
+      "detail": "",
+      "supported": true
+    },
+    "s3": {
+      "detail": "",
+      "supported": true
+    },
+    "secretsmanager": {
+      "detail": "",
+      "supported": true
+    },
+    "sns": {
+      "detail": "",
+      "supported": true
+    },
+    "sqs": {
+      "detail": "",
+      "supported": true
+    },
+    "ssm": {
+      "detail": "",
+      "supported": true
+    },
+    "stepfunctions": {
+      "detail": "",
+      "supported": true
+    }
+  },
+  "real_aws_blocked": true,
+  "startup_seconds": 0.57,
+  "state_cleared_by_reset": true
+}

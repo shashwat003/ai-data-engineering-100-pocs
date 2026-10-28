@@ -1,0 +1,76 @@
+{
+  "judges": {
+    "both biases": {
+      "calibrated_300": 0.9065,
+      "coverage": 0.78775,
+      "kappa_single": 0.7422590296751764,
+      "pos_bias": 0.10612500000000002,
+      "single": 0.871,
+      "swap_agree": 0.9685814027292923,
+      "swap_avg": 0.90075
+    },
+    "position-biased (+1.0)": {
+      "calibrated_300": 0.91125,
+      "coverage": 0.76925,
+      "kappa_single": 0.7447839278802332,
+      "pos_bias": 0.115375,
+      "single": 0.87225,
+      "swap_agree": 0.9827754306142347,
+      "swap_avg": 0.92325
+    },
+    "unbiased": {
+      "calibrated_300": 0.91225,
+      "coverage": 0.944,
+      "kappa_single": 0.8319966399327987,
+      "pos_bias": -0.0015000000000000013,
+      "single": 0.916,
+      "swap_agree": 0.9430614406779662,
+      "swap_avg": 0.92325
+    },
+    "verbose-biased (+1.5/100 words)": {
+      "calibrated_300": 0.9055,
+      "coverage": 0.951,
+      "kappa_single": 0.8040019599804002,
+      "pos_bias": -0.0010000000000000009,
+      "single": 0.902,
+      "swap_agree": 0.9203470031545742,
+      "swap_avg": 0.90075
+    }
+  },
+  "learning_curve": [
+    [
+      20,
+      0.899,
+      "0.894-0.904"
+    ],
+    [
+      50,
+      0.905,
+      "0.901-0.907"
+    ],
+    [
+      100,
+      0.907,
+      "0.905-0.908"
+    ],
+    [
+      200,
+      0.909,
+      "0.908-0.910"
+    ],
+    [
+      500,
+      0.911,
+      "0.910-0.911"
+    ],
+    [
+      1000,
+      0.91,
+      "0.910-0.911"
+    ]
+  ],
+  "ranking_tau": {
+    "calibrated_vs_human": 1.0,
+    "raw_judge_vs_human": 0.7333333333333333
+  }
+}

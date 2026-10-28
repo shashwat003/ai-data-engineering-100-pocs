@@ -1,0 +1,276 @@
+{
+  "ablation_alpha": [
+    {
+      "alpha": 0.0,
+      "mrr@10": 0.8682500000000001
+    },
+    {
+      "alpha": 0.25,
+      "mrr@10": 0.8888333333333334
+    },
+    {
+      "alpha": 0.5,
+      "mrr@10": 0.8851666666666667
+    },
+    {
+      "alpha": 0.75,
+      "mrr@10": 0.8864166666666666
+    },
+    {
+      "alpha": 1.0,
+      "mrr@10": 0.8909999999999999
+    }
+  ],
+  "ablation_alpha_neural": [],
+  "ablation_dims": [
+    {
+      "dense_lsa_mrr@10": 0.5699206349206349,
+      "dims": 8,
+      "hybrid_lsa_rrf_mrr@10": 0.9000178571428572
+    },
+    {
+      "dense_lsa_mrr@10": 0.7614642857142857,
+      "dims": 16,
+      "hybrid_lsa_rrf_mrr@10": 0.8959166666666667
+    },
+    {
+      "dense_lsa_mrr@10": 0.8878531746031746,
+      "dims": 32,
+      "hybrid_lsa_rrf_mrr@10": 0.8825
+    },
+    {
+      "dense_lsa_mrr@10": 0.8909999999999999,
+      "dims": 64,
+      "hybrid_lsa_rrf_mrr@10": 0.8767499999999999
+    },
+    {
+      "dense_lsa_mrr@10": 0.8836666666666666,
+      "dims": 96,
+      "hybrid_lsa_rrf_mrr@10": 0.87425
+    }
+  ],
+  "comparisons": [
+    {
+      "a": "hybrid_lsa_rrf",
+      "b": "bm25",
+      "ci95": [
+        -0.004416666666666667,
+        0.022250000000000002
+      ],
+      "mean_rr_diff": 0.0085
+    },
+    {
+      "a": "hybrid_lsa_rrf",
+      "b": "dense_lsa",
+      "ci95": [
+        -0.03341666666666667,
+        0.00425
+      ],
+      "mean_rr_diff": -0.01425
+    }
+  ],
+  "meta": {
+    "kb_fingerprint": "2433ddb42b57195058fb6624082433053f6288c25f30e1b0e1f099472075a845",
+    "lsa_dims": 64,
+    "n_docs": 120,
+    "n_queries": 200,
+    "neural": null,
+    "numpy": "2.5.4",
+    "python": "3.13.16",
+    "queries_per_kind": 50
+  },
+  "retrievers": {
+    "bm25": {
+      "answer": {
+        "context_has_answer@3": 0.975,
+        "extractive_accuracy@3": 0.44,
+        "groundedness": 1.0
+      },
+      "by_kind": {
+        "keyword": {
+          "mrr@10": 1.0,
+          "ndcg@10": 1.0,
+          "recall@1": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0
+        },
+        "natural": {
+          "mrr@10": 1.0,
+          "ndcg@10": 1.0,
+          "recall@1": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0
+        },
+        "paraphrase": {
+          "mrr@10": 0.5396666666666667,
+          "ndcg@10": 0.6558308219880808,
+          "recall@1": 0.24,
+          "recall@3": 0.9,
+          "recall@5": 1.0
+        },
+        "typo": {
+          "mrr@10": 0.9333333333333332,
+          "ndcg@10": 0.9504743802857166,
+          "recall@1": 0.88,
+          "recall@3": 1.0,
+          "recall@5": 1.0
+        }
+      },
+      "mrr_ci95": [
+        0.83325,
+        0.9013333333333334
+      ],
+      "overall": {
+        "mrr@10": 0.8682500000000001,
+        "ndcg@10": 0.9015763005684494,
+        "recall@1": 0.78,
+        "recall@3": 0.975,
+        "recall@5": 1.0
+      }
+    },
+    "dense_lsa": {
+      "answer": {
+        "context_has_answer@3": 0.94,
+        "extractive_accuracy@3": 0.45,
+        "groundedness": 1.0
+      },
+      "by_kind": {
+        "keyword": {
+          "mrr@10": 1.0,
+          "ndcg@10": 1.0,
+          "recall@1": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0
+        },
+        "natural": {
+          "mrr@10": 1.0,
+          "ndcg@10": 1.0,
+          "recall@1": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0
+        },
+        "paraphrase": {
+          "mrr@10": 0.564,
+          "ndcg@10": 0.6710421565884627,
+          "recall@1": 0.36,
+          "recall@3": 0.72,
+          "recall@5": 1.0
+        },
+        "typo": {
+          "mrr@10": 1.0,
+          "ndcg@10": 1.0,
+          "recall@1": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0
+        }
+      },
+      "mrr_ci95": [
+        0.8570833333333333,
+        0.9274166666666666
+      ],
+      "overall": {
+        "mrr@10": 0.8909999999999999,
+        "ndcg@10": 0.9177605391471156,
+        "recall@1": 0.84,
+        "recall@3": 0.93,
+        "recall@5": 1.0
+      }
+    },
+    "hybrid_lsa_rrf": {
+      "answer": {
+        "context_has_answer@3": 0.96,
+        "extractive_accuracy@3": 0.445,
+        "groundedness": 1.0
+      },
+      "by_kind": {
+        "keyword": {
+          "mrr@10": 1.0,
+          "ndcg@10": 1.0,
+          "recall@1": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0
+        },
+        "natural": {
+          "mrr@10": 1.0,
+          "ndcg@10": 1.0,
+          "recall@1": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0
+        },
+        "paraphrase": {
+          "mrr@10": 0.547,
+          "ndcg@10": 0.6607949404557074,
+          "recall@1": 0.26,
+          "recall@3": 0.84,
+          "recall@5": 1.0
+        },
+        "typo": {
+          "mrr@10": 0.96,
+          "ndcg@10": 0.9704743802857166,
+          "recall@1": 0.92,
+          "recall@3": 1.0,
+          "recall@5": 1.0
+        }
+      },
+      "mrr_ci95": [
+        0.8429166666666668,
+        0.9090833333333334
+      ],
+      "overall": {
+        "mrr@10": 0.8767499999999999,
+        "ndcg@10": 0.907817330185356,
+        "recall@1": 0.795,
+        "recall@3": 0.96,
+        "recall@5": 1.0
+      }
+    },
+    "hybrid_lsa_weighted": {
+      "answer": {
+        "context_has_answer@3": 0.95,
+        "extractive_accuracy@3": 0.45,
+        "groundedness": 1.0
+      },
+      "by_kind": {
+        "keyword": {
+          "mrr@10": 1.0,
+          "ndcg@10": 1.0,
+          "recall@1": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0
+        },
+        "natural": {
+          "mrr@10": 1.0,
+          "ndcg@10": 1.0,
+          "recall@1": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0
+        },
+        "paraphrase": {
+          "mrr@10": 0.5406666666666666,
+          "ndcg@10": 0.6542894745512438,
+          "recall@1": 0.3,
+          "recall@3": 0.76,
+          "recall@5": 1.0
+        },
+        "typo": {
+          "mrr@10": 1.0,
+          "ndcg@10": 1.0,
+          "recall@1": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0
+        }
+      },
+      "mrr_ci95": [
+        0.8504999999999999,
+        0.9193333333333333
+      ],
+      "overall": {
+        "mrr@10": 0.8851666666666667,
+        "ndcg@10": 0.913572368637811,
+        "recall@1": 0.825,
+        "recall@3": 0.94,
+        "recall@5": 1.0
+      }
+    }
+  }
+}

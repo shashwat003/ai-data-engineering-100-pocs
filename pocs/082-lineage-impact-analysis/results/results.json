@@ -1,0 +1,80 @@
+{
+  "breaking_rename": [
+    "project no longer compiles: OptimizeError: Unknown column: amount_usd"
+  ],
+  "edges": 47,
+  "extraction_seconds": 0.16,
+  "impact": {
+    "raw.customers.email": {
+      "columns": [
+        "marts.email_domains.email_domain",
+        "staging.stg_customers.email_domain"
+      ],
+      "depth": 2,
+      "tables": [
+        "marts.email_domains",
+        "staging.stg_customers"
+      ]
+    },
+    "raw.orders.amount": {
+      "columns": [
+        "marts.dim_customer.lifetime_value",
+        "marts.exec_dashboard.revenue",
+        "marts.fct_orders.amount_usd",
+        "marts.revenue_by_segment.revenue",
+        "staging.stg_orders.amount_usd"
+      ],
+      "depth": 5,
+      "tables": [
+        "marts.dim_customer",
+        "marts.exec_dashboard",
+        "marts.fct_orders",
+        "marts.revenue_by_segment",
+        "staging.stg_orders"
+      ]
+    },
+    "raw.products.unit_cost": {
+      "columns": [
+        "intermediate.int_order_margin.margin",
+        "marts.category_margin.margin",
+        "marts.exec_dashboard.best_category_margin",
+        "marts.fct_orders.margin",
+        "staging.stg_items.line_cost"
+      ],
+      "depth": 3,
+      "tables": [
+        "intermediate.int_order_margin",
+        "marts.category_margin",
+        "marts.exec_dashboard",
+        "marts.fct_orders",
+        "staging.stg_items"
+      ]
+    },
+    "staging.stg_items": {
+      "columns": [
+        "intermediate.int_order_margin.margin",
+        "intermediate.int_order_margin.order_id",
+        "intermediate.int_order_margin.revenue",
+        "marts.category_margin.category",
+        "marts.category_margin.margin",
+        "marts.category_margin.revenue",
+        "marts.exec_dashboard.best_category_margin",
+        "marts.fct_orders.margin"
+      ],
+      "depth": 2,
+      "tables": [
+        "intermediate.int_order_margin",
+        "marts.category_margin",
+        "marts.exec_dashboard",
+        "marts.fct_orders"
+      ]
+    }
+  },
+  "leaf_rename": [],
+  "score": {
+    "columns_checked": 22,
+    "precision": 1.0,
+    "recall": 1.0,
+    "wrong": []
+  }
+}

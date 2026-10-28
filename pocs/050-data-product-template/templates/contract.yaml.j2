@@ -1,0 +1,15 @@
+contract: {{ name }}
+version: 1.0.0
+owner: {{ owner_team }}
+description: {{ description }}
+format: csv
+extra_columns: warn
+columns:
+  - {name: id, type: integer, required: true, unique: true, description: Surrogate key.}
+  - {name: event_date, type: date, required: true, description: Business date of the record.}
+  - {name: status, type: string, required: true, enum: [new, active, closed], description: Lifecycle status.}
+  - {name: amount, type: number, required: true, min: 0, max: 1000000, description: Monetary amount.}
+  - {name: contact_email, type: string, pii: true, pattern: '^[^@\s]+@[^@\s]+\.[A-Za-z]{2,}$', description: Contact email (PII).}
+quality:
+  min_rows: 10
+  freshness: {column: event_date, max_age_days: 3}

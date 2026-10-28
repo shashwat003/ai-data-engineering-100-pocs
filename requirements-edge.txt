@@ -1,0 +1,5 @@
+# POC 017: ONNX export, dynamic int8 quantisation and CPU inference.
+-r requirements.txt
+onnx==1.23.2
+onnxruntime==1.31.0
+skl2onnx==1.20.0

@@ -1,0 +1,172 @@
+{
+  "assumptions": {
+    "answer_tokens": 30,
+    "decay_per_doubling": 0.0,
+    "decode_tok_per_s": 50.0,
+    "floor": 0.3,
+    "prefill_tok_per_s": 5000.0,
+    "usd_per_mtok_in": 1.0,
+    "usd_per_mtok_out": 4.0,
+    "window_tokens": 128000
+  },
+  "corpus_tokens": 9671,
+  "curves": {
+    "mild (3%/doubling)": {
+      "corpus_tokens": 9671,
+      "k": 3,
+      "long_context": {
+        "context_tokens": 9671,
+        "est_accuracy": 0.902,
+        "gold_in_context": 1.0,
+        "latency_s": 2.53,
+        "usd_per_query": 0.009791
+      },
+      "n_docs": 120,
+      "rag": {
+        "context_tokens": 235.1,
+        "est_accuracy": 0.975,
+        "gold_in_context": 0.975,
+        "latency_s": 0.647,
+        "recall_by_kind": {
+          "keyword": 1.0,
+          "natural": 1.0,
+          "paraphrase": 0.9,
+          "typo": 1.0
+        },
+        "retrieval_ms": 0.3,
+        "usd_per_query": 0.000355
+      }
+    },
+    "no degradation": {
+      "corpus_tokens": 9671,
+      "k": 3,
+      "long_context": {
+        "context_tokens": 9671,
+        "est_accuracy": 1.0,
+        "gold_in_context": 1.0,
+        "latency_s": 2.53,
+        "usd_per_query": 0.009791
+      },
+      "n_docs": 120,
+      "rag": {
+        "context_tokens": 235.1,
+        "est_accuracy": 0.975,
+        "gold_in_context": 0.975,
+        "latency_s": 0.647,
+        "recall_by_kind": {
+          "keyword": 1.0,
+          "natural": 1.0,
+          "paraphrase": 0.9,
+          "typo": 1.0
+        },
+        "retrieval_ms": 0.3,
+        "usd_per_query": 0.000355
+      }
+    },
+    "steep (8%/doubling)": {
+      "corpus_tokens": 9671,
+      "k": 3,
+      "long_context": {
+        "context_tokens": 9671,
+        "est_accuracy": 0.738,
+        "gold_in_context": 1.0,
+        "latency_s": 2.53,
+        "usd_per_query": 0.009791
+      },
+      "n_docs": 120,
+      "rag": {
+        "context_tokens": 235.1,
+        "est_accuracy": 0.975,
+        "gold_in_context": 0.975,
+        "latency_s": 0.647,
+        "recall_by_kind": {
+          "keyword": 1.0,
+          "natural": 1.0,
+          "paraphrase": 0.9,
+          "typo": 1.0
+        },
+        "retrieval_ms": 0.3,
+        "usd_per_query": 0.000355
+      }
+    }
+  },
+  "n_docs": 120,
+  "projection": [
+    {
+      "corpus_tokens": 8059,
+      "cost_ratio": 23.0,
+      "docs": 100,
+      "fits_window": true,
+      "long_ctx_usd_per_query": 0.0082,
+      "rag_usd_per_query": 0.000355
+    },
+    {
+      "corpus_tokens": 80591,
+      "cost_ratio": 227.4,
+      "docs": 1000,
+      "fits_window": true,
+      "long_ctx_usd_per_query": 0.0807,
+      "rag_usd_per_query": 0.000355
+    },
+    {
+      "corpus_tokens": 805916,
+      "cost_ratio": null,
+      "docs": 10000,
+      "fits_window": false,
+      "long_ctx_usd_per_query": null,
+      "rag_usd_per_query": 0.000355
+    },
+    {
+      "corpus_tokens": 8059166,
+      "cost_ratio": null,
+      "docs": 100000,
+      "fits_window": false,
+      "long_ctx_usd_per_query": null,
+      "rag_usd_per_query": 0.000355
+    }
+  ],
+  "rag_recall_vs_corpus": [
+    {
+      "n_docs": 15,
+      "rag_recall": 0.944
+    },
+    {
+      "n_docs": 30,
+      "rag_recall": 0.903
+    },
+    {
+      "n_docs": 60,
+      "rag_recall": 0.931
+    },
+    {
+      "n_docs": 120,
+      "rag_recall": 0.975
+    }
+  ],
+  "small_window": {
+    "corpus_tokens": 9671,
+    "k": 3,
+    "long_context": {
+      "context_tokens": 1936,
+      "est_accuracy": 0.231,
+      "gold_in_context": 0.231,
+      "latency_s": 0.99,
+      "usd_per_query": 0.002056
+    },
+    "n_docs": 120,
+    "rag": {
+      "context_tokens": 235.1,
+      "est_accuracy": 0.975,
+      "gold_in_context": 0.975,
+      "latency_s": 0.647,
+      "recall_by_kind": {
+        "keyword": 1.0,
+        "natural": 1.0,
+        "paraphrase": 0.9,
+        "typo": 1.0
+      },
+      "retrieval_ms": 0.29,
+      "usd_per_query": 0.000355
+    }
+  }
+}

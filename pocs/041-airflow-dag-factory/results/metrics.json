@@ -1,0 +1,44 @@
+{
+  "dags": {
+    "fan_in": {
+      "edges": [
+        "extract_a>validate_a",
+        "extract_b>validate_a",
+        "validate_a>date"
+      ],
+      "schedule": "@hourly",
+      "tags": [
+        "demo"
+      ],
+      "tasks": 4,
+      "test_run_state": "success"
+    },
+    "orders_daily": {
+      "edges": [
+        "extract>validate",
+        "load>done",
+        "validate>load"
+      ],
+      "schedule": "0 3 * * *",
+      "tags": [
+        "daily",
+        "orders"
+      ],
+      "tasks": 4,
+      "test_run_state": "success"
+    },
+    "strict_quality": {
+      "edges": [
+        "extract>validate",
+        "validate>load"
+      ],
+      "schedule": "None",
+      "tags": [
+        "quality"
+      ],
+      "tasks": 3,
+      "test_run_state": "failed"
+    }
+  },
+  "import_errors": {}
+}

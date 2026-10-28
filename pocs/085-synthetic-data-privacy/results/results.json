@@ -1,0 +1,85 @@
+{
+  "n_holdout": 1000,
+  "n_train": 2000,
+  "real_to_real_auc": 0.6409,
+  "rows": [
+    {
+      "corr_abs_diff": 0.2686,
+      "dcr_median_members": 0.5278,
+      "dcr_median_nonmembers": 0.5545,
+      "dcr_ratio": 0.9518,
+      "eps": null,
+      "exact_copy_rate": 0.0,
+      "kind": "independent",
+      "ks_mean": 0.0226,
+      "mia_auc": 0.538,
+      "tstr_auc": 0.5278,
+      "tvd_mean": 0.023
+    },
+    {
+      "corr_abs_diff": 0.027,
+      "dcr_median_members": 0.4556,
+      "dcr_median_nonmembers": 0.4628,
+      "dcr_ratio": 0.9844,
+      "eps": null,
+      "exact_copy_rate": 0.0,
+      "kind": "copula",
+      "ks_mean": 0.0219,
+      "mia_auc": 0.5064,
+      "tstr_auc": 0.5963,
+      "tvd_mean": 0.0125
+    },
+    {
+      "corr_abs_diff": 0.0133,
+      "dcr_median_members": 0.022,
+      "dcr_median_nonmembers": 0.4513,
+      "dcr_ratio": 0.0487,
+      "eps": null,
+      "exact_copy_rate": 0.0,
+      "kind": "memoriser",
+      "ks_mean": 0.0235,
+      "mia_auc": 0.8163,
+      "tstr_auc": 0.6322,
+      "tvd_mean": 0.0123
+    },
+    {
+      "corr_abs_diff": 0.0372,
+      "dcr_median_members": 0.487,
+      "dcr_median_nonmembers": 0.4996,
+      "dcr_ratio": 0.9749,
+      "eps": 0.1,
+      "exact_copy_rate": 0.0,
+      "kind": "copula",
+      "ks_mean": 0.0519,
+      "mia_auc": 0.5184,
+      "tstr_auc": 0.6264,
+      "tvd_mean": 0.0265
+    },
+    {
+      "corr_abs_diff": 0.0333,
+      "dcr_median_members": 0.4685,
+      "dcr_median_nonmembers": 0.4761,
+      "dcr_ratio": 0.9841,
+      "eps": 1.0,
+      "exact_copy_rate": 0.0,
+      "kind": "copula",
+      "ks_mean": 0.0213,
+      "mia_auc": 0.51,
+      "tstr_auc": 0.6315,
+      "tvd_mean": 0.0142
+    },
+    {
+      "corr_abs_diff": 0.0327,
+      "dcr_median_members": 0.4667,
+      "dcr_median_nonmembers": 0.4724,
+      "dcr_ratio": 0.988,
+      "eps": 10.0,
+      "exact_copy_rate": 0.0,
+      "kind": "copula",
+      "ks_mean": 0.0208,
+      "mia_auc": 0.506,
+      "tstr_auc": 0.6315,
+      "tvd_mean": 0.0125
+    }
+  ]
+}

@@ -1,0 +1,3 @@
+# POC 043: needs Java 17 or 21 on PATH as well. Large download (~450 MB). Not part of `make setup`.
+-r requirements.txt
+pyspark==4.2.0

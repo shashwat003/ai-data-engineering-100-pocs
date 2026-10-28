@@ -1,0 +1,121 @@
+{
+  "batches": [
+    {
+      "batch": "b001",
+      "embedded": 169,
+      "gates": "8/8",
+      "models": [],
+      "status": "ok",
+      "unchanged": 0
+    },
+    {
+      "batch": "b002",
+      "embedded": 34,
+      "gates": "8/8",
+      "models": [
+        {
+          "auc_delta_ci": [
+            0.0,
+            0.0
+          ],
+          "candidate": "v1 (regular)",
+          "champion": null,
+          "promoted": true,
+          "reasons": [
+            "no champion yet: first version passes smoke test"
+          ],
+          "window": 2
+        }
+      ],
+      "status": "ok",
+      "unchanged": 163
+    },
+    {
+      "batch": "b003",
+      "embedded": 12,
+      "gates": "8/8",
+      "models": [
+        {
+          "auc_delta_ci": [
+            -0.04949838308720371,
+            -0.004354068887518918
+          ],
+          "candidate": "v2 (regular)",
+          "champion": 1,
+          "promoted": false,
+          "reasons": [
+            "subgroup 1 AUC regressed 0.606 -> 0.575",
+            "AUC improvement not demonstrated: 95% interval [-0.0495, -0.0044] vs required lower bound 0.002"
+          ],
+          "window": 3
+        }
+      ],
+      "status": "ok",
+      "unchanged": 187
+    },
+    {
+      "batch": "b004",
+      "embedded": 13,
+      "gates": "8/8",
+      "models": [
+        {
+          "auc_delta_ci": [
+            0.24397520034769338,
+            0.525312102004717
+          ],
+          "candidate": "v3 (regular)",
+          "champion": 1,
+          "promoted": true,
+          "reasons": [
+            "improvement +0.2440..+0.5253 above margin; no subgroup regression"
+          ],
+          "window": 4
+        },
+        {
+          "auc_delta_ci": [
+            0.0,
+            0.0
+          ],
+          "candidate": "v4 (missing feature)",
+          "champion": 3,
+          "promoted": false,
+          "reasons": [
+            "signature mismatch: candidate expects 5 features, serving sends 6"
+          ],
+          "window": 4
+        }
+      ],
+      "status": "ok",
+      "unchanged": 187
+    }
+  ],
+  "champion_version": 3,
+  "customers_indexed": 200,
+  "embedded_full_rebuild_each_batch": 800,
+  "embedded_incremental": 228,
+  "replay": {
+    "all_ok": true,
+    "embedded": 0,
+    "ingested": 0,
+    "lake_hash_unchanged": true,
+    "model_versions_unchanged": true,
+    "models_trained": 0
+  },
+  "retrieval_self_hit_rate": 1.0,
+  "tampered_batch": {
+    "error": "BatchConflict: orders/b002 already ingested with different content",
+    "state_unchanged": true,
+    "status": "failed"
+  },
+  "trace": {
+    "by_name": {
+      "lakehouse.run": 9,
+      "model.gate": 8,
+      "platform.batch": 9,
+      "vector.sync": 8
+    },
+    "root_spans_with_error": 1,
+    "spans": 34
+  },
+  "versions_registered": 4
+}

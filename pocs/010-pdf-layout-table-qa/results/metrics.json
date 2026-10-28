@@ -1,0 +1,57 @@
+{
+  "pages_with_running_header_in_extracted_text": {
+    "layout": 0,
+    "naive": 16
+  },
+  "scores": {
+    "table_cell": {
+      "layout": {
+        "accuracy": 1.0,
+        "correct": 86,
+        "n": 86
+      },
+      "naive": {
+        "accuracy": 0.814,
+        "correct": 70,
+        "n": 86
+      }
+    },
+    "table_gap": {
+      "layout": {
+        "accuracy": 1.0,
+        "correct": 10,
+        "n": 10
+      },
+      "naive": {
+        "accuracy": 0.1,
+        "correct": 1,
+        "n": 10
+      }
+    },
+    "text_open": {
+      "layout": {
+        "accuracy": 1.0,
+        "correct": 24,
+        "n": 24
+      },
+      "naive": {
+        "accuracy": 0.25,
+        "correct": 6,
+        "n": 24
+      }
+    },
+    "text_staff": {
+      "layout": {
+        "accuracy": 1.0,
+        "correct": 24,
+        "n": 24
+      },
+      "naive": {
+        "accuracy": 0.0,
+        "correct": 0,
+        "n": 24
+      }
+    }
+  },
+  "table_answers_with_correct_page_citation": "86/86"
+}

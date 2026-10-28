@@ -1,0 +1,175 @@
+{
+  "cost_ratio_modelled": 0.08,
+  "greedy_identical_to_target": true,
+  "lossless_tv": {
+    "bigram summary": 0.0213,
+    "exact copy": 0.0249,
+    "near-uniform bigram": 0.0212,
+    "noisy copy (sigma 0.2)": 0.0234,
+    "noisy copy (sigma 0.6)": 0.0213
+  },
+  "sweep": [
+    {
+      "alpha": 1.0,
+      "draft": "exact copy",
+      "k": 1,
+      "modelled_speedup": 1.85,
+      "theory_tokens_per_call": 2.0,
+      "tokens_per_target_call": 2.0
+    },
+    {
+      "alpha": 1.0,
+      "draft": "exact copy",
+      "k": 2,
+      "modelled_speedup": 2.59,
+      "theory_tokens_per_call": 3.0,
+      "tokens_per_target_call": 3.0
+    },
+    {
+      "alpha": 1.0,
+      "draft": "exact copy",
+      "k": 4,
+      "modelled_speedup": 3.79,
+      "theory_tokens_per_call": 5.0,
+      "tokens_per_target_call": 5.0
+    },
+    {
+      "alpha": 1.0,
+      "draft": "exact copy",
+      "k": 8,
+      "modelled_speedup": 5.49,
+      "theory_tokens_per_call": 9.0,
+      "tokens_per_target_call": 9.0
+    },
+    {
+      "alpha": 0.931,
+      "draft": "noisy copy (sigma 0.2)",
+      "k": 1,
+      "modelled_speedup": 1.79,
+      "theory_tokens_per_call": 1.93,
+      "tokens_per_target_call": 1.93
+    },
+    {
+      "alpha": 0.927,
+      "draft": "noisy copy (sigma 0.2)",
+      "k": 2,
+      "modelled_speedup": 2.4,
+      "theory_tokens_per_call": 2.79,
+      "tokens_per_target_call": 2.79
+    },
+    {
+      "alpha": 0.931,
+      "draft": "noisy copy (sigma 0.2)",
+      "k": 4,
+      "modelled_speedup": 3.3,
+      "theory_tokens_per_call": 4.35,
+      "tokens_per_target_call": 4.35
+    },
+    {
+      "alpha": 0.931,
+      "draft": "noisy copy (sigma 0.2)",
+      "k": 8,
+      "modelled_speedup": 4.19,
+      "theory_tokens_per_call": 6.86,
+      "tokens_per_target_call": 6.91
+    },
+    {
+      "alpha": 0.801,
+      "draft": "noisy copy (sigma 0.6)",
+      "k": 1,
+      "modelled_speedup": 1.67,
+      "theory_tokens_per_call": 1.8,
+      "tokens_per_target_call": 1.8
+    },
+    {
+      "alpha": 0.797,
+      "draft": "noisy copy (sigma 0.6)",
+      "k": 2,
+      "modelled_speedup": 2.1,
+      "theory_tokens_per_call": 2.43,
+      "tokens_per_target_call": 2.43
+    },
+    {
+      "alpha": 0.788,
+      "draft": "noisy copy (sigma 0.6)",
+      "k": 4,
+      "modelled_speedup": 2.49,
+      "theory_tokens_per_call": 3.28,
+      "tokens_per_target_call": 3.28
+    },
+    {
+      "alpha": 0.793,
+      "draft": "noisy copy (sigma 0.6)",
+      "k": 8,
+      "modelled_speedup": 2.58,
+      "theory_tokens_per_call": 4.23,
+      "tokens_per_target_call": 4.25
+    },
+    {
+      "alpha": 0.333,
+      "draft": "bigram summary",
+      "k": 1,
+      "modelled_speedup": 1.23,
+      "theory_tokens_per_call": 1.33,
+      "tokens_per_target_call": 1.33
+    },
+    {
+      "alpha": 0.338,
+      "draft": "bigram summary",
+      "k": 2,
+      "modelled_speedup": 1.25,
+      "theory_tokens_per_call": 1.45,
+      "tokens_per_target_call": 1.45
+    },
+    {
+      "alpha": 0.33,
+      "draft": "bigram summary",
+      "k": 4,
+      "modelled_speedup": 1.13,
+      "theory_tokens_per_call": 1.49,
+      "tokens_per_target_call": 1.49
+    },
+    {
+      "alpha": 0.332,
+      "draft": "bigram summary",
+      "k": 8,
+      "modelled_speedup": 0.91,
+      "theory_tokens_per_call": 1.5,
+      "tokens_per_target_call": 1.5
+    },
+    {
+      "alpha": 0.308,
+      "draft": "near-uniform bigram",
+      "k": 1,
+      "modelled_speedup": 1.21,
+      "theory_tokens_per_call": 1.31,
+      "tokens_per_target_call": 1.31
+    },
+    {
+      "alpha": 0.304,
+      "draft": "near-uniform bigram",
+      "k": 2,
+      "modelled_speedup": 1.2,
+      "theory_tokens_per_call": 1.4,
+      "tokens_per_target_call": 1.4
+    },
+    {
+      "alpha": 0.31,
+      "draft": "near-uniform bigram",
+      "k": 4,
+      "modelled_speedup": 1.1,
+      "theory_tokens_per_call": 1.45,
+      "tokens_per_target_call": 1.45
+    },
+    {
+      "alpha": 0.316,
+      "draft": "near-uniform bigram",
+      "k": 8,
+      "modelled_speedup": 0.89,
+      "theory_tokens_per_call": 1.46,
+      "tokens_per_target_call": 1.46
+    }
+  ],
+  "tv_noise_floor": 0.0214,
+  "vocab": 30
+}

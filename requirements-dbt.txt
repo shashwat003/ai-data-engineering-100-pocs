@@ -1,0 +1,3 @@
+# POC 040: real dbt (dbt-core + DuckDB adapter). Heavy: ~100 MB, each dbt invocation takes seconds.
+-r requirements.txt
+dbt-duckdb==1.11.0

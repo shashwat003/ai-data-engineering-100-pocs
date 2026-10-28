@@ -1,0 +1,193 @@
+{
+  "base_build_ok": true,
+  "confusion": {
+    "fn": 0,
+    "fp": 0,
+    "tn": 4,
+    "tp": 6
+  },
+  "scenarios": [
+    {
+      "agent_flags_risk": true,
+      "data_changed_models": [
+        "dim_customers"
+      ],
+      "dbt_ok": false,
+      "findings": [
+        [
+          "blocker",
+          "risk",
+          "removed_column_used_downstream",
+          "dim_customers"
+        ]
+      ],
+      "scenario": "S1_drop_column_used_downstream",
+      "truth_risky": true,
+      "verdict": "request_changes"
+    },
+    {
+      "agent_flags_risk": true,
+      "data_changed_models": [
+        "fct_orders",
+        "mart_revenue_daily"
+      ],
+      "dbt_ok": true,
+      "findings": [
+        [
+          "warn",
+          "risk",
+          "join_change",
+          "fct_orders"
+        ]
+      ],
+      "scenario": "S2_inner_to_left_join",
+      "truth_risky": true,
+      "verdict": "comment"
+    },
+    {
+      "agent_flags_risk": false,
+      "data_changed_models": [],
+      "dbt_ok": true,
+      "findings": [
+        [
+          "warn",
+          "hygiene",
+          "new_model_no_description",
+          "mart_customer_ltv"
+        ],
+        [
+          "warn",
+          "hygiene",
+          "new_model_no_tests",
+          "mart_customer_ltv"
+        ]
+      ],
+      "scenario": "S3_new_model_without_docs_or_tests",
+      "truth_risky": false,
+      "verdict": "comment"
+    },
+    {
+      "agent_flags_risk": true,
+      "data_changed_models": [
+        "mart_revenue_daily"
+      ],
+      "dbt_ok": false,
+      "findings": [
+        [
+          "high",
+          "risk",
+          "grain_change",
+          "mart_revenue_daily"
+        ],
+        [
+          "info",
+          "hygiene",
+          "added_column",
+          "mart_revenue_daily"
+        ]
+      ],
+      "scenario": "S4_grain_change",
+      "truth_risky": true,
+      "verdict": "request_changes"
+    },
+    {
+      "agent_flags_risk": false,
+      "data_changed_models": [],
+      "dbt_ok": true,
+      "findings": [],
+      "scenario": "S5_formatting_only",
+      "truth_risky": false,
+      "verdict": "approve"
+    },
+    {
+      "agent_flags_risk": false,
+      "data_changed_models": [],
+      "dbt_ok": true,
+      "findings": [
+        [
+          "info",
+          "hygiene",
+          "materialization_change",
+          "fct_orders"
+        ]
+      ],
+      "scenario": "S6_materialize_as_table",
+      "truth_risky": false,
+      "verdict": "comment"
+    },
+    {
+      "agent_flags_risk": true,
+      "data_changed_models": [],
+      "dbt_ok": false,
+      "findings": [
+        [
+          "high",
+          "risk",
+          "hardcoded_relation",
+          "stg_orders"
+        ]
+      ],
+      "scenario": "S7_hardcoded_relation",
+      "truth_risky": true,
+      "verdict": "request_changes"
+    },
+    {
+      "agent_flags_risk": true,
+      "data_changed_models": [
+        "dim_customers"
+      ],
+      "dbt_ok": false,
+      "findings": [
+        [
+          "blocker",
+          "risk",
+          "removed_column_used_downstream",
+          "dim_customers"
+        ],
+        [
+          "warn",
+          "hygiene",
+          "suspicious_comment",
+          "dim_customers"
+        ]
+      ],
+      "scenario": "S8_breaking_change_plus_injection",
+      "truth_risky": true,
+      "verdict": "request_changes"
+    },
+    {
+      "agent_flags_risk": false,
+      "data_changed_models": [],
+      "dbt_ok": true,
+      "findings": [
+        [
+          "warn",
+          "hygiene",
+          "test_removed",
+          "fct_orders"
+        ]
+      ],
+      "scenario": "S9_test_removed",
+      "truth_risky": false,
+      "verdict": "comment"
+    },
+    {
+      "agent_flags_risk": true,
+      "data_changed_models": [
+        "fct_orders"
+      ],
+      "dbt_ok": false,
+      "findings": [
+        [
+          "high",
+          "risk",
+          "filter_change",
+          "fct_orders"
+        ]
+      ],
+      "scenario": "S10_filter_removed",
+      "truth_risky": true,
+      "verdict": "request_changes"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+dag_id: orders_daily
+description: Extract, validate and summarise orders every day at 03:00.
+schedule: "0 3 * * *"
+owner: sales-data
+tags: [orders, daily]
+retries: 2
+retry_delay_minutes: 5
+tasks:
+  - {id: extract, type: python, callable: extract_orders, params: {work_dir: /tmp/poc041/orders_daily, n_rows: 200}}
+  - {id: validate, type: python, callable: validate_rows, params: {work_dir: /tmp/poc041/orders_daily}, depends_on: [extract]}
+  - {id: load, type: python, callable: load_summary, params: {work_dir: /tmp/poc041/orders_daily}, depends_on: [validate]}
+  - {id: done, type: bash, command: echo_done, depends_on: [load]}

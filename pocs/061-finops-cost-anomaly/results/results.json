@@ -1,0 +1,45 @@
+{
+  "attribution_top1_spikes": 1.0,
+  "forecast": {
+    "actual_month": 28878,
+    "budget": 27868,
+    "first_breach_day": 9,
+    "forecast_day5_10_20": [
+      27708.0,
+      27954.0,
+      27976.0
+    ]
+  },
+  "recall_by_kind_weekday_mad": {
+    "new_service": 1.0,
+    "ramp": 1.0,
+    "spike": 1.0,
+    "step": 1.0
+  },
+  "summary": {
+    "day_over_day_30pct": {
+      "f1": 0.717,
+      "false_incidents_per_clean_180d": 24.45,
+      "precision": 0.559,
+      "recall": 1.0
+    },
+    "ewma": {
+      "f1": 0.98,
+      "false_incidents_per_clean_180d": 2.45,
+      "precision": 0.967,
+      "recall": 1.0
+    },
+    "rolling_z": {
+      "f1": 0.94,
+      "false_incidents_per_clean_180d": 0.0,
+      "precision": 1.0,
+      "recall": 0.887
+    },
+    "weekday_mad": {
+      "f1": 0.904,
+      "false_incidents_per_clean_180d": 7.9,
+      "precision": 0.829,
+      "recall": 1.0
+    }
+  }
+}

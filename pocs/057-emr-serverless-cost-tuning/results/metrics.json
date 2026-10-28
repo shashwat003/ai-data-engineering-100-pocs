@@ -1,0 +1,159 @@
+{
+  "all_configs_same_result": true,
+  "experiments": [
+    {
+      "billed_s_small": 60,
+      "config": "1",
+      "cost_small_usd": 0.00404,
+      "group": "shuffle partitions (AQE off)",
+      "projected_cost_usd": 0.03942,
+      "projected_runtime_s": 570.6,
+      "runtime_s": 2.853,
+      "tasks": 15,
+      "workers_billed": 1,
+      "workers_vcpu": 4
+    },
+    {
+      "billed_s_small": 60,
+      "config": "4",
+      "cost_small_usd": 0.00404,
+      "group": "shuffle partitions (AQE off)",
+      "projected_cost_usd": 0.02977,
+      "projected_runtime_s": 427.2,
+      "runtime_s": 2.136,
+      "tasks": 24,
+      "workers_billed": 1,
+      "workers_vcpu": 4
+    },
+    {
+      "billed_s_small": 60,
+      "config": "16",
+      "cost_small_usd": 0.00404,
+      "group": "shuffle partitions (AQE off)",
+      "projected_cost_usd": 0.0263,
+      "projected_runtime_s": 375.6,
+      "runtime_s": 1.878,
+      "tasks": 60,
+      "workers_billed": 1,
+      "workers_vcpu": 4
+    },
+    {
+      "billed_s_small": 60,
+      "config": "64",
+      "cost_small_usd": 0.00404,
+      "group": "shuffle partitions (AQE off)",
+      "projected_cost_usd": 0.03922,
+      "projected_runtime_s": 567.6,
+      "runtime_s": 2.838,
+      "tasks": 204,
+      "workers_billed": 1,
+      "workers_vcpu": 4
+    },
+    {
+      "billed_s_small": 60,
+      "config": "400",
+      "cost_small_usd": 0.00404,
+      "group": "shuffle partitions (AQE off)",
+      "projected_cost_usd": 0.06963,
+      "projected_runtime_s": 1019.2,
+      "runtime_s": 5.096,
+      "tasks": 1212,
+      "workers_billed": 1,
+      "workers_vcpu": 4
+    },
+    {
+      "billed_s_small": 60,
+      "config": "400 initial, AQE on",
+      "cost_small_usd": 0.00404,
+      "group": "AQE coalescing",
+      "projected_cost_usd": 0.02317,
+      "projected_runtime_s": 329.2,
+      "runtime_s": 1.646,
+      "tasks": 28,
+      "workers_billed": 1,
+      "workers_vcpu": 4
+    },
+    {
+      "billed_s_small": 60,
+      "config": "local[1]",
+      "cost_small_usd": 0.00404,
+      "group": "parallelism",
+      "projected_cost_usd": 0.02888,
+      "projected_runtime_s": 414.0,
+      "runtime_s": 2.07,
+      "tasks": 54,
+      "workers_billed": 1,
+      "workers_vcpu": 1
+    },
+    {
+      "billed_s_small": 60,
+      "config": "local[2]",
+      "cost_small_usd": 0.00404,
+      "group": "parallelism",
+      "projected_cost_usd": 0.02554,
+      "projected_runtime_s": 364.4,
+      "runtime_s": 1.822,
+      "tasks": 56,
+      "workers_billed": 1,
+      "workers_vcpu": 2
+    },
+    {
+      "billed_s_small": 60,
+      "config": "local[4]",
+      "cost_small_usd": 0.00404,
+      "group": "parallelism",
+      "projected_cost_usd": 0.02183,
+      "projected_runtime_s": 309.2,
+      "runtime_s": 1.546,
+      "tasks": 60,
+      "workers_billed": 1,
+      "workers_vcpu": 4
+    },
+    {
+      "billed_s_small": 60,
+      "config": "1 file",
+      "cost_small_usd": 0.00404,
+      "group": "input layout",
+      "projected_cost_usd": 0.02434,
+      "projected_runtime_s": 346.6,
+      "runtime_s": 1.733,
+      "tasks": 60,
+      "workers_billed": 1,
+      "workers_vcpu": 4
+    },
+    {
+      "billed_s_small": 60,
+      "config": "200 small files",
+      "cost_small_usd": 0.00404,
+      "group": "input layout",
+      "projected_cost_usd": 0.03038,
+      "projected_runtime_s": 436.2,
+      "runtime_s": 2.181,
+      "tasks": 66,
+      "workers_billed": 1,
+      "workers_vcpu": 4
+    }
+  ],
+  "idle_cost_per_month_usd": {
+    "1 pre-initialised 4 vCPU workers": 174.5,
+    "2 pre-initialised 4 vCPU workers": 349.0,
+    "5 pre-initialised 4 vCPU workers": 872.5
+  },
+  "n_orders": 1500000,
+  "plan_checks": {
+    "5 warm executors": [
+      "5 pre-initialised workers kept warm: about $872.5 per month while idle (justify with a latency requirement)"
+    ],
+    "default": [],
+    "long idle timeout": [
+      "idle timeout 60 min exceeds 15"
+    ],
+    "no cost ceiling (max 512 vCPU)": [
+      "maximum capacity 512 vCPU exceeds the 128 vCPU ceiling"
+    ],
+    "x86 workers": [
+      "x86_64 workers: ARM64 (Graviton) is cheaper for Spark if libraries support it"
+    ]
+  },
+  "scale_factor_modelled": 200
+}

@@ -1,0 +1,22 @@
+{
+  "feasible_workloads": 40,
+  "lp_mean_cost": 106.53960922938545,
+  "policies": {
+    "edf_cost_aware": {
+      "mean_cost_vs_lp": 2.2524567306845187,
+      "mean_missed_jobs": 0.0
+    },
+    "edf_on_demand": {
+      "mean_cost_vs_lp": 3.9502933670635763,
+      "mean_missed_jobs": 0.0
+    },
+    "fifo_on_demand": {
+      "mean_cost_vs_lp": 3.9502933670635763,
+      "mean_missed_jobs": 0.425
+    },
+    "fifo_spot": {
+      "mean_cost_vs_lp": 1.7934331253279652,
+      "mean_missed_jobs": 0.8
+    }
+  }
+}

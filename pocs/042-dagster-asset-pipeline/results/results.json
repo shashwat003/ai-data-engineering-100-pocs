@@ -1,0 +1,155 @@
+{
+  "blocked_days": [
+    "2025-03-05"
+  ],
+  "counts_after_fix": {
+    "clean_events": 601,
+    "daily_metrics": 7,
+    "quarantine": 34,
+    "raw_events": 668
+  },
+  "counts_after_rerun": {
+    "clean_events": 601,
+    "daily_metrics": 7,
+    "quarantine": 34,
+    "raw_events": 668
+  },
+  "counts_before_fix": {
+    "clean_events": 518,
+    "daily_metrics": 6,
+    "quarantine": 29,
+    "raw_events": 575
+  },
+  "days": [
+    "2025-03-01",
+    "2025-03-02",
+    "2025-03-03",
+    "2025-03-04",
+    "2025-03-05",
+    "2025-03-06",
+    "2025-03-07"
+  ],
+  "first_pass": [
+    {
+      "checks": {
+        "clean_has_no_bad_rows": true,
+        "quarantine_rate_is_low": true,
+        "raw_has_rows": true
+      },
+      "day": "2025-03-01",
+      "materialized": [
+        "clean_events",
+        "daily_metrics",
+        "raw_events"
+      ],
+      "success": true
+    },
+    {
+      "checks": {
+        "clean_has_no_bad_rows": true,
+        "quarantine_rate_is_low": true,
+        "raw_has_rows": true
+      },
+      "day": "2025-03-02",
+      "materialized": [
+        "clean_events",
+        "daily_metrics",
+        "raw_events"
+      ],
+      "success": true
+    },
+    {
+      "checks": {
+        "clean_has_no_bad_rows": true,
+        "quarantine_rate_is_low": true,
+        "raw_has_rows": true
+      },
+      "day": "2025-03-03",
+      "materialized": [
+        "clean_events",
+        "daily_metrics",
+        "raw_events"
+      ],
+      "success": true
+    },
+    {
+      "checks": {
+        "clean_has_no_bad_rows": true,
+        "quarantine_rate_is_low": true,
+        "raw_has_rows": true
+      },
+      "day": "2025-03-04",
+      "materialized": [
+        "clean_events",
+        "daily_metrics",
+        "raw_events"
+      ],
+      "success": true
+    },
+    {
+      "checks": {
+        "raw_has_rows": false
+      },
+      "day": "2025-03-05",
+      "materialized": [
+        "raw_events"
+      ],
+      "success": false
+    },
+    {
+      "checks": {
+        "clean_has_no_bad_rows": true,
+        "quarantine_rate_is_low": true,
+        "raw_has_rows": true
+      },
+      "day": "2025-03-06",
+      "materialized": [
+        "clean_events",
+        "daily_metrics",
+        "raw_events"
+      ],
+      "success": true
+    },
+    {
+      "checks": {
+        "clean_has_no_bad_rows": true,
+        "quarantine_rate_is_low": true,
+        "raw_has_rows": true
+      },
+      "day": "2025-03-07",
+      "materialized": [
+        "clean_events",
+        "daily_metrics",
+        "raw_events"
+      ],
+      "success": true
+    }
+  ],
+  "fixed_run": {
+    "checks": {
+      "clean_has_no_bad_rows": true,
+      "quarantine_rate_is_low": true,
+      "raw_has_rows": true
+    },
+    "day": "2025-03-05",
+    "materialized": [
+      "clean_events",
+      "daily_metrics",
+      "raw_events"
+    ],
+    "success": true
+  },
+  "rerun_all_ok": true,
+  "summary_after_fix": {
+    "days_with_metrics": 7,
+    "revenue": 28467.22
+  },
+  "summary_after_rerun": {
+    "days_with_metrics": 7,
+    "revenue": 28467.22
+  },
+  "summary_before_fix": {
+    "days_with_metrics": 6,
+    "revenue": 24508.87
+  }
+}

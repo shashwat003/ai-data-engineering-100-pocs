@@ -1,0 +1,12 @@
+# Narrow, documented gitleaks exceptions. Every entry is a fingerprint of ONE finding; all were reviewed and are not credentials.
+#
+# POC 023 test canary: a deliberately fake marker string used to prove the agent never leaks secrets (generic-api-key rule).
+35d746d4eab14c4d558d9b816e78c1eb42d5ed51:pocs/023-incident-triage-agent/incident_triage_agent/ops.py:generic-api-key:35
+pocs/023-incident-triage-agent/incident_triage_agent/ops.py:generic-api-key:35
+# POC 023 test: a fake AWS-shaped key assembled from two literals to exercise a redactor.
+35d746d4eab14c4d558d9b816e78c1eb42d5ed51:pocs/023-incident-triage-agent/tests/test_poc.py:aws-access-token:327
+# POC 051 tests: lists of policy rule identifiers (s3-public-access-blocked, ...) that the generic-api-key rule mistakes for a key.
+27cd6ddc4f7598f8b6a93ce9f47ce43fb77d4dd3:pocs/051-terraform-aws-datalake-foundation/tests/test_poc.py:generic-api-key:50
+pocs/051-terraform-aws-datalake-foundation/tests/test_poc.py:generic-api-key:50
+pocs/051-terraform-aws-datalake-foundation/tests/test_poc.py:generic-api-key:266
+27cd6ddc4f7598f8b6a93ce9f47ce43fb77d4dd3:pocs/051-terraform-aws-datalake-foundation/tests/test_poc.py:generic-api-key:266

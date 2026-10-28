@@ -1,0 +1,5 @@
+# POC 051: local mock of AWS APIs and an SDK to inspect it. Terraform itself (1.5+) must be on PATH.
+# Not needed by `make setup` at the repository root; CI installs it for POC 051 only.
+-r requirements.txt
+moto[server]==5.2.4
+boto3==1.43.114

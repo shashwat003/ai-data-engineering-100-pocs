@@ -1,0 +1,8 @@
+redshift_elt:
+  target: local_duckdb
+  outputs:
+    # Executed here. The production target would be type: redshift (host = workgroup endpoint, IAM auth); NOT run in this repository.
+    local_duckdb:
+      type: duckdb
+      path: "{{ env_var('ELT_DB') }}"
+      threads: 1

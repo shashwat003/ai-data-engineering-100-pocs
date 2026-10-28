@@ -1,0 +1,97 @@
+{
+  "detectors": {
+    "EWMA z-score": {
+      "event_recall": 0.586,
+      "false_alarms_per_1000": 0.69,
+      "median_delay_points": 1,
+      "points_per_second": 2224351,
+      "recall_by_kind": {
+        "dropout": 0.07,
+        "level_shift": 0.8,
+        "seasonal_break": 0.2,
+        "spike": 0.8,
+        "variance": 0.93
+      },
+      "threshold": 2.119
+    },
+    "Missing-data run rule": {
+      "event_recall": 0.214,
+      "false_alarms_per_1000": 0.0,
+      "median_delay_points": 2,
+      "points_per_second": 6223324,
+      "recall_by_kind": {
+        "dropout": 1.0,
+        "level_shift": 0.0,
+        "seasonal_break": 0.0,
+        "spike": 0.0,
+        "variance": 0.0
+      },
+      "threshold": 2.5
+    },
+    "Rolling median/MAD": {
+      "event_recall": 0.5,
+      "false_alarms_per_1000": 0.83,
+      "median_delay_points": 9,
+      "points_per_second": 24535,
+      "recall_by_kind": {
+        "dropout": 0.13,
+        "level_shift": 0.8,
+        "seasonal_break": 0.2,
+        "spike": 0.47,
+        "variance": 0.8
+      },
+      "threshold": 2.496
+    },
+    "Seasonal EWMA": {
+      "event_recall": 0.786,
+      "false_alarms_per_1000": 0.28,
+      "median_delay_points": 0,
+      "points_per_second": 968485,
+      "recall_by_kind": {
+        "dropout": 0.0,
+        "level_shift": 1.0,
+        "seasonal_break": 1.0,
+        "spike": 1.0,
+        "variance": 1.0
+      },
+      "threshold": 3.785
+    },
+    "river ADWIN (drift)": {
+      "event_recall": 0.329,
+      "false_alarms_per_1000": 0.9,
+      "median_delay_points": 25,
+      "points_per_second": 1076559,
+      "recall_by_kind": {
+        "dropout": 0.0,
+        "level_shift": 1.0,
+        "seasonal_break": 0.6,
+        "spike": 0.0,
+        "variance": 0.13
+      },
+      "threshold": 0.5
+    },
+    "river HalfSpaceTrees": {
+      "event_recall": 0.643,
+      "false_alarms_per_1000": 0.49,
+      "median_delay_points": 0,
+      "points_per_second": 10708,
+      "recall_by_kind": {
+        "dropout": 0.07,
+        "level_shift": 0.93,
+        "seasonal_break": 0.4,
+        "spike": 0.73,
+        "variance": 1.0
+      },
+      "threshold": 0.983
+    }
+  },
+  "false_alarm_budget_per_1000": 1.0,
+  "n_events": 70,
+  "seeds": [
+    1,
+    2,
+    3,
+    4,
+    5
+  ]
+}

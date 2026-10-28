@@ -1,0 +1,3 @@
+# POC 032: browser automation. Browsers are installed with `playwright install chromium` (or /opt/pw-browsers locally).
+-r requirements.txt
+playwright==1.64.0

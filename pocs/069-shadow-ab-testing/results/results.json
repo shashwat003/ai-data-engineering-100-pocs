@@ -1,0 +1,37 @@
+{
+  "aa_false_positive": {
+    "msprt": 0.02,
+    "peek_naive": 0.2625,
+    "single_look_at_end": 0.05
+  },
+  "cuped": {
+    "reduction": 0.712,
+    "variance_after": 2.231,
+    "variance_before": 7.755
+  },
+  "power": {
+    "0.05": {
+      "msprt": 0.285,
+      "peek_naive": 0.73,
+      "single_look_at_end": 0.565
+    },
+    "0.1": {
+      "msprt": 0.96,
+      "peek_naive": 1.0,
+      "single_look_at_end": 1.0
+    },
+    "0.2": {
+      "msprt": 1.0,
+      "peek_naive": 1.0,
+      "single_look_at_end": 1.0
+    }
+  },
+  "sample_size_per_arm": 14745,
+  "shadow": {
+    "candidate_errors_logged": 20,
+    "served_unchanged": true
+  },
+  "srm_p_broken": 6.979756146090812e-34,
+  "srm_p_good": 0.26998956870141794,
+  "sticky": true
+}

@@ -1,0 +1,32 @@
+# Policy for the incident-triage agent. Evaluated outside the model, on every proposed tool call.
+# Decisions: allow | approve (human must approve the exact arguments) | deny. Default is deny.
+limits:
+  max_steps: 12
+  max_write_actions: 3        # executed write actions per incident
+approvers: [oncall.alice, oncall.bob]
+approval_ttl_minutes: 60
+tools:
+  search_datasets: {risk: read, decision: allow}
+  get_dataset_schema: {risk: read, decision: allow}
+  get_lineage: {risk: read, decision: allow}
+  profile_column: {risk: read, decision: allow}
+  get_runbook: {risk: read, decision: allow}
+  get_pipeline_runs: {risk: read, decision: allow}
+  get_pipeline_config: {risk: read, decision: allow}
+  create_ticket: {risk: write, decision: allow}
+  rerun_pipeline:
+    risk: write
+    scope: [pipeline]
+    rules:
+      - {when: {pipeline_env: staging}, decision: allow}
+      - {when: {pipeline_env: prod}, decision: approve}
+  quarantine_dataset: {risk: write, scope: [dataset], decision: approve}
+  page_oncall:
+    risk: write
+    scope: [team]
+    rules:
+      - {when: {severity_lte: 2}, decision: allow}
+      - {decision: approve}
+  delete_dataset: {risk: forbidden, decision: deny}
+  disable_alerts: {risk: forbidden, decision: deny}
+  export_data: {risk: forbidden, decision: deny}

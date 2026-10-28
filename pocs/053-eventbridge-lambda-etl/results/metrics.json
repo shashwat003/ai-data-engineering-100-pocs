@@ -1,0 +1,44 @@
+{
+  "curated_keys": [
+    "curated/day1.parquet",
+    "curated/day2.parquet"
+  ],
+  "curated_keys_final": [
+    "curated/day1.parquet",
+    "curated/day2.parquet",
+    "curated/flaky.parquet"
+  ],
+  "day2_quarantine_reasons": [
+    "negative amount",
+    "unknown currency",
+    "unparseable value"
+  ],
+  "day2_rows_curated": 10,
+  "day2_schema": {
+    "amount": "double",
+    "currency": "string",
+    "customer_id": "int64",
+    "order_date": "date32[day]",
+    "order_id": "int64"
+  },
+  "dlq_messages": 2,
+  "duplicate_results": [
+    "duplicate"
+  ],
+  "main_queue_empty_at_end": true,
+  "messages_processed": 2,
+  "poison_attempts": 6,
+  "quarantine_keys": [
+    "quarantine/day2.csv"
+  ],
+  "reconciliation": {
+    "balanced": true,
+    "in": 37,
+    "ok": 33,
+    "rejected": 4
+  },
+  "transient_statuses": [
+    "retry",
+    "ok"
+  ]
+}

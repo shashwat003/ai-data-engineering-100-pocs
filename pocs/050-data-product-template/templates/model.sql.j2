@@ -1,0 +1,9 @@
+-- {{ name }}: output port of the data product. Column names and types are fixed by contract.yaml (enforced by dbt).
+select
+    cast(id as integer) as id,
+    cast(event_date as date) as event_date,
+    cast(status as varchar) as status,
+    cast(amount as double) as amount,
+    cast(contact_email as varchar) as contact_email
+from {{ '{{' }} ref('raw_{{ name }}') {{ '}}' }}
+where status is not null

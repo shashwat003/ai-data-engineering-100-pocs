@@ -1,0 +1,116 @@
+{
+  "ann": {
+    "flat_exact": {
+      "ms_per_query": 0.014,
+      "recall_vs_exact": 1.0
+    },
+    "hnsw_ef16": {
+      "ms_per_query": 0.0038,
+      "recall_vs_exact": 0.7564
+    },
+    "hnsw_ef64": {
+      "ms_per_query": 0.0073,
+      "recall_vs_exact": 0.9997
+    },
+    "ivf_nprobe1": {
+      "ms_per_query": 0.0061,
+      "recall_vs_exact": 0.3343
+    },
+    "ivf_nprobe4": {
+      "ms_per_query": 0.007,
+      "recall_vs_exact": 0.8658
+    }
+  },
+  "epochs_used": 2,
+  "items": 800,
+  "loss_first_last": [
+    5.502,
+    5.193
+  ],
+  "models": {
+    "SVD (32 factors)": {
+      "all": {
+        "coverage@10": 0.395,
+        "mean_pop_rank_top10": 0.098,
+        "ndcg@10": 0.097,
+        "recall@10": 0.144,
+        "recall@50": 0.359,
+        "users": 1500
+      },
+      "cold_items_only": {
+        "coverage@10": 0.395,
+        "mean_pop_rank_top10": 0.103,
+        "ndcg@10": 0.0,
+        "recall@10": 0.0,
+        "recall@50": 0.0,
+        "users": 211
+      }
+    },
+    "item-item co-occurrence": {
+      "all": {
+        "coverage@10": 0.281,
+        "mean_pop_rank_top10": 0.031,
+        "ndcg@10": 0.1137,
+        "recall@10": 0.1753,
+        "recall@50": 0.4157,
+        "users": 1500
+      },
+      "cold_items_only": {
+        "coverage@10": 0.281,
+        "mean_pop_rank_top10": 0.034,
+        "ndcg@10": 0.0,
+        "recall@10": 0.0,
+        "recall@50": 0.0,
+        "users": 211
+      }
+    },
+    "popularity": {
+      "all": {
+        "coverage@10": 0.028,
+        "mean_pop_rank_top10": 0.009,
+        "ndcg@10": 0.0657,
+        "recall@10": 0.1,
+        "recall@50": 0.2683,
+        "users": 1500
+      },
+      "cold_items_only": {
+        "coverage@10": 0.028,
+        "mean_pop_rank_top10": 0.009,
+        "ndcg@10": 0.0,
+        "recall@10": 0.0,
+        "recall@50": 0.0,
+        "users": 211
+      }
+    },
+    "two-tower": {
+      "all": {
+        "coverage@10": 0.285,
+        "mean_pop_rank_top10": 0.053,
+        "ndcg@10": 0.1106,
+        "recall@10": 0.1663,
+        "recall@50": 0.398,
+        "users": 1500
+      },
+      "cold_items_only": {
+        "coverage@10": 0.285,
+        "mean_pop_rank_top10": 0.062,
+        "ndcg@10": 0.0039,
+        "recall@10": 0.0095,
+        "recall@50": 0.2773,
+        "users": 211
+      }
+    }
+  },
+  "train_interactions": 36902,
+  "users": 1500,
+  "validation_recall50_by_epoch": {
+    "1": 0.3653,
+    "2": 0.4207,
+    "3": 0.4127,
+    "4": 0.416,
+    "5": 0.41,
+    "6": 0.4087,
+    "7": 0.4067,
+    "8": 0.4
+  }
+}

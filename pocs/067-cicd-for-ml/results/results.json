@@ -1,0 +1,30 @@
+{
+  "gate_failures_on_bad_model": [
+    "AUC 0.466 below the absolute floor 0.9",
+    "AUC 0.466 regressed more than 0.01 from baseline 0.950"
+  ],
+  "gates_pass_on_good_model": true,
+  "stage_status": {
+    "1 first run": {
+      "evaluate": "ran",
+      "prepare": "ran",
+      "train": "ran"
+    },
+    "2 second run, nothing changed": {
+      "evaluate": "cached",
+      "prepare": "cached",
+      "train": "cached"
+    },
+    "3 change train.C": {
+      "evaluate": "ran",
+      "prepare": "cached",
+      "train": "ran"
+    },
+    "4 change prepare.n_rows": {
+      "evaluate": "ran",
+      "prepare": "ran",
+      "train": "ran"
+    }
+  },
+  "workflow_findings": []
+}

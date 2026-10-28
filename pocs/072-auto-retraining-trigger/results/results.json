@@ -1,0 +1,37 @@
+{
+  "drift OR performance, cooldown + budget + gate": {
+    "gate_rejections": 0.0,
+    "mean_auc": 0.9264654311110264,
+    "retrains": 4.25,
+    "worst_week_auc": 0.7267903932376605
+  },
+  "drift-triggered (KS on inputs)": {
+    "gate_rejections": 0.0,
+    "mean_auc": 0.890475548079297,
+    "retrains": 3.0833333333333335,
+    "worst_week_auc": 0.7251313283740833
+  },
+  "fixed every 8 weeks": {
+    "gate_rejections": 0.0,
+    "mean_auc": 0.9317455804925862,
+    "retrains": 6.0,
+    "worst_week_auc": 0.7683662612520684
+  },
+  "label_outage": {
+    "gate_rejections": 5.083333333333333,
+    "gated_mean_auc": 0.8679356830303102,
+    "ungated_mean_auc": 0.682370837192552
+  },
+  "never retrain": {
+    "gate_rejections": 0.0,
+    "mean_auc": 0.8282482209496497,
+    "retrains": 0.0,
+    "worst_week_auc": 0.7216647117279228
+  },
+  "performance-triggered (labels lag 2 wk)": {
+    "gate_rejections": 0.0,
+    "mean_auc": 0.9107554389859428,
+    "retrains": 1.3333333333333333,
+    "worst_week_auc": 0.7233237765914998
+  }
+}

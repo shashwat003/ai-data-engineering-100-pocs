@@ -1,0 +1,26 @@
+# Example: breaking change (column removed, ship_date now required) -> MAJOR bump.
+# Contract for the daily orders feed. Edit with care: `cli check` compares this file with the
+# base branch and requires a matching version bump (see ../README.md for the policy).
+contract: orders_feed
+version: 2.0.0
+owner: commerce-data
+description: One row per order, delivered daily as CSV by the commerce platform.
+format: csv
+extra_columns: warn
+columns:
+  - {name: order_id, type: integer, required: true, unique: true, description: Surrogate key of the order.}
+  - {name: customer_id, type: integer, required: true, description: Customer who placed the order.}
+  - {name: order_date, type: date, required: true, description: Date the order was placed.}
+  - {name: ship_date, type: date, required: true, description: Date the order shipped; empty until shipped.}
+  - name: status
+    type: string
+    required: true
+    enum: [completed, shipped, cancelled, returned]
+    description: Order lifecycle status.
+  - {name: amount, type: number, required: true, min: 0, max: 1000000, description: Order total.}
+quality:
+  min_rows: 100
+  max_null_rate: {customer_id: 0.0}
+  freshness: {column: order_date, max_age_days: 7}
+  rules:
+    - {type: column_compare, left: ship_date, op: ">=", right: order_date}

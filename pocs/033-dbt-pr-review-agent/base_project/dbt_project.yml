@@ -1,0 +1,9 @@
+name: shop
+version: "1.0"
+profile: shop
+model-paths: ["models"]
+seed-paths: ["seeds"]
+test-paths: ["tests"]
+models:
+  shop:
+    +materialized: view

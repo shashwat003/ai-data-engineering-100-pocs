@@ -1,0 +1,195 @@
+{
+  "base_unchanged_by_lora_training": true,
+  "fine_classes": [
+    "billing",
+    "login",
+    "shipping",
+    "bug",
+    "feature_request",
+    "cancellation"
+  ],
+  "grid": {
+    "120|full": {
+      "acc_mean": 0.7328,
+      "acc_std": 0.0107,
+      "f1_mean": 0.7316,
+      "mode": "full",
+      "n": 120,
+      "trainable": 296070
+    },
+    "120|linear_probe": {
+      "acc_mean": 0.4989,
+      "acc_std": 0.0173,
+      "f1_mean": 0.4817,
+      "mode": "linear_probe",
+      "n": 120,
+      "trainable": 774
+    },
+    "120|lora": {
+      "acc_mean": 0.6881,
+      "acc_std": 0.0165,
+      "f1_mean": 0.687,
+      "mode": "lora",
+      "n": 120,
+      "trainable": 14086
+    },
+    "120|qlora": {
+      "acc_mean": 0.6846,
+      "acc_std": 0.0177,
+      "f1_mean": 0.6835,
+      "mode": "qlora",
+      "n": 120,
+      "trainable": 14086
+    },
+    "120|tfidf+LR (no pretraining)": {
+      "acc_mean": 0.7465,
+      "acc_std": 0.0137,
+      "f1_mean": 0.7456,
+      "mode": "tfidf+LR (no pretraining)",
+      "n": 120,
+      "trainable": null
+    },
+    "240|full": {
+      "acc_mean": 0.7466,
+      "acc_std": 0.003,
+      "f1_mean": 0.7454,
+      "mode": "full",
+      "n": 240,
+      "trainable": 296070
+    },
+    "240|linear_probe": {
+      "acc_mean": 0.5405,
+      "acc_std": 0.0267,
+      "f1_mean": 0.5238,
+      "mode": "linear_probe",
+      "n": 240,
+      "trainable": 774
+    },
+    "240|lora": {
+      "acc_mean": 0.7215,
+      "acc_std": 0.0075,
+      "f1_mean": 0.7203,
+      "mode": "lora",
+      "n": 240,
+      "trainable": 14086
+    },
+    "240|qlora": {
+      "acc_mean": 0.7218,
+      "acc_std": 0.0074,
+      "f1_mean": 0.7205,
+      "mode": "qlora",
+      "n": 240,
+      "trainable": 14086
+    },
+    "240|tfidf+LR (no pretraining)": {
+      "acc_mean": 0.7615,
+      "acc_std": 0.0074,
+      "f1_mean": 0.7603,
+      "mode": "tfidf+LR (no pretraining)",
+      "n": 240,
+      "trainable": null
+    },
+    "30|full": {
+      "acc_mean": 0.5452,
+      "acc_std": 0.0475,
+      "f1_mean": 0.5117,
+      "mode": "full",
+      "n": 30,
+      "trainable": 296070
+    },
+    "30|linear_probe": {
+      "acc_mean": 0.412,
+      "acc_std": 0.021,
+      "f1_mean": 0.3287,
+      "mode": "linear_probe",
+      "n": 30,
+      "trainable": 774
+    },
+    "30|lora": {
+      "acc_mean": 0.5266,
+      "acc_std": 0.0302,
+      "f1_mean": 0.4993,
+      "mode": "lora",
+      "n": 30,
+      "trainable": 14086
+    },
+    "30|qlora": {
+      "acc_mean": 0.528,
+      "acc_std": 0.0308,
+      "f1_mean": 0.5005,
+      "mode": "qlora",
+      "n": 30,
+      "trainable": 14086
+    },
+    "30|tfidf+LR (no pretraining)": {
+      "acc_mean": 0.5094,
+      "acc_std": 0.0506,
+      "f1_mean": 0.48,
+      "mode": "tfidf+LR (no pretraining)",
+      "n": 30,
+      "trainable": null
+    },
+    "60|full": {
+      "acc_mean": 0.6574,
+      "acc_std": 0.0208,
+      "f1_mean": 0.6525,
+      "mode": "full",
+      "n": 60,
+      "trainable": 296070
+    },
+    "60|linear_probe": {
+      "acc_mean": 0.4411,
+      "acc_std": 0.0292,
+      "f1_mean": 0.3896,
+      "mode": "linear_probe",
+      "n": 60,
+      "trainable": 774
+    },
+    "60|lora": {
+      "acc_mean": 0.6084,
+      "acc_std": 0.0334,
+      "f1_mean": 0.601,
+      "mode": "lora",
+      "n": 60,
+      "trainable": 14086
+    },
+    "60|qlora": {
+      "acc_mean": 0.6082,
+      "acc_std": 0.0332,
+      "f1_mean": 0.601,
+      "mode": "qlora",
+      "n": 60,
+      "trainable": 14086
+    },
+    "60|tfidf+LR (no pretraining)": {
+      "acc_mean": 0.6516,
+      "acc_std": 0.0262,
+      "f1_mean": 0.6453,
+      "mode": "tfidf+LR (no pretraining)",
+      "n": 60,
+      "trainable": null
+    }
+  },
+  "memory_bytes": {
+    "adapters_fp32": 53248,
+    "base_fp32": 1181184,
+    "base_q4_0_packed": 167424,
+    "head_fp32": 3096
+  },
+  "merge": {
+    "acc_lora": 0.687,
+    "acc_merged": 0.687,
+    "acc_qlora_adapter": 0.684,
+    "acc_qlora_merged_dense": 0.684,
+    "acc_qlora_merged_requantised_q4": 0.6845,
+    "max_abs_logit_diff_lora_vs_merged": 5.7220458984375e-06
+  },
+  "pretrain_coarse_train_acc": 0.9663,
+  "rank_sweep_n120": {
+    "1": 0.6274,
+    "2": 0.6438,
+    "4": 0.6701,
+    "8": 0.6881,
+    "16": 0.6784
+  }
+}

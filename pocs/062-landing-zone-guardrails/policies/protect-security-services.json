@@ -1,0 +1,11 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {"Sid": "ProtectAuditAndDetection", "Effect": "Deny",
+     "Action": ["cloudtrail:StopLogging", "cloudtrail:DeleteTrail", "cloudtrail:UpdateTrail",
+                "config:StopConfigurationRecorder", "config:DeleteConfigurationRecorder", "config:DeleteDeliveryChannel",
+                "guardduty:DeleteDetector", "guardduty:DisassociateFromMasterAccount"],
+     "Resource": "*",
+     "Condition": {"ArnNotLike": {"aws:PrincipalArn": "arn:aws:iam::*:role/OrganizationBreakGlass"}}}
+  ]
+}

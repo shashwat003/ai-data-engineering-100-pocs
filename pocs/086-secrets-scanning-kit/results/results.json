@@ -1,0 +1,35 @@
+{
+  "holdout": 7,
+  "negatives": 12,
+  "positives": 13,
+  "tools": {
+    "gitleaks 8.30.0": {
+      "false_positive_files": [],
+      "fp_rate": 0.0,
+      "holdout_missed": [
+        "private-key-body",
+        "split-token"
+      ],
+      "holdout_recall": 0.714,
+      "missed": [
+        "db-url-password"
+      ],
+      "recall": 0.923,
+      "seconds": 0.71
+    },
+    "kit scanner": {
+      "false_positive_files": [],
+      "fp_rate": 0.0,
+      "holdout_missed": [
+        "azure-connection-string",
+        "bearer-header",
+        "private-key-body",
+        "split-token"
+      ],
+      "holdout_recall": 0.429,
+      "missed": [],
+      "recall": 1.0,
+      "seconds": 0.003
+    }
+  }
+}

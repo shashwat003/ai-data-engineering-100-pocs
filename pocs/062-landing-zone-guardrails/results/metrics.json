@@ -1,0 +1,83 @@
+{
+  "lint_problems": [],
+  "matrix": {
+    "cases": 28,
+    "failures": [],
+    "passed": 28
+  },
+  "mutation": {
+    "deny-leave-org": [
+      "prod-leave-organisation"
+    ],
+    "deny-root-user": [
+      "member-root-user"
+    ],
+    "protect-security-services": [
+      "prod-stop-cloudtrail"
+    ],
+    "region-lock": [
+      "action-case-insensitive",
+      "prod-read-wrong-region",
+      "regulated-glue-us-east"
+    ],
+    "regulated-allowlist": [
+      "regulated-ec2-not-allowlisted",
+      "regulated-lambda-not-allowlisted"
+    ],
+    "require-s3-encryption": [
+      "prod-disable-public-access-block",
+      "prod-put-without-sse",
+      "regulated-put-without-sse"
+    ],
+    "sandbox-cost-guard": [
+      "sandbox-instance-type-missing-fails-closed",
+      "sandbox-large-instance",
+      "sandbox-rds-cluster",
+      "sandbox-sagemaker-endpoint"
+    ]
+  },
+  "sample_decisions": {
+    "prod-breakglass-stop-cloudtrail": "allow: allowed at every level, no explicit deny",
+    "prod-global-service-any-region": "allow: allowed at every level, no explicit deny",
+    "prod-large-instance-allowed": "allow: allowed at every level, no explicit deny",
+    "prod-put-with-sse": "allow: allowed at every level, no explicit deny",
+    "prod-put-without-sse": "deny: explicit deny: require-s3-encryption/DenyUnencryptedObjectUploads at prod",
+    "prod-read-approved-region": "allow: allowed at every level, no explicit deny",
+    "prod-read-wrong-region": "deny: explicit deny: region-lock/DenyOutsideApprovedRegions at prod",
+    "prod-stop-cloudtrail": "deny: explicit deny: protect-security-services/ProtectAuditAndDetection at root"
+  },
+  "terraform": {
+    "allowlist_gap_cases_after_apply": [
+      "regulated-ec2-not-allowlisted",
+      "regulated-lambda-not-allowlisted"
+    ],
+    "attachments_match_org_json_after_apply": false,
+    "attachments_match_org_json_after_reconcile": true,
+    "clean_replan_exit_code": 0,
+    "config_rules_declared": [
+      "CLOUD_TRAIL_ENABLED",
+      "ENCRYPTED_VOLUMES",
+      "S3_BUCKET_PUBLIC_READ_PROHIBITED",
+      "S3_BUCKET_SERVER_SIDE_ENCRYPTION_ENABLED"
+    ],
+    "content_matches_files": true,
+    "drift_plan_exit_code_after_console_edit": 2,
+    "matrix_on_actual_state_after_apply": "26/28",
+    "matrix_on_actual_state_after_reconcile": "28/28",
+    "plan_exit_code_after_reapply": 0,
+    "policies_created": [
+      "deny-leave-org",
+      "deny-root-user",
+      "protect-security-services",
+      "region-lock",
+      "regulated-allowlist",
+      "require-s3-encryption",
+      "sandbox-cost-guard"
+    ],
+    "reconciled_ous": [
+      "regulated"
+    ],
+    "required_config_rules_present": true,
+    "status": "RAN against local moto, not real AWS"
+  }
+}

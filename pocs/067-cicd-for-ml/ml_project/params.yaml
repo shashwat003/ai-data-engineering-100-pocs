@@ -1,0 +1,11 @@
+prepare:
+  n_rows: 4000
+  seed: 7
+  test_fraction: 0.25
+train:
+  C: 1.0
+  seed: 7
+  features: [0, 1, 2, 3, 4]
+gates:
+  min_auc: 0.90
+  max_regression_vs_baseline: 0.01

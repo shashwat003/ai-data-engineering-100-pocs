@@ -1,0 +1,27 @@
+{
+  "category_accuracy": 1.0,
+  "escalated_vip": 40,
+  "hard_accuracy": 0.133,
+  "hard_accuracy_when_auto_routed": 1.0,
+  "hard_n": 15,
+  "hard_sent_to_human": 14,
+  "n": 150,
+  "needs_human": 14,
+  "order_id_extracted": "84/84",
+  "queues": {
+    "account-services": 30,
+    "finance-support": 30,
+    "logistics": 30,
+    "product-feedback": 30,
+    "tier2-engineering": 30
+  },
+  "replay": {
+    "duplicate": 150
+  },
+  "replay_changed_state": false,
+  "risky_attachment_tickets": 14,
+  "thread_action": "appended",
+  "tickets": 150,
+  "unknown_category": 0,
+  "urgent_accuracy": 1.0
+}

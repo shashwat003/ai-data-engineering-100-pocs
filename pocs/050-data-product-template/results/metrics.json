@@ -1,0 +1,85 @@
+{
+  "dbt_clean_build_ok": true,
+  "dbt_defect_builds_ok": {
+    "bad_status": false,
+    "negative_amount": false
+  },
+  "evolution_gate": [
+    [
+      "drop column + patch bump",
+      "major",
+      "patch",
+      "REJECT"
+    ],
+    [
+      "tighten amount max + minor bump",
+      "major",
+      "minor",
+      "REJECT"
+    ],
+    [
+      "tighten amount max + major bump",
+      "major",
+      "major",
+      "accept"
+    ],
+    [
+      "doc-only change + patch bump",
+      "patch",
+      "patch",
+      "accept"
+    ]
+  ],
+  "registry_demo": [],
+  "scaffold_files": [
+    ".github/workflows/product-ci.yml",
+    "README.md",
+    "contract.yaml",
+    "dbt_project/dbt_project.yml",
+    "dbt_project/models/order_events.sql",
+    "dbt_project/models/schema.yml",
+    "dbt_project/profiles.yml",
+    "dbt_project/tests/assert_order_events_amount_valid.sql",
+    "dbt_project/tests/assert_order_events_contact_email_valid.sql",
+    "product.yaml"
+  ],
+  "schema_drift_detected": true,
+  "slo_scenarios": [
+    [
+      "healthy",
+      true,
+      "-",
+      1.5
+    ],
+    [
+      "stale (no load for 3 days)",
+      false,
+      "freshness_hours",
+      1.4
+    ],
+    [
+      "volume drop (-70%)",
+      false,
+      "volume_deviation_pct",
+      1.5
+    ],
+    [
+      "availability burn (4 failed loads)",
+      false,
+      "availability",
+      -2.5
+    ],
+    [
+      "incomplete (20 null amounts)",
+      false,
+      "completeness, validity",
+      1.5
+    ],
+    [
+      "invalid (20 bad statuses)",
+      false,
+      "validity",
+      1.5
+    ]
+  ]
+}

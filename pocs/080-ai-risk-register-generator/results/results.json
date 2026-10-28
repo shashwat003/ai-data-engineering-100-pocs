@@ -1,0 +1,172 @@
+{
+  "items": [
+    {
+      "action": "no open gaps against modelled obligations",
+      "gaps": [],
+      "id": "SYS-01",
+      "name": "Credit scoring model",
+      "obligations": {
+        "accuracy_monitoring": {
+          "label": "Accuracy, robustness, cybersecurity (Art. 15)",
+          "status": "evidenced"
+        },
+        "data_governance": {
+          "label": "Data and data governance (Art. 10)",
+          "status": "evidenced"
+        },
+        "human_oversight": {
+          "label": "Human oversight (Art. 14)",
+          "status": "evidenced"
+        },
+        "logging": {
+          "label": "Record-keeping / logging (Art. 12)",
+          "status": "evidenced"
+        },
+        "risk_management": {
+          "label": "Risk management system (Art. 9)",
+          "status": "evidenced"
+        },
+        "technical_documentation": {
+          "label": "Technical documentation (Art. 11)",
+          "status": "evidenced"
+        }
+      },
+      "purpose": "Rank consumer loan applicants by default risk",
+      "reasons": [
+        "Annex III(5)(b): creditworthiness of natural persons"
+      ],
+      "tier": "high",
+      "unmapped_controls": []
+    },
+    {
+      "action": "close gaps before go-live",
+      "gaps": [
+        "risk_management",
+        "data_governance",
+        "human_oversight",
+        "accuracy_monitoring"
+      ],
+      "id": "SYS-02",
+      "name": "CV screening assistant",
+      "obligations": {
+        "accuracy_monitoring": {
+          "label": "Accuracy, robustness, cybersecurity (Art. 15)",
+          "status": "MISSING"
+        },
+        "data_governance": {
+          "label": "Data and data governance (Art. 10)",
+          "status": "MISSING"
+        },
+        "human_oversight": {
+          "label": "Human oversight (Art. 14)",
+          "status": "MISSING"
+        },
+        "logging": {
+          "label": "Record-keeping / logging (Art. 12)",
+          "status": "evidenced"
+        },
+        "risk_management": {
+          "label": "Risk management system (Art. 9)",
+          "status": "MISSING"
+        },
+        "technical_documentation": {
+          "label": "Technical documentation (Art. 11)",
+          "status": "evidenced"
+        }
+      },
+      "purpose": "Shortlist job applicants from submitted CVs",
+      "reasons": [
+        "Annex III(4): recruitment and worker management"
+      ],
+      "tier": "high",
+      "unmapped_controls": []
+    },
+    {
+      "action": "no open gaps against modelled obligations",
+      "gaps": [],
+      "id": "SYS-03",
+      "name": "Support chatbot",
+      "obligations": {
+        "disclosure_to_users": {
+          "label": "Transparency: tell users they interact with AI (Art. 50)",
+          "status": "evidenced"
+        }
+      },
+      "purpose": "Answer customer questions about card fees",
+      "reasons": [
+        "Art. 50: system interacts directly with people"
+      ],
+      "tier": "limited",
+      "unmapped_controls": []
+    },
+    {
+      "action": "no open gaps against modelled obligations",
+      "gaps": [],
+      "id": "SYS-04",
+      "name": "Marketing copy generator",
+      "obligations": {},
+      "purpose": "Draft promotional emails reviewed by staff",
+      "reasons": [
+        "no prohibited, high-risk or transparency rule matched"
+      ],
+      "tier": "minimal",
+      "unmapped_controls": []
+    },
+    {
+      "action": "no open gaps against modelled obligations",
+      "gaps": [],
+      "id": "SYS-05",
+      "name": "Invoice anomaly detector",
+      "obligations": {},
+      "purpose": "Flag unusual supplier invoices for finance review",
+      "reasons": [
+        "no prohibited, high-risk or transparency rule matched"
+      ],
+      "tier": "minimal",
+      "unmapped_controls": []
+    },
+    {
+      "action": "STOP: do not deploy; escalate to legal",
+      "gaps": [],
+      "id": "SYS-06",
+      "name": "Emotion tracking in call centre",
+      "obligations": {},
+      "purpose": "Infer agent emotions from voice to rank staff",
+      "reasons": [
+        "Art. 5(1)(f): emotion inference in the workplace"
+      ],
+      "tier": "prohibited",
+      "unmapped_controls": []
+    },
+    {
+      "action": "close gaps before go-live",
+      "gaps": [
+        "content_labelling"
+      ],
+      "id": "SYS-07",
+      "name": "Deepfake voice for ads",
+      "obligations": {
+        "content_labelling": {
+          "label": "Label synthetic/deepfake content (Art. 50)",
+          "status": "MISSING"
+        }
+      },
+      "purpose": "Synthetic celebrity-style voice for radio ads",
+      "reasons": [
+        "Art. 50: deepfake content"
+      ],
+      "tier": "limited",
+      "unmapped_controls": []
+    }
+  ],
+  "summary": {
+    "by_tier": {
+      "high": 2,
+      "limited": 2,
+      "minimal": 2,
+      "prohibited": 1
+    },
+    "open_gaps": 5,
+    "systems": 7
+  }
+}

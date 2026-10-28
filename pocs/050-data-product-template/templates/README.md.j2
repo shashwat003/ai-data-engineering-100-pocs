@@ -1,0 +1,10 @@
+# Data product: {{ name }}
+
+Domain **{{ domain }}**, owned by **{{ owner_team }}** (on call: {{ oncall }}).
+
+- `product.yaml`: ownership, tier, SLOs, access and retention. Validated in CI.
+- `contract.yaml`: the schema and quality contract (columns, types, PII flags, rules).
+- `dbt_project/`: the transformation; `schema.yml` is GENERATED from the contract, do not edit it by hand.
+- Changing the contract needs a version bump that matches the change (breaking = major).
+
+Run `python -m data_product_template.cli validate .` and `... slo .` before opening a pull request.

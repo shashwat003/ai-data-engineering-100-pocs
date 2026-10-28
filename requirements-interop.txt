@@ -1,0 +1,3 @@
+# OPTIONAL: lets POC 024 run its interoperability test against the official MCP Python client.
+-r requirements.txt
+mcp==2.3.0
