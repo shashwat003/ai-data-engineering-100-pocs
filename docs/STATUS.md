@@ -95,7 +95,7 @@ Evidence labels across built POCs: mock (13), modelled (11), simulated (18), tes
 | 85 | [synthetic-data-privacy](../pocs/085-synthetic-data-privacy) | Governance & Security | full | verified | 13 | tested, unverified | CI: fast (py3.12 + py3.13) | yes |
 | 86 | [secrets-scanning-kit](../pocs/086-secrets-scanning-kit) | Governance & Security | full | verified | 14 | tested, unverified | CI: fast (py3.12 + py3.13) | yes |
 | 87 | [llm-output-safety-filter](../pocs/087-llm-output-safety-filter) | Governance & Security | full | verified | 19 | tested, unverified | CI: fast (py3.12 + py3.13) | yes |
-| 88 | [gdpr-erasure-pipeline](../pocs/088-gdpr-erasure-pipeline) | Governance & Security | full | verified | 17 | tested | CI: fast (py3.12 + py3.13) | yes |
+| 88 | [gdpr-erasure-pipeline](../pocs/088-gdpr-erasure-pipeline) | Governance & Security | full | verified | 18 | tested | CI: fast (py3.12 + py3.13) | yes |
 | 89 | [timeseries-forecast-benchmark](../pocs/089-timeseries-forecast-benchmark) | ML & Analytics | full | verified | 13 | tested, unverified | CI: fast (py3.12 + py3.13) | yes |
 | 90 | [streaming-anomaly-detection](../pocs/090-streaming-anomaly-detection) | ML & Analytics | full | verified | 14 | tested, unverified | CI: fast (py3.12 + py3.13) | yes |
 | 91 | [churn-uplift-modeling](../pocs/091-churn-uplift-modeling) | ML & Analytics | full | verified | 12 | tested, unverified | CI: fast (py3.12 + py3.13) | yes |
@@ -109,5 +109,5 @@ Evidence labels across built POCs: mock (13), modelled (11), simulated (18), tes
 | 99 | [reference-edge-cloud-slm](../pocs/099-reference-edge-cloud-slm) | Capstone | local-variant | verified | 18 | modelled, tested | CI: fast (py3.12 + py3.13) | partial |
 | 100 | [poc-portfolio-site](../pocs/100-poc-portfolio-site) | Capstone | full | verified | 8 | tested, unverified | CI: fast (py3.12 + py3.13) | yes |
 
-Static count of test functions in built POCs: 1364 (parametrised tests count once; shared libraries are tested separately in `libs/tests`).
+Static count of test functions in built POCs: 1365 (parametrised tests count once; shared libraries are tested separately in `libs/tests`).
 
